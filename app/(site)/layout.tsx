@@ -20,14 +20,14 @@ const pages = await getPages();
 
 	return (
 		<html lang="en">
-			<body className="max-w-3xl mx-auto py-20" >
-				<header className="flex items-center justify-between " >
+			<body className="bg-gradient-to-b from-gray-900 via-emerald-200 to-gray-200 mx-auto p-20" >
+				<header className="text-2xl flex items-center justify-between " >
 					<Link
 						href="/"
-						className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold ">
+						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold ">
 						Oti.
 					</Link>
-<div className="flex items-center gap-3 text-sm text-gray-600" >
+<div className="flex items-center gap-3 text-gray-300" >
 	{pages.map((page) => (
 		<Link key={page._id} href={`/${page.slug}`} className="hover:underline" >
 			{page.title}

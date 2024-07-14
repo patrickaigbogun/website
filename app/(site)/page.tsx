@@ -11,13 +11,13 @@ export default async function Home() {
 
 		return (
 			<div >
-				<h1 className="text-7xl font-extrabold">
+				<h1 className="text-7xl font-extrabold text-white">
 					Hello I&apos;m{" "}
-					<span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
+					<span className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent">
 						Oti!
 					</span>
 				</h1>
-				<p className="mt-3 text-xl text-gray-600">
+				<p className="mt-3 text-xl text-gray-300">
 					{" "}
 					Aloha everyone! Check out my projects{" "}
 				</p>
@@ -40,7 +40,7 @@ export default async function Home() {
 							className = 'object-cover rounded-lg border border-gray-500'
 							/>
 						)}	
-						<div className="font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
+						<div className="font-extrabold text-gray-700">
 							{project.name}
 						</div>
 					</Link>
