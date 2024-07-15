@@ -20,7 +20,7 @@ const pages = await getPages();
 
 	return (
 		<html lang="en">
-			<body className="bg-gradient-to-b from-gray-900 via-emerald-200 to-gray-200 mx-auto p-20" >
+			<body className="bg-gradient-to-b from-slate-950 via-emerald-700 to-gray-800 mx-auto p-10 sm:p-20" >
 				<header className="text-2xl flex items-center justify-between " >
 					<Link
 						href="/"
