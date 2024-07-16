@@ -17,11 +17,11 @@ export default async function Home() {
 						Oti!
 					</span>
 				</h1>
-				<p className="mt-3 text-xl text-gray-300">
+				<p className="mt-3 text-xl text-white">
 					{" "}
 					Aloha everyone! Check out my projects{" "}
 				</p>
-				<h2 className="mt-24 font-bold text-gray-700 text-3xl">
+				<h2 className="mt-24 font-bold text-white text-3xl">
 					My Projects
 				</h2>
 
@@ -37,10 +37,10 @@ export default async function Home() {
 							alt = {project.name}
 							width = {750}
 							height = {300}
-							className = 'object-cover rounded-lg border border-gray-500'
+							className = 'aspect-video object-cover rounded-lg border border-gray-500'
 							/>
 						)}	
-						<div className="font-extrabold text-gray-700">
+						<div className="font-extrabold text-gray-300">
 							{project.name}
 						</div>
 					</Link>

@@ -24,12 +24,12 @@ const pages = await getPages();
 				<header className="text-2xl flex items-center justify-between " >
 					<Link
 						href="/"
-						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold ">
-						Oti.
+						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold hover:scale-125 transition	 ">
+						Oti.	
 					</Link>
-<div className="flex items-center gap-3 text-gray-300" >
+<div className="flex items-center gap-3 text-gray-400" >
 	{pages.map((page) => (
-		<Link key={page._id} href={`/${page.slug}`} className="hover:underline" >
+		<Link key={page._id} href={`/${page.slug}`} className="hover:underline hover:scale-105 hover:text-gray-200 transition" >
 			{page.title}
 		</Link>
 	))}
