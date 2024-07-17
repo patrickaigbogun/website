@@ -13,31 +13,42 @@ export default async function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-
 	// get all pages
 
-const pages = await getPages();
+	const pages = await getPages();
 
 	return (
 		<html lang="en">
-			<body className="bg-gradient-to-b from-slate-950 via-emerald-700 to-gray-800 mx-auto p-10 sm:p-20" >
-				<header className="text-2xl flex items-center justify-between " >
+			<body className="bg-gradient-to-b from-slate-950 via-emerald-500 to-gray-800 mx-auto p-10 sm:p-20">
+				<header className="text-3xl flex items-center justify-between ">
 					<Link
 						href="/"
 						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold hover:scale-125 transition	 ">
-						Oti.	
+						Oti.
 					</Link>
-<div className="flex items-center gap-3 text-gray-400" >
-	{pages.map((page) => (
-		<Link key={page._id} href={`/${page.slug}`} className="hover:underline hover:scale-105 hover:text-gray-200 transition" >
-			{page.title}
-		</Link>
-	))}
-</div>
-
+					<div className="flex items-center gap-3 text-gray-400">
+						{pages.map((page) => (
+							<Link
+								key={page._id}
+								href={`/${page.slug}`}
+								className="hover:underline hover:scale-105 hover:text-gray-200 transition">
+								{page.title}
+							</Link>
+						))}
+					</div>
 				</header>
 
-				<main className="py-20" >{children}</main>
+				<main className="py-20">{children}</main>
+
+				<footer  className="bg-gray-800 
+             text-3xl text-white text-center 
+             border-t-4 border-emerald-500 
+             fixed 
+             inset-x-0 
+             bottom-0 
+             p-4" >
+
+				</footer>
 			</body>
 		</html>
 	);
