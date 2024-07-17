@@ -26,12 +26,12 @@ export default async function RootLayout({
 						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold hover:scale-125 transition	 ">
 						Oti.
 					</Link>
-					<div className="flex items-center gap-3 text-gray-400">
+					<div className="flex items-center gap-3 text-gray-200">
 						{pages.map((page) => (
 							<Link
 								key={page._id}
 								href={`/${page.slug}`}
-								className="hover:underline hover:scale-105 hover:text-gray-200 transition">
+								className="hover:underline hover:scale-105 hover:text-white hover:font-medium transition">
 								{page.title}
 							</Link>
 						))}
@@ -41,13 +41,17 @@ export default async function RootLayout({
 				<main className="py-20">{children}</main>
 
 				<footer  className="bg-gray-800 
-             text-3xl text-white text-center 
-             border-t-4 border-emerald-500 
+              text-white text-center 
+             border-t-2 border-emerald-500 
              fixed 
              inset-x-0 
              bottom-0 
              p-4" >
-
+				&copy;Oti. contact me at any of these options;
+				+12345678
+				name@email.com
+				lindin.com/username 
+				github.com/username
 				</footer>
 			</body>
 		</html>
