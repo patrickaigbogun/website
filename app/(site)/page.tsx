@@ -1,5 +1,3 @@
-
-
 import { getProjects } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +8,7 @@ export default async function Home() {
 		console.log(projects); // Check if projects are fetched correctly
 
 		return (
-			<div >
+			<div>
 				<h1 className="text-7xl font-extrabold text-white">
 					Hello I&apos;m{" "}
 					<span className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent">
@@ -25,28 +23,27 @@ export default async function Home() {
 					My Projects
 				</h2>
 
-				<div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" >
-				{projects.map((project) => (
-					<Link
-					href={`/projects/${project.slug}`}
-						key={project._id}
-						className="border-2 border-gray-500 rounded-lg p-1 hover:scale-105 hover:border-gray-200 transition">
-						{project.image &&(
-							<Image
-							src = {project.image}
-							alt = {project.name}
-							width = {750}
-							height = {300}
-							className = 'aspect-video object-cover rounded-lg border border-gray-500'
-							/>
-						)}	
-						<div className="font-extrabold text-gray-300">
-							{project.name}
-						</div>
-					</Link>
-				))}
+				<div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{projects.map((project) => (
+						<Link
+							href={`/projects/${project.slug}`}
+							key={project._id}
+							className="border-2 border-gray-500 rounded-lg p-1 hover:scale-105 hover:border--200 transition">
+							{project.image && (
+								<Image
+									src={project.image}
+									alt={project.name}
+									width={750}
+									height={300}
+									className="aspect-video object-cover rounded-lg border border-gray-500"
+								/>
+							)}
+							<div className="font-extrabold text-gray-300">
+								{project.name}
+							</div>
+						</Link>
+					))}
 				</div>
-				
 			</div>
 		);
 	} catch (error) {
