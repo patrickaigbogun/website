@@ -3,6 +3,8 @@ import "../globals.css";
 import Link from "next/link";
 import { getPages } from "@/sanity/sanity-utils";
 
+import { Phone } from "@phosphor-icons/react/dist/ssr";
+
 export const metadata: Metadata = {
 	title: "A simple portfolio",
 	description: "personal website made with nextjs and sanitystudio",
@@ -48,6 +50,7 @@ export default async function RootLayout({
              bottom-0 
              p-4" >
 				&copy;Oti. contact me at any of these options;
+				<Phone weight="duotone" />
 				+12345678
 				name@email.com
 				lindin.com/username 
