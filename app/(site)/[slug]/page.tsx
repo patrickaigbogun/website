@@ -10,7 +10,7 @@ export default async function Page({params}: Prop) {
 
     return(
         <div>
-            <h1 className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold" >{page.title}</h1>
+            <h1 className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold" >{page?.title}</h1>
         
        <div className="prose prose-a:underline prose-a:text-white hover:prose-a:text-gray-400 transition text-lg text-white mt-10" >
        <PortableText value={page.content}/>

@@ -5,6 +5,8 @@ const config = {
 
 	apiVersion: "2024-06-30",
 
+	useCdn: true,
+
 }
 
 export default config;
