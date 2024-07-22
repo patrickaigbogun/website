@@ -3,7 +3,7 @@ import "../globals.css";
 import Link from "next/link";
 import { getPages } from "@/sanity/sanity-utils";
 
-import { Phone } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, GithubLogo, LinkedinLogo, Phone } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
 	title: "A simple portfolio",
@@ -43,18 +43,26 @@ export default async function RootLayout({
 				<main className="py-20">{children}</main>
 
 				<footer  className="bg-gray-800 
-              text-white text-center 
+              text-white flex flex-row justify-center
              border-t-2 border-emerald-500 
              fixed 
              inset-x-0 
              bottom-0 
-             p-4" >
-				&copy;Oti. contact me at any of these options;
-				<Phone weight="duotone" />
+             p-4 gap-2" >
+				<p>&copy;Oti. Built by Patrick Aigbogun</p>
+				<Phone size={24} weight="duotone" >
 				+12345678
+				</Phone>
+				<EnvelopeSimple size={24} weight="duotone" >
 				name@email.com
-				lindin.com/username 
-				github.com/username
+				</EnvelopeSimple>
+				<LinkedinLogo size={24} weight="duotone" >
+				linkedin.com/username
+				</LinkedinLogo >
+				 <GithubLogo size={24} weight="duotone" >
+				 github.com/username
+				 </GithubLogo>
+				
 				</footer>
 			</body>
 		</html>
