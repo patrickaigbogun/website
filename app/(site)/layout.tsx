@@ -23,7 +23,7 @@ export default async function RootLayout({
 				<header className="text-3xl flex items-center justify-between ">
 					<Link
 						href="/"
-						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold hover:scale-125 transition	 ">
+						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold hover:scale-125 transition">
 						Oti.
 					</Link>
 					<div className="flex items-center gap-3 text-gray-200">
