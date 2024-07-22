@@ -31,8 +31,8 @@ export default async function RootLayout({
 					<div className="flex items-center gap-3 text-gray-200">
 						{pages.map((page) => (
 							<Link
-								key={page._id}
 								href={`/${page.slug}`}
+								key={page._id}
 								className="hover:underline hover:scale-105 hover:text-white hover:font-medium transition">
 								{page.title}
 							</Link>
