@@ -16,8 +16,8 @@ export default async function Home() {
 					</span>
 				</h1>
 				<p className="mt-3 text-xl text-white">
-					{" "}
-					Aloha everyone! Check out my projects{" "}
+					Welcome to my portfolio! 
+					<br /><i><sub>displayed below are my most confident works</sub></i>
 				</p>
 				<h2 className="mt-24 font-bold text-white text-3xl">
 					My Projects
@@ -28,7 +28,7 @@ export default async function Home() {
 						<Link
 							href={`/projects/${project.slug}`}
 							key={project._id}
-							className="border-2 border-gray-200 rounded-lg p-1 hover:scale-105 hover:border-3 hover:border-gray-200 transition">
+							className="border border-gray-300 rounded-lg p-1 hover:scale-105 hover:border-3 hover:border-gray-200 hover:shadow-2xl transition">
 							{project.image && (
 								<Image
 									src={project.image}
@@ -38,7 +38,7 @@ export default async function Home() {
 									className="aspect-video object-cover rounded-lg border border-gray-500"
 								/>
 							)}
-							<div className="font-extrabold text-gray-300">
+							<div className="font-extrabold text-gray-300 group-hover:text-gray-300">
 								{project.name}
 							</div>
 						</Link>
