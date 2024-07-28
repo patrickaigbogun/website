@@ -1,6 +1,12 @@
-import { getProjects } from "@/sanity/sanity-utils";
+// sanitytester\app\(site)\page.tsx
+
+
+import { getProjects } from "@/sanity/sanity-utils"; 
 import Image from "next/image";
 import Link from "next/link";
+
+
+export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function Home() {
 	try {
@@ -16,7 +22,7 @@ export default async function Home() {
 					</span>
 				</h1>
 				<p className="mt-3 text-xl text-white">
-					Welcome to my portfolio! 
+					Welcome to my portfolio!
 					<br /><i><sub>displayed below are my most confident works</sub></i>
 				</p>
 				<h2 className="mt-24 font-bold text-white text-3xl">

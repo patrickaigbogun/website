@@ -1,3 +1,5 @@
+// sanitytester\app\(site)\[slug]\page.tsx
+
 import { getPage } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 

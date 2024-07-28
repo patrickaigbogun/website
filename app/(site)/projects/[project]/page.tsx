@@ -1,3 +1,5 @@
+// sanitytester\app\(site)\projects\[project]\page.tsx
+
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
