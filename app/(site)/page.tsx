@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 5; // Revalidate every 60 seconds
 
 export default async function Home() {
 	try {
