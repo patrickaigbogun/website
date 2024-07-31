@@ -28,7 +28,7 @@ export default async function RootLayout({
 						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold hover:scale-125 transition">
 						Oti.
 					</Link>
-					<div className="flex items-center gap-3 text-gray-200">
+					<div className="flex justify-between gap-3 text-gray-200">
 						{pages.map((page) => (
 							<Link
 								href={`/${page.slug}`}
