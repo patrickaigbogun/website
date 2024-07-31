@@ -19,13 +19,17 @@ export default async function Project({params}: Props){
         <div  >
         
         <header className="flex items-center justify-between gap-2" >
-        <Link href="../" title="Home" rel="noopener noreferrer" className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-gray-800 hover:text-white transition">Home</Link>
-            <Link href={project.url} title="view project" target="_blank" rel="noopener noreferrer" className="bg-gray-100 rounded-lg text-gray-500 font-bold py-3 px-4 whitespace-nowrap hover:bg-gray-800 hover:text-white transition" >
-                View Project
-            </Link>
+        <Link href="../" title="Home" rel="noopener noreferrer" className="bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition">
+            Home
+        </Link>
+		<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className="bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition" >
+			View Project
+		</Link>
         </header>
 
-        <h1 className="my-10 bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold" >{project.name}</h1>
+        <h1 className="my-10 bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent text-5xl font-bold" >
+			{project.name}
+		</h1>
 
 
         {/* image here */}
