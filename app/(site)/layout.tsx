@@ -21,7 +21,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang="en">
-			<body className="bg-gradient-to-b from-slate-950 via-emerald-500 to-gray-800 mx-auto p-10 sm:p-20">
+			<body className="bg-black mx-auto p-10 sm:p-20">
 				<header className="text-3xl flex items-center justify-between ">
 					<Link
 						href="/"
