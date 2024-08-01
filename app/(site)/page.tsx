@@ -41,7 +41,7 @@ export default async function Home() {
 									alt={project.name}
 									width={750}
 									height={300}
-									className="aspect-video object-cover rounded-lg border border-gray-500"
+									className="aspect-video object-cover rounded-lg "
 								/>
 							)}
 							<div className="font-extrabold text-gray-300 group-hover:text-gray-300">
