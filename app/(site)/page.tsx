@@ -18,7 +18,7 @@ export default async function Home() {
 				<h1 className="text-7xl font-extrabold text-white">
 					Hello I&apos;m{" "}
 					<span className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent">
-						Oti!
+						Oti.
 					</span>
 				</h1>
 				<p className="mt-3 text-xl text-white">
