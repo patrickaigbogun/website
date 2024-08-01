@@ -27,7 +27,7 @@ export default async function Project({ params }: Props) {
 				</Link>
 			</header>
 			<div className="w-full md:w-[75%] mx-auto">
-  <h1 className="my-14 bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent text-5xl font-bold">
+  <h1 className="my-14 text-white text-5xl font-bold">
     {project.name}
   </h1>
   
