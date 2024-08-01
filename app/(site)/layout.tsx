@@ -42,28 +42,25 @@ export default async function RootLayout({
 
 				<main className="py-20">{children}</main>
 
-				<footer  className="bg-gray-800 
-              text-white flex flex-row justify-center
-             border-t-2 border-emerald-500 
-             fixed 
-             inset-x-0 
-             bottom-0 
-             p-4 gap-2" >
-				<p>&copy;Oti. Built by Patrick Aigbogun</p>
-				<Phone size={24} weight="duotone" >
-				+12345678
-				</Phone>
-				<EnvelopeSimple size={24} weight="duotone" >
-				name@email.com
-				</EnvelopeSimple>
-				<LinkedinLogo size={24} weight="duotone" >
-				linkedin.com/username
-				</LinkedinLogo >
-				 <GithubLogo size={24} weight="duotone" >
-				 github.com/username
-				 </GithubLogo>
-				
-				</footer>
+				<footer className="bg-gray-950 bg-opacity-15 backdrop-blur-md text-white flex flex-row justify-center border-t-2 border-green-300 fixed inset-x-0 bottom-0 p-4 gap-4">
+      <p>&copy; Oti. Built by Patrick Aigbogun</p>
+      <div className="flex items-center gap-2">
+        <Phone size={24} weight="duotone" />
+        <span>+12345678</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <EnvelopeSimple size={24} weight="duotone" />
+        <span>name@email.com</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <LinkedinLogo size={24} weight="duotone" />
+        <a href="https://linkedin.com/username" target="_blank" rel="noopener noreferrer">linkedin.com/username</a>
+      </div>
+      <div className="flex items-center gap-2">
+        <GithubLogo size={24} weight="duotone" />
+        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">github.com/username</a>
+      </div>
+    </footer>
 			</body>
 		</html>
 	);
