@@ -33,7 +33,7 @@ export default function Project({ params }: Props) {
 	}
 
 	return (
-		<div  >
+		<div className="mb-10" >
 
 			<header className=" my-2 p-0 flex items-center justify-between gap-2" >
 				<Link href="../" title="Home" rel="noopener noreferrer" className=" m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition">

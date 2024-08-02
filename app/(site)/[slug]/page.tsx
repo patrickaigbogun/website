@@ -25,7 +25,7 @@ export default function Page({ params }: PageProps) {
   }
 
   return (
-    <div className="w-full md:w-[75%] mx-auto">
+    <div className="mb-10 w-full md:w-[75%] mx-auto">
       <h1 className="my-14 text-white text-5xl font-bold">{page.title}</h1>
 
       <div className="prose prose-a:underline prose-a:text-white hover:prose-a:text-gray-400 transition text-lg text-white mt-10">

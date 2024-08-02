@@ -5,7 +5,7 @@ export default function Footer() {
 
 	return (
 
-		<footer className="bg-gray-950 bg-opacity-15 backdrop-blur-md text-white flex flex-row justify-center border-t-2 border-green-500 fixed inset-x-0 bottom-0 p-4 gap-4">
+		<footer className=" text-sm lg:text-base bg-gray-950 bg-opacity-15 backdrop-blur-md text-white flex flex-row justify-center border-t-2 border-green-500 fixed inset-x-0 bottom-0 p-4 gap-4">
 			<p>&copy; Oti. Built by Patrick Aigbogun</p>
 			<div className="flex items-center gap-2 hover:scale-125 transition">
 				<Phone size={24} weight="duotone" />
