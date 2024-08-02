@@ -27,29 +27,29 @@ export default async function Project({ params }: Props) {
 				</Link>
 			</header>
 			<div className="w-full md:w-[75%] mx-auto">
-  <h1 className="my-14 text-white text-5xl font-bold">
-    {project.name}
-  </h1>
-  
-  <div className="flex justify-center">
-    <div className="m-0 p-0">
-      {/* Image here */}
-      <Image
-        src={project.image}
-        alt={project.name}
-        width={960}
-        height={540}
-        className="aspect-video my-10 border-2 border-gray-700 object-cover rounded-xl"
-      />
-    </div>
-  </div>
+				<h1 className="my-14 text-white text-5xl font-bold">
+					{project.name}
+				</h1>
 
-  {/* Content here */}
-  <div className="prose text-lg text-white mt-5">
-    <PortableText value={project.content} />
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quibusdam assumenda voluptates! Quis, amet itaque ratione architecto quisquam earum odio ducimus corrupti aliquam libero placeat quidem error mollitia assumenda esse!</p>
-  </div>
-</div>
+				<div className="flex justify-center">
+					<div className="m-0 p-0">
+						{/* Image here */}
+						<Image
+							src={project.image}
+							alt={project.name}
+							width={960}
+							height={540}
+							className="aspect-video my-10 border-2 border-gray-700 object-cover rounded-xl"
+						/>
+					</div>
+				</div>
+
+				{/* Content here */}
+				<div className="prose text-lg text-white mt-5">
+					<PortableText value={project.content} />
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quibusdam assumenda voluptates! Quis, amet itaque ratione architecto quisquam earum odio ducimus corrupti aliquam libero placeat quidem error mollitia assumenda esse!</p>
+				</div>
+			</div>
 
 
 		</div>
