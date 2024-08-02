@@ -1,19 +1,36 @@
 // sanitytester\app\(site)\projects\[project]\page.tsx
 
+"use client"
+
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from 'next/link';
+import { useState, useEffect } from "react";
 
 type Props = {
 	params: { project: string }
 };
 
-export default async function Project({ params }: Props) {
+export default function Project({ params }: Props) {
 
-	const slug = params.project;
+	// const slug = params.project;
 
-	const project = await getProject(slug);
+
+	const [project, setProject] = useState<any>(null);
+
+	useEffect(() => {
+	  const fetchProject = async () => {
+		const fetchedProject = await getProject(params.project);
+		setProject(fetchedProject);
+	  };
+  
+	  fetchProject();
+	}, [params.project]);
+  
+	if (!project) {
+	  return <div className="text-white" >Loading...</div>; // Placeholder for loading state
+	}
 
 	return (
 		<div  >
