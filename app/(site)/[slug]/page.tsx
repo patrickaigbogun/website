@@ -29,10 +29,10 @@ export default function Page({ params }: PageProps) {
 
 	return (
 		<div className="mb-10 w-full md:w-[75%] mx-auto">
-			<header className=" my-2 p-0 flex items-center justify-between gap-2" >
-				<Link href="../" title="Home" rel="noopener noreferrer" className=" m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition">
+			<header className=" my-2 p-0 flex items-center justify-start gap-2" >
+				{/* <Link href="../" title="Home" rel="noopener noreferrer" className=" m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition">
 					Home
-				</Link>
+				</Link> */}
 				<button
 					onClick={() => window.history.back()}
 					title="Go back"
