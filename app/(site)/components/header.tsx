@@ -14,7 +14,7 @@ export default async function Header() {
 	const pages = await getPages();
 
     return(
-        <header className="text-3xl flex items-center justify-between ">
+        <header className=" text-3xl flex items-center justify-between ">
 					<Link
 						href="/"
 						className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent font-bold hover:scale-125 transition">
