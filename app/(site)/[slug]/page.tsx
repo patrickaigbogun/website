@@ -4,6 +4,7 @@ import { getPage } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 import { useEffect, useState } from "react"; // Import React hooks for async rendering
 import LoadingUI from "../components/loadingui";
+import ContactForm from "../components/contactform";
 
 type PageProps = {
   params: { slug: string };
@@ -34,12 +35,7 @@ export default function Page({ params }: PageProps) {
       </div>
 
       {page.slug === "contact" && (
-        <div className="text-white mt-10">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
-          sunt? Fuga quia atque dolor dolores quibusdam id, adipisci eum quidem
-          ullam laborum. Repellat, facere animi excepturi unde nulla perferendis
-          id.
-        </div>
+        <ContactForm/>
       )}
     </div>
   );
