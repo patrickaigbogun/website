@@ -5,6 +5,7 @@ import { getProjects } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import LoadingUI from "./components/loadingui";
 
 // Define the project type
 interface Project {
@@ -37,7 +38,7 @@ export default function Home() {
   }
 
   if (!projects) {
-    return <div className="text-white">Loading...</div>; // Placeholder for loading state
+    return <LoadingUI/>; // loading state UI
   }
 
   return (

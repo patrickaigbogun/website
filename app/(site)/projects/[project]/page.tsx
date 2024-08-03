@@ -7,6 +7,7 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from 'next/link';
 import { useState, useEffect } from "react";
+import LoadingUI from "../../components/loadingui";
 
 type Props = {
 	params: { project: string }
@@ -29,7 +30,7 @@ export default function Project({ params }: Props) {
 	}, [params.project]);
   
 	if (!project) {
-	  return <div className="text-white" >Loading...</div>; // Placeholder for loading state
+	  return <LoadingUI/>; // Placeholder for loading state
 	}
 
 	return (

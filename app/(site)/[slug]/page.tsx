@@ -3,6 +3,7 @@
 import { getPage } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 import { useEffect, useState } from "react"; // Import React hooks for async rendering
+import LoadingUI from "../components/loadingui";
 
 type PageProps = {
   params: { slug: string };
@@ -21,7 +22,7 @@ export default function Page({ params }: PageProps) {
   }, [params.slug]);
 
   if (!page) {
-    return <div className="text-white" >Loading...</div>; // Placeholder for loading state
+    return <LoadingUI/>; // Placeholder for loading state
   }
 
   return (
