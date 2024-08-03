@@ -21,25 +21,29 @@ export default function Project({ params }: Props) {
 	const [project, setProject] = useState<any>(null);
 
 	useEffect(() => {
-	  const fetchProject = async () => {
-		const fetchedProject = await getProject(params.project);
-		setProject(fetchedProject);
-	  };
-  
-	  fetchProject();
+		const fetchProject = async () => {
+			const fetchedProject = await getProject(params.project);
+			setProject(fetchedProject);
+		};
+
+		fetchProject();
 	}, [params.project]);
-  
+
 	if (!project) {
-	  return <LoadingUI/>; // Placeholder for loading state
+		return <LoadingUI />; // Placeholder for loading state
 	}
 
 	return (
 		<div className="mb-10" >
 
 			<header className=" my-2 p-0 flex items-center justify-between gap-2" >
-				<Link href="../" title="Home" rel="noopener noreferrer" className=" m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition">
-					Home
-				</Link>
+				<button
+					onClick={() => window.history.back()}
+					title="Go back"
+					className="m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition"
+				>
+					Go back
+				</button>
 				<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className=" m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition" >
 					View Project
 				</Link>
