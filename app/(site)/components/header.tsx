@@ -25,7 +25,7 @@ export default async function Header() {
 							<Link
 								href={`/${page.slug}`}
 								key={page._id}
-								className=" bg-white rounded-lg text-black font-medium sm:font-medium p-2 whitespace-nowrap hover:font-bold hover:underline hover:scale-110 transition">
+								className=" text-white font-medium sm:font-medium p-2 hover:font-bold hover:underline hover:scale-110 transition">
 								{page.title}
 							</Link>
 						))}
