@@ -19,15 +19,26 @@ export default function Project({ params }: Props) {
 
 
 	const [project, setProject] = useState<any>(null);
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		const fetchProject = async () => {
-			const fetchedProject = await getProject(params.project);
+			try {
+				const fetchedProject = await getProject(params.project);
 			setProject(fetchedProject);
+			} catch (error) {
+				console.error("error fetching project: ", error);
+				setError("error fetching project");
+				
+			}
 		};
 
 		fetchProject();
 	}, [params.project]);
+
+	if (error) {
+		return <div className="text-white">{error}</div>
+	}
 
 	if (!project) {
 		return <LoadingUI />; // Placeholder for loading state
