@@ -5,7 +5,7 @@ import { PortableText } from "next-sanity";
 import { useEffect, useState } from "react"; // Import React hooks for async rendering
 import LoadingUI from "../components/loadingui";
 import ContactForm from "../components/contactform";
-import Link from "next/link";
+// import Link from "next/link";
 
 type PageProps = {
 	params: { slug: string };
@@ -13,15 +13,26 @@ type PageProps = {
 
 export default function Page({ params }: PageProps) {
 	const [page, setPage] = useState<any>(null);
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		const fetchPage = async () => {
-			const fetchedPage = await getPage(params.slug);
+			try{
+				const fetchedPage = await getPage(params.slug);
 			setPage(fetchedPage);
+			}
+			catch (error) {
+				console.error("Error fetching page:", error);
+				setError("Error loading page");
+			}
 		};
 
 		fetchPage();
 	}, [params.slug]);
+
+	if (error) {
+		return <div className="text-white">{error}</div>;
+	};
 
 	if (!page) {
 		return <LoadingUI />; // Placeholder for loading state
