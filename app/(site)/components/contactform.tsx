@@ -16,6 +16,7 @@ export default function ContactForm() {
 				name="email"
 				className="px-4 py-2 rounded-lg border-2 border-green-500 focus:outline-none focus:border-green-500"
 				placeholder="eg; you@example.com"
+				required
 			  />
 			</div>
 			<div className="flex flex-col">
@@ -26,6 +27,7 @@ export default function ContactForm() {
 				rows={4}
 				className="px-4 py-2 border-2 border-green-500 rounded-lg focus:outline-none focus:border-green-500"
 				placeholder="eg; Hi Oti, I need a blog site done.."
+				required
 			  ></textarea>
 			</div>
 			<button
