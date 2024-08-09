@@ -47,7 +47,7 @@ export default function Home() {
 		<div className="mb-10">
 			<Hero />
 
-			<div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
 				{projects.map((project: Project) => (
 					<Link
 						href={`/projects/${project.slug}`}
@@ -62,7 +62,7 @@ export default function Home() {
 								className="aspect-video object-cover rounded-lg"
 							/>
 						)}
-						<div className="font-extrabold text-gray-300 group-hover:text-gray-300">
+						<div className="font-extrabold text-gray-300 group-hover:text-gray-300 my-1">
 							{project.name}
 						</div>
 					</Link>
