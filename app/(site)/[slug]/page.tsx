@@ -5,6 +5,7 @@ import { PortableText } from "next-sanity";
 import { useEffect, useState } from "react"; // Import React hooks for async rendering
 import LoadingUI from "../components/loadingui";
 import ContactForm from "../components/contactform";
+import { montserrat } from "@/fonts/fonts";
 // import Link from "next/link";
 
 type PageProps = {
@@ -52,7 +53,7 @@ export default function Page({ params }: PageProps) {
 					Go back
 				</button>
 			</header>
-			<h1 className="my-14 text-white text-5xl font-bold">{page.title}</h1>
+			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 
 			<div className="prose prose-a:underline prose-a:text-white hover:prose-a:text-gray-400 transition text-lg text-white mt-10">
 				<PortableText value={page.content} />

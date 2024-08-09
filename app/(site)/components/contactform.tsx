@@ -1,3 +1,4 @@
+import { montserrat } from "@/fonts/fonts";
 
 
 
@@ -5,8 +6,8 @@ export default function ContactForm() {
 	return (
 	  <div className="flex justify-center my-10">
 		<div className="w-full max-w-lg md:max-w-3xl lg:max-w-5xl p-8">
-		  <h2 className="text-2xl font-bold text-white mb-4">Contact Me</h2>
-		  <form className="space-y-8">
+		  <h2 className={` ${montserrat.className} text-2xl font-bold text-white mb-4`}>Contact Me</h2>
+		  <form action={'https://formspree.io/f/xzzpgvdw'} method="POST" className="space-y-8">
 			<div className="flex flex-col">
 			  <label htmlFor="email" className="text-white">Your Email</label>
 			  <input
