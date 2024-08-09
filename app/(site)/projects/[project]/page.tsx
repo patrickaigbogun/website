@@ -78,7 +78,7 @@ export default function Project({ params }: Props) {
 				</div>
 
 				{/* Content here */}
-				<div className="prose text-lg text-white mt-5">
+				<div className="prose text-lg text-white mt-5 font-sans">
 					<PortableText value={project.content} />
 					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quibusdam assumenda voluptates! Quis, amet itaque ratione architecto quisquam earum odio ducimus corrupti aliquam libero placeat quidem error mollitia assumenda esse!</p>
 				</div>
