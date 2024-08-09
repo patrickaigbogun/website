@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import { useState, useEffect } from "react";
 import LoadingUI from "../../components/loadingui";
+import { montserrat } from "@/fonts/fonts";
 
 type Props = {
 	params: { project: string }
@@ -60,7 +61,7 @@ export default function Project({ params }: Props) {
 				</Link>
 			</header>
 			<div className="w-full md:w-[75%] mx-auto">
-				<h1 className="my-14 text-white text-5xl font-bold">
+				<h1 className={`my-14 text-white text-5xl font-bold ${montserrat.className}` }>
 					{project.name}
 				</h1>
 
@@ -78,7 +79,7 @@ export default function Project({ params }: Props) {
 				</div>
 
 				{/* Content here */}
-				<div className="prose text-lg text-white mt-5 font-sans">
+				<div className="prose text-lg text-white">
 					<PortableText value={project.content} />
 					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quibusdam assumenda voluptates! Quis, amet itaque ratione architecto quisquam earum odio ducimus corrupti aliquam libero placeat quidem error mollitia assumenda esse!</p>
 				</div>

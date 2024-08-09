@@ -5,7 +5,7 @@ import { getPages } from "@/sanity/sanity-utils";
 import Footer from "./components/footer";
 import Header from "./components/header";
 
-import { montserrat, nunito } from "@/fonts/fonts";
+import { nunito } from "@/fonts/fonts";
 
 // import { EnvelopeSimple, GithubLogo, LinkedinLogo, Phone } from "@phosphor-icons/react/dist/ssr";
 

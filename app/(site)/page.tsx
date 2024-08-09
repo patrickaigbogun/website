@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import LoadingUI from "./components/loadingui";
 import Hero from "./components/hero";
+import { montserrat } from "@/fonts/fonts";
 
 
 // Define the project type
@@ -62,7 +63,7 @@ export default function Home() {
 								className="aspect-video object-cover rounded-lg"
 							/>
 						)}
-						<div className="font-extrabold text-gray-300 group-hover:text-gray-300 my-1">
+						<div className={` ${montserrat.className} font-extrabold text-gray-300 group-hover:text-gray-300 my-1`}>
 							{project.name}
 						</div>
 					</Link>
