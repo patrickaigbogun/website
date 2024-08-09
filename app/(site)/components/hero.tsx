@@ -1,5 +1,4 @@
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import { montserrat, openSans } from '@/fonts/fonts';
 
 
 
@@ -16,7 +15,7 @@ export default function Hero() {
       })
 
 	return (
-		<div className='{`${montserrat.font-montserrat} ${roboto_mono.variable}`}'>
+		<div className={``}>
 			<h1 className=" text-7xl font-extrabold text-white">
 				Hello I&apos;m{" "}
 				<span className="bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text text-transparent">

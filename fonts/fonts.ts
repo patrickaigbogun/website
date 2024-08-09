@@ -1,4 +1,4 @@
-import { Montserrat, Open_Sans } from "next/font/google";
+import { Montserrat, Nunito } from "next/font/google";
 
 export const montserrat = Montserrat({
   subsets: ['latin'],
@@ -6,7 +6,7 @@ export const montserrat = Montserrat({
   display: 'swap',
 });
 
-export const openSans = Open_Sans({
+export const nunito = Nunito({
   subsets: ['latin'],
   variable: '--font-open-sans',
   display: 'swap',
