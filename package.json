@@ -16,7 +16,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-simple-typewriter": "^5.0.1",
-    "styled-components": "^6.1.12"
+    "styled-components": "^6.1.12",
+    "tailwind-scrollbar": "^3.1.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
