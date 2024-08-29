@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useState, useEffect } from "react";
 import LoadingUI from "../../components/loadingui";
 import { montserrat } from "@/fonts/fonts";
+import BackButton from "../../components/backButton";
 
 type Props = {
 	params: { project: string }
@@ -26,11 +27,11 @@ export default function Project({ params }: Props) {
 		const fetchProject = async () => {
 			try {
 				const fetchedProject = await getProject(params.project);
-			setProject(fetchedProject);
+				setProject(fetchedProject);
 			} catch (error) {
 				console.error("error fetching project: ", error);
 				setError("error fetching project");
-				
+
 			}
 		};
 
@@ -49,19 +50,15 @@ export default function Project({ params }: Props) {
 		<div className="mb-10" >
 
 			<header className="flex items-center justify-between gap-2 p-0 my-2 " >
-				<button
-					onClick={() => window.history.back()}
-					title="Go back"
-					className="p-3 m-0 font-bold text-black transition bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white"
-				>
-					Go back
-				</button>
-				<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg  sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white" >
-					View Project
+				<BackButton/>
+
+				<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className="relative inline-block p-3 m-0 overflow-hidden font-bold text-black transition-all duration-300 ease-out bg-white border-4 border-black rounded-lg hover:border-white group" >
+				<span className="absolute top-0 left-0 w-0 transition-all duration-300 ease-out bg-gray-800 group-hover:w-full group-hover:h-full"></span>
+				<span className="relative group-hover:text-white">View Project</span>
 				</Link>
 			</header>
 			<div className="w-full md:w-[75%] mx-auto">
-				<h1 className={`my-14 text-white text-5xl font-bold ${montserrat.className}` }>
+				<h1 className={`my-14 text-white text-5xl font-bold ${montserrat.className}`}>
 					{project.name}
 				</h1>
 

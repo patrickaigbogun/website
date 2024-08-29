@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"; // Import React hooks for async ren
 import LoadingUI from "../components/loadingui";
 import ContactForm from "../components/contactform";
 import { montserrat } from "@/fonts/fonts";
+import BackButton from "../components/backButton";
 // import Link from "next/link";
 
 type PageProps = {
@@ -45,13 +46,7 @@ export default function Page({ params }: PageProps) {
 				{/* <Link href="../" title="Home" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white">
 					Home
 				</Link> */}
-				<button
-					onClick={() => window.history.back()}
-					title="Go back"
-					className="p-3 m-0 font-bold text-black transition-colors bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white "
-				>
-					Go back
-				</button>
+				<BackButton/>
 			</header>
 			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 
