@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function BackButton() {
+export default function BackBtn() {
     return (
         <button
             onClick={() => window.history.back()}
