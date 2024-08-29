@@ -1,34 +1,34 @@
 {
-  "name": "sanitytester",
-  "version": "0.5.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@phosphor-icons/react": "^2.1.7",
-    "@portabletext/react": "^3.1.0",
-    "next": "14.2.4",
-    "next-sanity": "^9.4.2",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-simple-typewriter": "^5.0.1",
-    "styled-components": "^6.1.12",
-    "tailwind-scrollbar": "^3.1.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.4",
-    "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5"
-  }
+	"name": "sanitytester",
+	"version": "0.5.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@phosphor-icons/react": "^2.1.7",
+		"@portabletext/react": "^3.1.0",
+		"next": "14.2.4",
+		"next-sanity": "^9.4.2",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-simple-typewriter": "^5.0.1",
+		"styled-components": "^6.1.12",
+		"tailwind-scrollbar": "^3.1.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.13",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"autoprefixer": "^10.4.19",
+		"eslint": "^8",
+		"eslint-config-next": "14.2.4",
+		"postcss": "^8.4.39",
+		"tailwindcss": "^3.4.4",
+		"typescript": "^5"
+	}
 }
