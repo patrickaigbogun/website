@@ -48,15 +48,15 @@ export default function Project({ params }: Props) {
 	return (
 		<div className="mb-10" >
 
-			<header className=" my-2 p-0 flex items-center justify-between gap-2" >
+			<header className="flex items-center justify-between gap-2 p-0 my-2 " >
 				<button
 					onClick={() => window.history.back()}
 					title="Go back"
-					className="m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition"
+					className="p-3 m-0 font-bold text-black transition bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white"
 				>
 					Go back
 				</button>
-				<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className=" m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition" >
+				<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg  sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white" >
 					View Project
 				</Link>
 			</header>
@@ -66,20 +66,20 @@ export default function Project({ params }: Props) {
 				</h1>
 
 				<div className="flex justify-center">
-					<div className="m-0 p-0">
+					<div className="p-0 m-0">
 						{/* Image here */}
 						<Image
 							src={project.image}
 							alt={project.name}
 							width={960}
 							height={540}
-							className="aspect-video my-10 border-2 border-gray-700 object-cover rounded-xl"
+							className="object-cover my-10 border-2 border-gray-700 aspect-video rounded-xl"
 						/>
 					</div>
 				</div>
 
 				{/* Content here */}
-				<div className="prose text-lg text-white">
+				<div className="text-lg text-white ">
 					<PortableText value={project.content} />
 					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quibusdam assumenda voluptates! Quis, amet itaque ratione architecto quisquam earum odio ducimus corrupti aliquam libero placeat quidem error mollitia assumenda esse!</p>
 				</div>

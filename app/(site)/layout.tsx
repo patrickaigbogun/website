@@ -25,7 +25,7 @@ export default async function RootLayout({
 	const pages = await getPages();
 
 	return (
-		<html className=" scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-green-500 overflow-y-scroll" lang="en">
+		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-green-500" lang="en">
 			<body className={`bg-black mx-auto p-5 sm:p-20 ${nunito.className} `}>
 				<Header />
 				<main className="py-20">

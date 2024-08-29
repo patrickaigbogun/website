@@ -42,7 +42,7 @@ export default function Page({ params }: PageProps) {
 	return (
 		<div className="mb-10 w-full md:w-[75%] mx-auto">
 			<header className="flex items-center justify-start gap-2 p-0 my-2 " >
-				{/* <Link href="../" title="Home" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg  sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white">
+				{/* <Link href="../" title="Home" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white">
 					Home
 				</Link> */}
 				<button
@@ -55,7 +55,7 @@ export default function Page({ params }: PageProps) {
 			</header>
 			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 
-			<div className="mt-10 text-lg prose text-white transition prose-a:underline prose-a:text-white hover:prose-a:text-gray-400">
+			<div className="mt-10 text-lg ">
 				<PortableText value={page.content} />
 			</div>
 
