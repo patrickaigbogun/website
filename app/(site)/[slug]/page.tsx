@@ -41,21 +41,21 @@ export default function Page({ params }: PageProps) {
 
 	return (
 		<div className="mb-10 w-full md:w-[75%] mx-auto">
-			<header className=" my-2 p-0 flex items-center justify-start gap-2" >
-				{/* <Link href="../" title="Home" rel="noopener noreferrer" className=" m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition">
+			<header className="flex items-center justify-start gap-2 p-0 my-2 " >
+				{/* <Link href="../" title="Home" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg  sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white">
 					Home
 				</Link> */}
 				<button
 					onClick={() => window.history.back()}
 					title="Go back"
-					className="m-0 bg-white rounded-lg text-black font-bold sm:font-medium p-3 whitespace-nowrap hover:bg-gray-800 hover:text-white transition"
+					className="p-3 m-0 font-bold text-black transition-colors bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white "
 				>
 					Go back
 				</button>
 			</header>
 			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 
-			<div className="prose prose-a:underline prose-a:text-white hover:prose-a:text-gray-400 transition text-lg text-white mt-10">
+			<div className="mt-10 text-lg prose text-white transition prose-a:underline prose-a:text-white hover:prose-a:text-gray-400">
 				<PortableText value={page.content} />
 			</div>
 
