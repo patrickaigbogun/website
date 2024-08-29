@@ -55,7 +55,7 @@ export default function Page({ params }: PageProps) {
 			</header>
 			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 
-			<div className="mt-10 text-lg ">
+			<div className="mt-10 text-lg prose text-white transition prose-strong:text-white prose-headings:text-white prose-a:text-white p prose-a:underline prose-a:decoration-green-500">
 				<PortableText value={page.content} />
 			</div>
 
