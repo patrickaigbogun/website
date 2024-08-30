@@ -25,7 +25,7 @@ export default function Header({ pages }: HeaderProps) {
         <header className={`${montserrat.className} text-3xl flex items-center justify-between p-4`}>
             <Link
                 href="/"
-                className="font-bold text-transparent transition ease-linear bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text hover:scale-125"
+                className="font-bold text-transparent transition duration-500 ease-linear bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text hover:scale-125"
                 aria-label="Go to homepage"
             >
                 Oti.
