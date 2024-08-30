@@ -53,7 +53,7 @@ export default function Home() {
 					<Link
 						href={`/projects/${project.slug}`}
 						key={project._id}
-						className="transition duration-300 ease-in-out border-2 border-gray-300 rounded-xl hover:scale-105 hover:border-4 hover:border-gray-300">
+						className="transition duration-300 ease-in-out border-2 border-gray-300 group rounded-xl hover:scale-105 hover:border-4 hover:border-gray-300">
 						{project.image && (
 							<Image
 								src={project.image}
