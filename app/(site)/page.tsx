@@ -48,22 +48,22 @@ export default function Home() {
 		<div className="mb-10">
 			<Hero />
 
-			<div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
+			<div className="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3 ">
 				{projects.map((project: Project) => (
 					<Link
 						href={`/projects/${project.slug}`}
 						key={project._id}
-						className="border border-2 border-gray-300 rounded-lg p-1 hover:scale-105 hover:border-3 hover:border-green-500 transition duration-300 ease-in-out">
+						className="transition duration-300 ease-in-out border-2 border-gray-300 rounded-xl hover:scale-105 hover:border-4 hover:border-gray-300">
 						{project.image && (
 							<Image
 								src={project.image}
 								alt={project.name}
 								width={750}
 								height={300}
-								className="aspect-video object-cover rounded-lg"
+								className="object-cover rounded-lg aspect-video"
 							/>
 						)}
-						<div className={` ${montserrat.className} font-extrabold text-gray-300 group-hover:text-gray-300 my-1`}>
+						<div className={` ${montserrat.className} font-bold text-gray-300/50 group-hover:text-gray-300 m-2`}>
 							{project.name}
 						</div>
 					</Link>
