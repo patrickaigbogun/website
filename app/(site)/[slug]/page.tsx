@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"; // Import React hooks for async ren
 import LoadingUI from "../components/loadingui";
 import ContactForm from "../components/contactform";
 import { montserrat } from "@/fonts/fonts";
-import BackBtn from "../components/BackButton";
+import {BackBtn} from "../components/NavButton";
 // import Link from "next/link";
 
 type PageProps = {

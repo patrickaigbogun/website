@@ -9,7 +9,8 @@ import Link from 'next/link';
 import { useState, useEffect } from "react";
 import LoadingUI from "../../components/loadingui";
 import { montserrat } from "@/fonts/fonts";
-import BackBtn from "../../components/BackButton";
+import { BackBtn } from "../../components/NavButton";
+import { LinkButton } from "../../components/LinkButton";
 
 type Props = {
 	params: { project: string }
@@ -51,11 +52,14 @@ export default function Project({ params }: Props) {
 
 			<header className="flex items-center justify-between gap-2 p-0 my-2 " >
 				<BackBtn>Go Back</BackBtn>
+				{/* {project.url} */}
+				{/* View project */}
+				{/* View Project */}
 
-				<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className="relative inline-block p-3 m-0 overflow-hidden font-bold text-black transition-all duration-300 ease-out bg-white border-4 border-black rounded-lg hover:border-white group" >
-				<span className="absolute top-0 left-0 w-0 transition-all duration-300 ease-out bg-black group-hover:w-full group-hover:h-full"></span>
-				<span className="relative group-hover:text-white">View Project</span>
-				</Link>
+				<LinkButton
+					target={project.url}
+					// title='View project'
+				>View Project</LinkButton>
 			</header>
 			<div className="w-full md:w-[75%] mx-auto">
 				<h1 className={`my-14 text-white text-5xl font-bold ${montserrat.className}`}>
