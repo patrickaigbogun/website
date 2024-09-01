@@ -46,7 +46,7 @@ export default function Page({ params }: PageProps) {
 				{/* <Link href="../" title="Home" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white">
 					Home
 				</Link> */}
-				<BackBtn/>
+				<BackBtn>Previous Page</BackBtn>
 			</header>
 			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 

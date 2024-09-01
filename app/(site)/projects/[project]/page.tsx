@@ -50,10 +50,10 @@ export default function Project({ params }: Props) {
 		<div className="mb-10" >
 
 			<header className="flex items-center justify-between gap-2 p-0 my-2 " >
-				<BackBtn/>
+				<BackBtn>Go Back</BackBtn>
 
 				<Link href={project.url} title="View project" target="_blank" rel="noopener noreferrer" className="relative inline-block p-3 m-0 overflow-hidden font-bold text-black transition-all duration-300 ease-out bg-white border-4 border-black rounded-lg hover:border-white group" >
-				<span className="absolute top-0 left-0 w-0 transition-all duration-300 ease-out bg-gray-800 group-hover:w-full group-hover:h-full"></span>
+				<span className="absolute top-0 left-0 w-0 transition-all duration-300 ease-out bg-black group-hover:w-full group-hover:h-full"></span>
 				<span className="relative group-hover:text-white">View Project</span>
 				</Link>
 			</header>
