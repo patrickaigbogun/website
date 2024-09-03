@@ -8,15 +8,9 @@ import { useState, useEffect } from "react";
 import LoadingUI from "./components/loadingui";
 import Hero from "./components/hero";
 import { montserrat } from "@/fonts/fonts";
+import { Project } from "@/types/Projects";
 
 
-// Define the project type
-interface Project {
-	_id: string;
-	name: string;
-	slug: string;
-	image?: string;
-}
 
 export default function Home() {
 	const [projects, setProjects] = useState<any>(null);
@@ -37,7 +31,10 @@ export default function Home() {
 	}, []);
 
 	if (error) {
-		return <div className="text-white">{error}</div>;
+		return <div className="text-white">
+			<h2>An error occured while getting projects, this could be the reason;</h2>
+			{error}
+			</div>;
 	}
 
 	if (!projects) {
