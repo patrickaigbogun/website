@@ -5,7 +5,7 @@
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-import Link from 'next/link';
+// import Link from 'next/link';
 import { useState, useEffect } from "react";
 import LoadingUI from "../../components/loadingui";
 import { montserrat } from "@/fonts/fonts";
@@ -57,9 +57,10 @@ export default function Project({ params }: Props) {
 				{/* View Project */}
 
 				<LinkButton
-					target={project.url}
-					// title='View project'
-				>View Project</LinkButton>
+					target={'project.url'}
+					title='View project'
+					>
+					View Project</LinkButton>
 			</header>
 			<div className="w-full md:w-[75%] mx-auto">
 				<h1 className={`my-14 text-white text-5xl font-bold ${montserrat.className}`}>
