@@ -99,7 +99,7 @@ export async function getblogPost(slug: String): Promise<blogPost> {
     'image': image.asset->url,
     url,
     content
-}`
+}`,{slug}
 	);
 
 
