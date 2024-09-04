@@ -6,8 +6,8 @@ import { useEffect, useState } from "react"; // Import React hooks for async ren
 import LoadingUI from "../components/loadingui";
 import ContactForm from "../components/contactform";
 import { montserrat } from "@/fonts/fonts";
-import {BackBtn} from "../components/NavButton";
-// import Link from "next/link";
+import { BackBtn } from "../components/NavButton";
+import RedirectButton from "../components/RedirectButton";
 
 type PageProps = {
 	params: { slug: string };
@@ -19,11 +19,10 @@ export default function Page({ params }: PageProps) {
 
 	useEffect(() => {
 		const fetchPage = async () => {
-			try{
+			try {
 				const fetchedPage = await getPage(params.slug);
-			setPage(fetchedPage);
-			}
-			catch (error) {
+				setPage(fetchedPage);
+			} catch (error) {
 				console.error("Error fetching page:", error);
 				setError("Error loading page");
 			}
@@ -31,6 +30,18 @@ export default function Page({ params }: PageProps) {
 
 		fetchPage();
 	}, [params.slug]);
+
+	useEffect(() => {
+		if (page && page.slug === "cave-experience") {
+			// Redirect after 5 seconds
+			const timer = setTimeout(() => {
+				window.open('./', '_blank');
+			}, 5000);
+
+			// Cleanup the timer if the component is unmounted before the delay
+			return () => clearTimeout(timer);
+		}
+	}, [page]);
 
 	if (error) {
 		return <div className="text-white">{error}</div>;
@@ -42,10 +53,7 @@ export default function Page({ params }: PageProps) {
 
 	return (
 		<div className="mb-10 w-full md:w-[75%] mx-auto">
-			<header className="flex items-center justify-start gap-2 p-0 my-2 " >
-				{/* <Link href="../" title="Home" rel="noopener noreferrer" className="p-3 m-0 font-bold text-black transition bg-white rounded-lg sm:font-medium whitespace-nowrap hover:bg-gray-800 hover:text-white">
-					Home
-				</Link> */}
+			<header className="flex items-center justify-start gap-2 p-0 my-2 ">
 				<BackBtn>Previous Page</BackBtn>
 			</header>
 			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
@@ -54,9 +62,16 @@ export default function Page({ params }: PageProps) {
 				<PortableText value={page.content} />
 			</div>
 
-			{page.slug === "contact" && (
-				<ContactForm />
-			)}
+			<div className="my-6">
+				{page.slug === "contact" && (
+					<ContactForm />
+				)}
+				{page.slug === "cave-experience" && (
+					<RedirectButton target="./" >
+						Going to Blog
+					</RedirectButton>
+				)}
+			</div>
 		</div>
 	);
 }

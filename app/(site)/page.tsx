@@ -57,7 +57,7 @@ export default function Home() {
 								alt={project.name}
 								width={750}
 								height={300}
-								className="object-cover rounded-lg aspect-video"
+								className="object-cover rounded-lg group-hover:brightness-50 aspect-video"
 							/>
 						)}
 						<div className={` ${montserrat.className} font-bold text-gray-300/50 group-hover:text-gray-300 m-2`}>
