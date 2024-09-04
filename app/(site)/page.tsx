@@ -9,6 +9,7 @@ import LoadingUI from "./components/loadingui";
 import Hero from "./components/hero";
 import { montserrat } from "@/fonts/fonts";
 import { Project } from "@/types/Projects";
+import BgDarkDiv from "./components/BgDarkDiv";
 
 
 
@@ -34,7 +35,7 @@ export default function Home() {
 		return <div className="text-white">
 			<h2>An error occured while getting projects, this could be the reason;</h2>
 			{error}
-			</div>;
+		</div>;
 	}
 
 	if (!projects) {
@@ -45,6 +46,11 @@ export default function Home() {
 		<div className="mb-10">
 			<Hero />
 
+		{/* TODO: implement conditional classnames with all your reuseable components */}
+			{/* <BgDarkDiv
+				reuse=""
+			/> */}
+			
 			<div className="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3 ">
 				{projects.map((project: Project) => (
 					<Link
