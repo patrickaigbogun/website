@@ -32,8 +32,8 @@ const blogPost = {
 
 	fields: [
 		{
-			name: "name",
-			title: "Name",
+			name: "title",
+			title: "Title",
 			type: "string",
 			group: ["seo", "summary"],
 		},
@@ -60,7 +60,7 @@ const blogPost = {
 		},
 		{
 			title: 'Publish date',
-			name: 'PublishDate',
+			name: 'publishDate',
 			type: 'date',
 			options: {
 			  dateFormat: 'YYYY-MM-DD',

@@ -22,7 +22,7 @@ const author = {
 		},
 		{
 			title: 'Publish date',
-			name: 'PublishDate',
+			name: 'publishDate',
 			type: 'date',
 			options: {
 			  dateFormat: 'YYYY-MM-DD',
