@@ -10,3 +10,8 @@ export type LinkProps =  {
     children: React.ReactNode;
     title?: string; // Optional third parameter
 };
+
+export type  ButtonProps =  {
+    children: React.ReactNode;
+};
+

@@ -1,8 +1,7 @@
+import { ButtonProps } from '@/types/components'
 import React from 'react'
 
-interface ButtonProps {
-    children: React.ReactNode;
-}
+
 
 export function BackBtn({ children }: ButtonProps) {
     return (
