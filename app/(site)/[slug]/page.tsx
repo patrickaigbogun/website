@@ -3,11 +3,11 @@
 import { getPage } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 import { useEffect, useState } from "react"; // Import React hooks for async rendering
-import LoadingUI from "../components/loadingui";
-import ContactForm from "../components/contactform";
+import LoadingUI from "@/components/loadingui";
+import ContactForm from "@/components/contactform";
 import { montserrat } from "@/fonts/fonts";
-import { BackBtn } from "../components/NavButton";
-import RedirectButton from "../components/RedirectButton";
+import { BackBtn } from "@/components/NavButton";
+import RedirectButton from "@/components/RedirectButton";
 
 type PageProps = {
 	params: { slug: string };

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
 // import Link from "next/link";
-import Footer from "./components/footer";
-import HeadWrapper from "./components/HeadWrapper";
+import Footer from "@/components/footer";
+import HeadWrapper from "@/components/HeadWrapper";
 
 import { nunito } from "@/fonts/fonts";
 

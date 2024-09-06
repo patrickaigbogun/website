@@ -7,10 +7,10 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 // import Link from 'next/link';
 import { useState, useEffect } from "react";
-import LoadingUI from "../../components/loadingui";
+import LoadingUI from "@/components/loadingui";
 import { montserrat } from "@/fonts/fonts";
-import { BackBtn } from "../../components/NavButton";
-import { LinkButton } from "../../components/LinkButton";
+import { BackBtn } from "@/components/NavButton";
+import { LinkButton } from "@/components/LinkButton";
 
 type Props = {
 	params: { project: string }
