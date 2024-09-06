@@ -9,7 +9,7 @@ import LoadingUI from "./components/loadingui";
 import Hero from "./components/hero";
 import { montserrat } from "@/fonts/fonts";
 import { Project } from "@/types/Projects";
-import BgDarkDiv from "./components/BgDarkDiv";
+// import BgDarkDiv from "./components/BgDarkDiv";
 
 
 
