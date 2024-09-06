@@ -1,7 +1,7 @@
 // components/Header.tsx
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import Link from "next/link";
 import { montserrat } from "@/fonts/fonts";
 import { HeaderProps } from "@/types/components";
