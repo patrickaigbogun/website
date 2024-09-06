@@ -1,5 +1,5 @@
 
-const Author = {
+const author = {
 	name: "Author",
 
 	title: "Author",
@@ -47,4 +47,4 @@ const Author = {
 	],
 };
 
-export default Author;
+export default author;
