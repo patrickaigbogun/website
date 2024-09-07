@@ -1,4 +1,4 @@
-// /components/BlogPostsGrid
+// @/components/BlogPostsGrid
 
 "use client";
 
