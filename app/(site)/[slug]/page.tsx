@@ -16,6 +16,7 @@ type PageProps = {
 export default function Page({ params }: PageProps) {
 	const [page, setPage] = useState<any>(null);
 	const [error, setError] = useState<string | null>(null);
+	const blogUrl = './blog'
 
 	useEffect(() => {
 		const fetchPage = async () => {
@@ -35,8 +36,8 @@ export default function Page({ params }: PageProps) {
 		if (page && page.slug === "cave-experience") {
 			// Redirect after 5 seconds
 			const timer = setTimeout(() => {
-				window.open('./', '_blank');
-			}, 5000);
+				window.open(blogUrl, '_blank');
+			}, 7000);
 
 			// Cleanup the timer if the component is unmounted before the delay
 			return () => clearTimeout(timer);
@@ -67,7 +68,7 @@ export default function Page({ params }: PageProps) {
 					<ContactForm />
 				)}
 				{page.slug === "cave-experience" && (
-					<RedirectButton target="./" >
+					<RedirectButton target= {blogUrl} >
 						Going to Blog
 					</RedirectButton>
 				)}
