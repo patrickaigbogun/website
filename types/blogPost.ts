@@ -9,7 +9,10 @@ export type blogPost = {
     excerpt:string;
     publishDate:Date;
     authors:string;
-    image:string;
+    image:{
+        image: string;
+        alt: string;
+    };
     url:string;
     content: PortableTextBlock[];
 };
