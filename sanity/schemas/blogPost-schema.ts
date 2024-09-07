@@ -41,7 +41,7 @@ const blogPost = {
 			name: "slug",
 			title: "Slug",
 			type: "slug",
-			options: { source: "name" },
+			options: { source: "title" },
 		},
 		{
 			name: "tagline",
