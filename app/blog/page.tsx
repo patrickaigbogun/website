@@ -3,9 +3,9 @@
 import BlogPostsGridWrapper from '@/components/BlogPostGridWrapper';
 
 export default function BlogHome() {
-	return(
+	return (
 		<>
-		<BlogPostsGridWrapper/>
+			<BlogPostsGridWrapper />
 		</>
 	);
 };

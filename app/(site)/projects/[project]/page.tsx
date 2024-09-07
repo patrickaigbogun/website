@@ -59,7 +59,7 @@ export default function Project({ params }: Props) {
 				<LinkButton
 					target={'project.url'}
 					title='View project'
-					>
+				>
 					View Project</LinkButton>
 			</header>
 			<div className="w-full md:w-[75%] mx-auto">

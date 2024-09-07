@@ -68,7 +68,7 @@ export default function Page({ params }: PageProps) {
 					<ContactForm />
 				)}
 				{page.slug === "cave-experience" && (
-					<RedirectButton target= {blogUrl} >
+					<RedirectButton target={blogUrl} >
 						Going to Blog
 					</RedirectButton>
 				)}

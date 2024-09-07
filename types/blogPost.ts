@@ -10,7 +10,7 @@ export type blogPost = {
     publishDate:Date;
     authors:string;
     image:string;
-    alt:{image:{alt:string}}
+    alt:string;
     url:string;
     content: PortableTextBlock[];
 };

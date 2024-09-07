@@ -46,11 +46,11 @@ export default function Home() {
 		<div className="mb-10">
 			<Hero />
 
-		{/* TODO: implement conditional classnames with all your reuseable components */}
+			{/* TODO: implement conditional classnames with all your reuseable components */}
 			{/* <BgDarkDiv
 				reuse=""
 			/> */}
-			
+
 			<div className="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3 ">
 				{projects.map((project: Project) => (
 					<Link

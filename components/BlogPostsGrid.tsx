@@ -11,16 +11,16 @@ import Link from 'next/link'
 
 export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
   return (
-<div className="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3 ">
+<div className="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
     {blogPosts.map((blogPost) => (
         <Link
             href={`/blog/post/${blogPost.slug}`}
             key={blogPost._id}
-            className="transition duration-300 ease-in-out border border-gray-300 group rounded-3xl hover:scale-105 hover:border-4 hover:border-gray-300">
+            className="transition duration-300 ease-in-out border border-gray-300 group rounded-3xl hover:scale-105">
             {blogPost.image && (
                 <Image
-                    src={blogPost.image.image}
-                    alt={blogPost.image.alt}
+                    src={blogPost.image}
+                    alt={blogPost.alt}
                     width={150}
                     height={300}
                     className="object-cover rounded-lg group-hover:brightness-50 "
