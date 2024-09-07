@@ -27,8 +27,8 @@ export default function BlogPostsGridWrapper() {
 
 	if (error) {
 		return <div className="text-white">
-			<h2>An error occured while getting posts, this could be the reason below</h2>
-			{error}
+			<h2>An error occurred while fetching the blog posts. Please try again later.</h2>
+			<p>{error}</p> {/* Display actual error message */}
 		</div>;
 	}
 
