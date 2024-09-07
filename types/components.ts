@@ -20,3 +20,12 @@ export type  ButtonProps =  {
     children: React.ReactNode;
 };
 
+export type RuleType = {
+	warning: (arg0: string) => RuleType;
+	required: () => RuleType
+	min: (min: number) => RuleType
+	max: (max: number) => RuleType
+	length: (exactLength: number) => RuleType
+	greaterThan: (gt: number) => RuleType
+	uri: (options: { scheme: string[] }) => RuleType
+}

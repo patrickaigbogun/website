@@ -1,3 +1,4 @@
+
 const config = {
 	projectId: "d8emt0pr",
 
@@ -10,3 +11,5 @@ const config = {
 }
 
 export default config;
+
+

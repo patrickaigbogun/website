@@ -5,9 +5,19 @@ import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { Page } from "@/types/Page";
 import { blogPost } from "@/types/blogPost";
+import imageUrlBuilder from '@sanity/image-url'
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 
 // UNCOMMENT WHEN YOU UNCOMMENT AUTHOR ASYNC FETCHES
 // import { Author } from "@/types/author"
+
+
+const builder = imageUrlBuilder(clientConfig)
+
+export function urlFor(source: SanityImageSource) {
+  return builder.image(source)
+}
 
 export async function getProjects(): Promise<Project[]> {
 
@@ -74,31 +84,32 @@ export async function getPage(slug: String): Promise<Page> {
 }
 
 export async function getblogPosts(): Promise<blogPost[]> {
-
-
 	return createClient(clientConfig).fetch(
 		groq`*[_type == 'blogPost']{
-
-            _id,
-            _createdAt,
-            name,
-            'slug': slug.current,
-            'image': image.asset->url,
-            url,
-            content
-        }`
+			_id,
+			_createdAt,
+			title, 
+			'slug': slug.current,
+			'image': image.asset->url,
+			alt,
+			tagline,
+			excerpt, 
+			publishDate,
+			authors,
+			content
+		}`
 	);
 }
 
-export async function getblogPost(slug: String): Promise<blogPost> {
 
+export async function getblogPost(slug: string): Promise<blogPost> {
 	return createClient(clientConfig).fetch(
 		groq`*[_type == 'blogPost' && slug.current == $slug][0]{
-
 			_id,
 			_createdAt,
 			title,
 			'slug': slug.current,
+			alt,
 			tagline,
 			excerpt,
 			publishDate,
@@ -108,9 +119,8 @@ export async function getblogPost(slug: String): Promise<blogPost> {
 		}`,
 		{ slug }
 	);
-
-
 }
+
 
 // UNCOMMENT IF YOU BUILD AN INDIVIDUAL AUTHOR PAGE OR NEED TO FETCH AUTHORS FOR SOME REASON
 
