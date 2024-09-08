@@ -1,6 +1,6 @@
 
 const author = {
-	name: "Author",
+	name: "author",
 
 	title: "Author",
 
@@ -28,7 +28,6 @@ const author = {
 			  dateFormat: 'YYYY-MM-DD',
 			  calendarTodayLabel: 'Today'
 			},
-            hidden: true,
 		  },
 		{
 			name: "image",

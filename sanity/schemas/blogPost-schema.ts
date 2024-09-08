@@ -1,7 +1,6 @@
 // import { group } from "console";
 
 import { RuleType } from "@/types/components";
-import ImageSchema from "./image-schema";
 
 
 
@@ -69,7 +68,20 @@ const blogPost = {
 			to: [{ type: 'author' }],
 			group: ["summary"],
 		},
-		ImageSchema,
+		{
+			name: "image",
+			title: "Image",
+			type: "image",
+			options: { hotspot: true },
+				
+		},
+		{
+			name: "alt",
+			title: "Alt Text",
+			type: "string",
+			validation: (rule: RuleType) => rule.required(),
+		},	
+	
 		{
 			name: "content",
 			title: "Content",

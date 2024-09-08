@@ -27,18 +27,20 @@ export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 								alt={blogPost.alt || 'Blog post image'}
 								width={150}
 								height={300}
-								className="object-cover rounded-lg group-hover:brightness-50 "
+								className="object-cover rounded-lg group-hover:brightness-50 aspect-auto "
 							/>
 						)}
-						<div className={` ${montserrat.className} font-bold text-gray-300/50 group-hover:text-gray-300 m-2`}>
+						<div>
+						<p className={` ${montserrat.className} font-bold text-gray-300/50 group-hover:text-gray-300 m-2`}>
 							{blogPost.title}
-						</div >
-						<div className={` ${montserrat.className} font-bold text-gray-300/50 group-hover:text-gray-300 m-2`}>
+						</p>
+						<p className={` ${montserrat.className} font-bold text-gray-300/50 group-hover:text-gray-300 m-2`}>
 							{blogPost.tagline}
-						</div>
+						</p>
+						<p>{new Date(blogPost.publishDate).toDateString()}</p>
 						<div className="text-lg text-white ">
 							<PortableText value={blogPost.excerpt} />
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quibusdam assumenda voluptates! Quis, amet itaque ratione architecto quisquam earum odio ducimus corrupti aliquam libero placeat quidem error mollitia assumenda esse!</p>
+						</div>
 						</div>
 					</Link>
 				);
