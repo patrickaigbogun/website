@@ -28,7 +28,7 @@ export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 						tagline={blogPost.tagline}
 						date={blogPost.publishDate}
 						excerpt={blogPost.excerpt}
-						reuse='group-hover:scale-105 group-hover:brightness-50 group-hover:blur-sm transition-all ease-in-out duration-300'
+						className='transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-50 group-hover:blur-sm'
 					/>
 				))}
 			</div>

@@ -8,9 +8,10 @@ import { useState } from 'react';
 
 
 
-
-export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, reuse }: CardImageBgProps) {
+export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, className }: CardImageBgProps) {
 	const [isHovered, setIsHovered] = useState(false);
+
+
 
 	return (
 		<div
@@ -20,7 +21,7 @@ export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, da
 		>
 			{/* Background Image */}
 			<div 
-			className={`${reuse} absolute inset-0`}>
+			className={`${className} absolute inset-0`}>
 				<Image
 					src={urlFor(imageSrc).url()}
 					alt={alt}

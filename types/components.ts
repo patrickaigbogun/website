@@ -41,5 +41,6 @@ export type CardImageBgProps = {
 	tagline?: string;
 	date: Date;
 	excerpt: PortableTextBlock[];
-	reuse?: string;
+	// reuse: string;
+	className?: string;
 };
