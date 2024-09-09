@@ -21,6 +21,7 @@ export type  ButtonProps =  {
 };
 
 export type RuleType = {
+	error(arg0: string): unknown;
 	warning: (arg0: string) => RuleType;
 	required: () => RuleType
 	min: (min: number) => RuleType
