@@ -1,17 +1,13 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import { urlFor } from '@/sanity/sanity-utils';
+import { CardImageBgProps } from '@/types/components';
+import { PortableText } from 'next-sanity';
+import Image from 'next/image';
 import { useState } from 'react';
 
-interface CardImageBgProps {
-	imageSrc: StaticImageData;
-	alt: string;
-	title?: string;
-	tagline?: string;
-	date?: string;
-	excerpt?: string;
-	reuse?: string;
-}
+
+
 
 export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, reuse }: CardImageBgProps) {
 	const [isHovered, setIsHovered] = useState(false);
@@ -25,7 +21,7 @@ export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, da
 			{/* Background Image */}
 			<div className="absolute inset-0">
 				<Image
-					src={imageSrc}
+					src={urlFor(imageSrc).url()}
 					alt={alt}
 					fill
 					className={` group-hover:brightness-50  object-cover transition-all ease-in-out duration-300`}
@@ -39,16 +35,16 @@ export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, da
 						<h2 className="text-xl font-bold text-white">{title}</h2>
 						<p className="text-base text-gray-300">{tagline}</p>
 					</span>
-					<p className="text-xs text-gray-300">{date}</p>
+					<p className="text-xs text-gray-300">{new Date(date).toDateString()}</p>
 				</span>
 
 				{/* Excerpt, only visible on hover */}
-				<p
+				<div
 					className={`mt-2 text-gray-100 text-base ease-in-out transition-all duration-500 ${isHovered ? 'flex ' : 'hidden'
 						}`}
 				>
-					{excerpt}
-				</p>
+					<PortableText value={excerpt} />
+				</div>
 			</div>
 		</div>
 	);

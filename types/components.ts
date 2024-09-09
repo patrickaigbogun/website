@@ -1,5 +1,7 @@
+import { PortableTextBlock } from "next-sanity";
 import { Page } from "./Page";
 import { blogPost } from './blogPost'
+
 
 
 export type HeaderProps = {
@@ -29,4 +31,15 @@ export type RuleType = {
 	length: (exactLength: number) => RuleType
 	greaterThan: (gt: number) => RuleType
 	uri: (options: { scheme: string[] }) => RuleType
-}
+};
+
+
+export type CardImageBgProps = {
+	imageSrc: { asset: { _ref: string }; alt: string }; 
+	alt: string;
+	title?: string;
+	tagline?: string;
+	date: Date;
+	excerpt: PortableTextBlock[];
+	reuse?: string;
+};
