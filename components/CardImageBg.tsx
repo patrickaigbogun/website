@@ -14,17 +14,18 @@ export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, da
 
 	return (
 		<div
-			className={` ${reuse} relative overflow-hidden shadow-lg cursor-pointer rounded-3xl w-72 h-[22rem] max-w-72 group`}
+			className={`  relative overflow-hidden shadow-lg cursor-pointer rounded-3xl w-72 h-[22rem] max-w-72 group`}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
 			{/* Background Image */}
-			<div className="absolute inset-0">
+			<div 
+			className={`${reuse} absolute inset-0`}>
 				<Image
 					src={urlFor(imageSrc).url()}
 					alt={alt}
 					fill
-					className={` group-hover:brightness-50  object-cover transition-all ease-in-out duration-300`}
+					className={`object-cover `}
 				/>
 			</div>
 
@@ -40,7 +41,7 @@ export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, da
 
 				{/* Excerpt, only visible on hover */}
 				<div
-					className={`mt-2 text-gray-100 text-base ease-in-out transition-all duration-500 ${isHovered ? 'flex ' : 'hidden'
+					className={` text-gray-100 text-base ease-in-out transition-all duration-500 ${isHovered ? 'block ' : 'hidden'
 						}`}
 				>
 					<PortableText value={excerpt} />
