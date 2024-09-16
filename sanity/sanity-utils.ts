@@ -95,10 +95,14 @@ export async function getblogPosts(): Promise<blogPost[]> {
 			tagline,
 			excerpt, 
 			publishDate,
-			authors,
+			'authors': authors._ref->name, 
 			content
 		}`
 	);
+	// we return the authors name here in a similar fashion as we return the image url, 
+	// this is untested, the reasoning behind it being that author is stored as an object in the blogpost document same as image, 
+	// we hope to return the name of the author defined in the author document through the reference created between them.
+	// if this works we implement it for the individual blogpost.
 }
 
 
