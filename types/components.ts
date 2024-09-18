@@ -22,6 +22,11 @@ export type  ButtonProps =  {
 	direction: 'back' | 'forward';
 };
 
+export type FormProps = {
+	action:string;
+	children:React.ReactNode;
+}
+
 export type TextAreaProps = {
 	id: string;
 	name: string;

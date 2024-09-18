@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
 // import Link from "next/link";
-import Footer from "@/components/footer";
-import HeadWrapper from "@/components/HeadWrapper";
+import Footer from "@/components/Footer";
+import HeaderWrapper from "@/components/HeaderWrapper";
 
 import { nunito } from "@/fonts/fonts";
 
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 	description: "personal website made with nextjs and sanitystudio",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
-		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-green-900/60" lang="en">
-			<body className={`bg-black mx-auto p-5 sm:p-20 ${nunito.className} `}>
-				<HeadWrapper />
+		<html lang="en">
+			<body className={`bg-black mx-auto p-5 sm:p-20 overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-green-900/60 ${nunito.className} `}>
+				<HeaderWrapper />
 				<main className="py-20">
 					{children}
 				</main>

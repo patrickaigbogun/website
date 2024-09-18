@@ -1,7 +1,6 @@
 // components/Header.tsx
-"use client";
+'use client';
 
-// import { useState } from "react";
 import Link from "next/link";
 import { montserrat } from "@/fonts/fonts";
 import { HeaderProps } from "@/types/components";
@@ -11,7 +10,8 @@ import clsx from "clsx";
 
 export default function Header({ pages }: HeaderProps) {
 	return (
-		<Disclosure as="nav" className="bg-green-800/15 backdrop-blur-lg border-t-green-500 rounded-2xl">
+		<div>
+			<Disclosure as="nav" className="bg-green-800/15 backdrop-blur-lg border-t-green-500 rounded-2xl">
 			{({ open }) => (
 				<div
 					className={clsx(
@@ -76,5 +76,6 @@ export default function Header({ pages }: HeaderProps) {
 				</div>
 			)}
 		</Disclosure>
+		</div>
 	);
 }

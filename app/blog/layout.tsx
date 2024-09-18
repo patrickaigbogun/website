@@ -14,9 +14,9 @@ export default async function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-green-900/60" lang="en">
-			<body className={`bg-indigo-950 text-gray-600 mx-auto ${nunito.className} `}>
-				<main className="">
+		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-zinc-700/50" lang="en">
+			<body className={`p-5 sm:p-20 bg-indigo-950 text-gray-600 mx-auto ${nunito.className} `}>
+				<main className="py-20">
 					{children}
 				</main>
 			</body>

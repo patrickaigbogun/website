@@ -1,11 +1,9 @@
+'use client';
 import { montserrat } from '@/fonts/fonts';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 
-
-
 export default function Hero() {
-
-	const [text, helper] = useTypewriter({
+	const [text] = useTypewriter({
 		words: [
 			"Welcome to my portfolio!",
 			"Coffee is better than Oxygen",
@@ -13,11 +11,11 @@ export default function Hero() {
 		],
 		loop: true,
 		delaySpeed: 2000,
-	})
+	});
 
 	return (
-		<>
-			<h1 className={`text-7xl font-extrabold text-white ${montserrat.className} `}>
+		<div className="hero-container">
+			<h1 className={`text-7xl font-extrabold text-white ${montserrat.className}`}>
 				Hello I&apos;m{" "}
 				<span className="text-transparent bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text">
 					Oti.
@@ -27,10 +25,9 @@ export default function Hero() {
 				{text}
 				<Cursor cursorColor="green" />
 			</p>
-			<h2 className={`mt-24 font-bold text-white text-3xl ${montserrat.className} `}>
+			<h2 className={`mt-24 font-bold text-white text-3xl ${montserrat.className}`}>
 				My Projects
 			</h2>
-		</>
-
-	)
+		</div>
+	);
 }

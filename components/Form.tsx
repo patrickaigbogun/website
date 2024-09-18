@@ -1,8 +1,10 @@
-import { TextAreaLabelProps, TextAreaProps } from '@/types/components'
+import { FormProps, TextAreaLabelProps, TextAreaProps } from '@/types/components'
 
-export function Form() {
+export function Form({action, children}:FormProps) {
   return (
-	<div>Form</div>
+	<form action={action}>
+		{children}
+	</form>
   )
 }
 

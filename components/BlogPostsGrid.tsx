@@ -1,13 +1,8 @@
 // @/components/BlogPostsGrid
 
-"use client";
 
-import { montserrat } from '@/fonts/fonts'
-import { urlFor } from '@/sanity/sanity-utils';
-// import { blogPost } from '@/types/blogPost'
+
 import { blogPostsProps } from '@/types/components'
-import { PortableText } from 'next-sanity';
-import Image from 'next/image'
 import Link from 'next/link'
 import CardImageBg from './CardImageBg';
 
@@ -19,17 +14,23 @@ export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 				{blogPosts.map((blogPost) => {
 					console.log(blogPost); // Correctly logs individual blog post
 					return (
-						<CardImageBg
+						<Link
 							key={blogPost._id}
-							imageSrc={blogPost.image}
-							alt={blogPost.alt || 'Blog post image'}
-							title={blogPost.title}
-							tagline={blogPost.tagline}
-							date={blogPost.publishDate}
-							author={blogPost.author.name}
-							excerpt={blogPost.excerpt}
-							className='transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-50 group-hover:blur-sm'
-						/>
+							href={`/blog/post/${blogPost.slug}`}
+						>
+
+							<CardImageBg
+								imageSrc={blogPost.image}
+								alt={blogPost.alt || 'Blog post image'}
+								title={blogPost.title}
+								tagline={blogPost.tagline}
+								date={blogPost.publishDate}
+								author={blogPost.author.name}
+								excerpt={blogPost.excerpt}
+								className='transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-50 group-hover:blur-sm'
+							/>
+
+						</Link>
 					);
 				})}
 			</div>
