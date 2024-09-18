@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 
 
-export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, className }: CardImageBgProps) {
+export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, className, author }: CardImageBgProps) {
 	const [isHovered, setIsHovered] = useState(false);
 
 
@@ -38,6 +38,9 @@ export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, da
 						<p className="text-base text-gray-300">{tagline}</p>
 					</span>
 					<p className="text-xs text-gray-300">{new Date(date).toDateString()}</p>
+					<p>
+						{author}
+					</p>
 				</span>
 
 				{/* Excerpt, only visible on hover */}

@@ -9,7 +9,7 @@ export type blogPost = {
     tagline: string;
     excerpt: PortableTextBlock[]; // Excerpt is portable text
     publishDate: Date;
-    authors: { _ref: string; _type: string }; // Reference to an Author document
+    author: {_id:string; name:string}; // Reference to an Author document
     image: { asset: { _ref: string }}; // Sanity image object
     content: PortableTextBlock[]; // Portable text for content
 };

@@ -95,7 +95,7 @@ export async function getblogPosts(): Promise<blogPost[]> {
 			tagline,
 			excerpt, 
 			publishDate,
-			'authors': authors._ref->name, 
+			'author': authors->{_id, name}, 
 			content
 		}`
 	);

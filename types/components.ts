@@ -35,11 +35,12 @@ export type RuleType = {
 
 
 export type CardImageBgProps = {
-	imageSrc: { asset: { _ref: string }; alt: string }; 
+	imageSrc: { asset: { _ref: string }}; 
 	alt: string;
 	title?: string;
 	tagline?: string;
 	date: Date;
+	author: string;
 	excerpt: PortableTextBlock[];
 	// reuse: string;
 	className?: string;
