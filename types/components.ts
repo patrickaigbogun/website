@@ -1,8 +1,6 @@
 import { PortableTextBlock } from "next-sanity";
 import { Page } from "./Page";
 import { blogPost } from './blogPost'
-import { ReactNode } from "react";
-
 
 
 export type HeaderProps = {
@@ -21,6 +19,7 @@ export type LinkProps =  {
 
 export type  ButtonProps =  {
     children: React.ReactNode;
+	direction: 'back' | 'forward';
 };
 
 export type TextAreaProps = {

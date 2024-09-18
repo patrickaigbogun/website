@@ -1,6 +1,10 @@
 import { TextAreaLabelProps, TextAreaProps } from '@/types/components'
-import React from 'react'
 
+export function Form() {
+  return (
+	<div>Form</div>
+  )
+}
 
 
 export function TextArea({ id, name, rows, reuse, placeholder, }: TextAreaProps) {
