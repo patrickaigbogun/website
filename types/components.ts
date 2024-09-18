@@ -1,6 +1,7 @@
 import { PortableTextBlock } from "next-sanity";
 import { Page } from "./Page";
 import { blogPost } from './blogPost'
+import { ReactNode } from "react";
 
 
 
@@ -21,6 +22,21 @@ export type LinkProps =  {
 export type  ButtonProps =  {
     children: React.ReactNode;
 };
+
+export type TextAreaProps = {
+	id: string;
+	name: string;
+	rows: number;
+	reuse:string;
+	placeholder:string;
+	children?: React.ReactNode;
+}
+
+export type TextAreaLabelProps = {
+	name: string;
+	reuse:string;
+	children?: React.ReactNode;
+}
 
 export type RuleType = {
 	error(arg0: string): unknown;
