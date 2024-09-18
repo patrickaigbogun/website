@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"; // Import React hooks for async ren
 import LoadingUI from "@/components/loadingui";
 import ContactForm from "@/components/ContactForm";
 import { montserrat } from "@/fonts/fonts";
-import { BackBtn } from "@/components/NavButton";
+import { NavBtn } from "@/components/NavBtn";
 import RedirectButton from "@/components/RedirectButton";
 
 type PageProps = {
@@ -55,7 +55,7 @@ export default function Page({ params }: PageProps) {
 	return (
 		<div className="mb-10 w-full md:w-[75%] mx-auto">
 			<header className="flex items-center justify-start gap-2 p-0 my-2 ">
-				<BackBtn>Previous Page</BackBtn>
+				<NavBtn direction="back" > Previous Page</NavBtn>
 			</header>
 			<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 

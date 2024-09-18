@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import LoadingUI from "@/components/loadingui";
 import { montserrat } from "@/fonts/fonts";
-import { BackBtn } from "@/components/NavButton";
+import { NavBtn } from "@/components/NavBtn";
 import { LinkButton } from "@/components/LinkButton";
 
 type Props = {
@@ -51,7 +51,7 @@ export default function Project({ params }: Props) {
 		<div className="mb-10" >
 
 			<header className="flex items-center justify-between gap-2 p-0 my-2 " >
-				<BackBtn>Go Back</BackBtn>
+				<NavBtn direction="back" >Go Back</NavBtn>
 				{/* {project.url} */}
 				{/* View project */}
 				{/* View Project */}
