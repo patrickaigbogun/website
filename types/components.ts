@@ -1,6 +1,7 @@
 import { PortableTextBlock } from "next-sanity";
 import { Page } from "./Page";
 import { blogPost } from './blogPost'
+import { FormEventHandler } from "react";
 
 
 export type HeaderProps = {
@@ -23,7 +24,7 @@ export type  ButtonProps =  {
 };
 
 export type FormProps = {
-	action:string;
+	onSubmit:FormEventHandler<HTMLFormElement>;
 	children:React.ReactNode;
 }
 
@@ -31,15 +32,22 @@ export type TextAreaProps = {
 	id: string;
 	name: string;
 	rows: number;
-	reuse:string;
+	className?:string;
 	placeholder:string;
+	value?:string
 	children?: React.ReactNode;
+	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export type TextAreaLabelProps = {
 	name: string;
-	reuse:string;
+	className:string;
 	children?: React.ReactNode;
+}
+
+export type FormButtonProps = {
+	children : React.ReactNode;
+	title:string;
 }
 
 export type RuleType = {

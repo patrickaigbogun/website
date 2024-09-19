@@ -1,15 +1,24 @@
-import { FormProps, TextAreaLabelProps, TextAreaProps } from '@/types/components'
+import { FormButtonProps, FormProps, TextAreaLabelProps, TextAreaProps } from '@/types/components'
 
-export function Form({action, children}:FormProps) {
+
+
+export function Form({onSubmit, children}:FormProps) {
   return (
-	<form action={action}>
+	<form className='p-2 border ' onSubmit={onSubmit}>
 		{children}
 	</form>
   )
 }
 
+export function TextAreaLabel({ name, className, children }: TextAreaLabelProps) {
+	return(
+		<label htmlFor={name} className={className}>{children}</label>
 
-export function TextArea({ id, name, rows, reuse, placeholder, }: TextAreaProps) {
+	)
+}
+
+
+export function TextArea({ id, name, rows, className, placeholder, value }: TextAreaProps) {
 	return (
 		<>
 			<label htmlFor="message" className="text-white">Type your message here:</label>
@@ -17,7 +26,7 @@ export function TextArea({ id, name, rows, reuse, placeholder, }: TextAreaProps)
 				id={id}
 				name={name}
 				rows={rows}
-				className={`${reuse}`}
+				className={`${className}`}
 				placeholder={placeholder}
 				required
 			></textarea>
@@ -25,14 +34,9 @@ export function TextArea({ id, name, rows, reuse, placeholder, }: TextAreaProps)
 	)
 }
 
-export function TextAreaLabel({ name, reuse, children }: TextAreaLabelProps) {
-	return(
-		<label htmlFor={name} className={reuse}>{children}</label>
 
-	)
-}
 
-export function TextAreaNoRq({ id, name, rows, reuse, placeholder, }: TextAreaProps) {
+export function TextAreaNoRq({ id, name, rows, className, placeholder, }: TextAreaProps) {
 	return (
 		<>
 
@@ -40,9 +44,28 @@ export function TextAreaNoRq({ id, name, rows, reuse, placeholder, }: TextAreaPr
 				id={id}
 				name={name}
 				rows={rows}
-				className={`${reuse}`}
+				className={`${className}`}
 				placeholder={placeholder}
 			></textarea>
 		</>
 	)
+}
+
+
+export function FormButton({children, title}:FormButtonProps) {
+
+
+  return (
+	<button
+		type='submit'
+		title={title}
+		aria-label={title}
+		className="relative inline-block p-3 m-0 overflow-hidden font-bold text-black transition-all duration-300 ease-out bg-white border-4 border-black rounded-xl hover:border-white group"
+	>
+		<span className="absolute top-0 left-0 w-0 h-full transition-all duration-300 ease-out bg-black group-hover:w-full"></span>
+		<span className="relative z-10 group-hover:text-white">
+			{children}
+		</span>
+	</button>
+  )
 }

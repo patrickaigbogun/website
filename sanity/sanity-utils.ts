@@ -161,3 +161,26 @@ export async function getblogPost(slug: string): Promise<blogPost> {
 
 
 // }
+
+
+
+export async function createComment({ comment }: { comment: string }) {
+  const newComment = {
+    _type: 'comment',
+    content: comment,
+    // Assuming you want to associate a user profile, add more fields here
+    // user: {
+    //   _type: 'reference',
+    //   _ref: 'userId', // Replace with the actual user reference
+    // },
+    createdAt: new Date().toISOString(),
+  };
+
+  // Use Sanity's client to create a new document
+  try {
+    const result = await createClient(clientConfig).create(newComment);
+    return result;
+  } catch (error) {
+    throw new Error('Failed to create comment: ' + error);
+  }
+}
