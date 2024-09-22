@@ -1,5 +1,5 @@
 'use client';
-import submitComments from '@/actions/form/handleSubmit';
+import submitComments from '@/actions/comments/HandleSubmit';
 import { CommentTypes } from '@/types/Comments';
 // import { useState } from 'react';
 // import { Form, FormButton, TextAreaLabel, TextAreaNoRq } from '@/components/Form';
