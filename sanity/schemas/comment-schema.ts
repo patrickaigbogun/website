@@ -1,12 +1,12 @@
 const comment = {
     name: "comment",
-    title: "Comment",
+    title: "Comments",
     type: "document",
     fields: [
       {
         name: "content",
         title: "Content",
-        type: "text",
+        type: "string",
       },
     ],
   };
