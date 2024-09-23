@@ -10,7 +10,7 @@ export default function BlogHome(comment:CommentTypes) {
   return (
     <>
       <BlogPostsGridWrapper />
-      <CommentForm _id={comment._id} _createdAt={comment._createdAt} content={''} />
+      <CommentForm FieldValue={comment._id}  />
     </>
   );
 }
