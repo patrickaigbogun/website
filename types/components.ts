@@ -72,6 +72,7 @@ export type FormButtonProps = {
 	autoFocus?: boolean;
 	disabled?: boolean;
 	formAction?: string;
+	className?:string;
 	popoverTargetAction?: 'toggle' | 'show' | 'hide'; // Narrowed type
 };
 

@@ -25,19 +25,29 @@ export default function CommentForm({ FieldValue, }: CommentProps) {
 	};
 
 	return (
-		<Form onSubmit={handleSubmit}>
-			<FormLabel htmlFor="comment" className="text-white">Type your message here:</FormLabel>
+		<Form onSubmit={handleSubmit} >
+			<FormLabel htmlFor="comment" className="text-left text-white">Type your message here:</FormLabel>
 			<FormTextArea
 				id="comment"
 				name="comment"
 				rows={3}
-				className='text-black'
+				className="w-full p-2 text-black bg-white border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-zinc-700"
 				placeholder="Type something here"
 				required
 				value={Value} // Bind the textarea to the state
 				onChange={(e) => setValue(e.target.value)} // Update state on change
 			/>
-			<FormButton title={'Send Comment'} >Send Comment</FormButton>
+			<div
+			className='flex justify-center md:justify-start'
+			>
+				<FormButton
+					className="w-full mx-auto md:w-auto md:mx-0 "
+					title={'Send Comment'} 
+					>
+					Send Comment
+				</FormButton>
+			</div>
+
 		</Form>
 	);
 }
