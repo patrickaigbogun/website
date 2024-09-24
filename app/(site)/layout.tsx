@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "../globals.css";
-// import Link from "next/link";
 import { Footer } from "@/components/footer";
-import HeaderWrapper from "@/components/HeaderWrapper";
-
+import { getPages } from "@/sanity/sanity-utils";
+import Header from "@/components/header";
+import { Suspense } from "react";
+import LoadingUI from "@/components/loadingui";
 import { nunito } from "@/fonts/fonts";
-
-// import { EnvelopeSimple, GithubLogo, LinkedinLogo, Phone } from "@phosphor-icons/react/dist/ssr";
 
 
 export const metadata: Metadata = {
@@ -14,15 +13,19 @@ export const metadata: Metadata = {
 	description: "personal website made with nextjs and sanitystudio",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const pages = await getPages();
+
 	return (
 		<html lang="en">
 			<body className={`bg-black mx-auto p-5 sm:p-20 overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-green-900/60 ${nunito.className} `}>
-				<HeaderWrapper />
+				<Suspense fallback={<LoadingUI />}>
+					<Header pages={pages} />
+				</Suspense>
 				<main className="py-20">
 					{children}
 				</main>
