@@ -8,7 +8,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 
-export function Header({ pages }: HeaderProps) {
+function Header({ pages }: HeaderProps) {
 	return (
 		<div>
 			<Disclosure as="nav" className="bg-green-800/15 backdrop-blur-lg border-t-green-500 rounded-2xl">
@@ -79,3 +79,5 @@ export function Header({ pages }: HeaderProps) {
 		</div>
 	);
 }
+
+export default Header;
