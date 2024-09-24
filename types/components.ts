@@ -23,10 +23,31 @@ export type  ButtonProps =  {
 	direction: 'back' | 'forward';
 };
 
+export type AutoCompleteOptions = 
+  | 'on'
+  | 'off'
+  | 'name'
+  | 'email'
+  | 'username'
+  | 'new-password'
+  | 'current-password'
+  | 'tel'
+  | 'address-line1'
+  | 'address-line2'
+  | 'country'
+  | 'postal-code'
+  | 'city'
+  | 'state'
+  | 'organization';
+
 export type FormProps = {
-	onSubmit:FormEventHandler<HTMLFormElement>;
-	children:React.ReactNode;
+    onSubmit?: FormEventHandler<HTMLFormElement>;
+    action?: string;
+    method?: 'GET' | 'POST' | 'PUT' | 'DELETE'; // More specific method types
+    autoComplete?: AutoCompleteOptions; // Narrowed type for autocomplete
+    children?: React.ReactNode;
 }
+
 
 export type TextAreaProps = {
 	id: string;

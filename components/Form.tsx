@@ -2,9 +2,9 @@ import { FormButtonProps, FormProps, TextAreaLabelProps, TextAreaProps } from '@
 
 
 
-export function Form({onSubmit, children}:FormProps) {
+export function Form({onSubmit, children, action, method, autoComplete }:FormProps) {
   return (
-	<form className='p-2 border ' onSubmit={onSubmit}>
+	<form className='p-2 border ' onSubmit={onSubmit} action={action} method={method} autoComplete={autoComplete}>
 		{children}
 	</form>
   )
@@ -34,22 +34,6 @@ export function TextArea({ id, name, rows, className, placeholder, value }: Text
 	)
 }
 
-
-
-export function TextAreaNoRq({ id, name, rows, className, placeholder, }: TextAreaProps) {
-	return (
-		<>
-
-			<textarea
-				id={id}
-				name={name}
-				rows={rows}
-				className={`${className}`}
-				placeholder={placeholder}
-			></textarea>
-		</>
-	)
-}
 
 
 export function FormButton({children, title}:FormButtonProps) {
