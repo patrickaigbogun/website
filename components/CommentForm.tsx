@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { submitComments } from '@/actions/comments/HandleSubmit';
 import { CommentProps } from '@/types/CommentProps';
-import { Form } from './Form';
+import { Form, FormLabel } from './Form';
 
 export default function CommentForm({ FieldValue, }: CommentProps) {
 	// State to manage the comment input
@@ -26,7 +26,7 @@ export default function CommentForm({ FieldValue, }: CommentProps) {
 
 	return (
 		<Form onSubmit={handleSubmit}>
-			<label htmlFor="comment" className="text-white">Type your message here:</label>
+			<FormLabel htmlFor="comment" className="text-white">Type your message here:</FormLabel>
 			<textarea
 				id="comment"
 				name="comment"

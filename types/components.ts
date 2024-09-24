@@ -61,7 +61,7 @@ export type TextAreaProps = {
 }
 
 export type TextAreaLabelProps = {
-	name: string;
+	htmlFor: string;
 	className:string;
 	children?: React.ReactNode;
 }
