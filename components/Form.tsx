@@ -1,4 +1,4 @@
-import { FormButtonProps, FormProps, TextAreaLabelProps, TextAreaProps } from '@/types/components'
+import { FormButtonProps, FormProps, FormLabelProps, FormTextAreaProps } from '@/types/components'
 
 
 
@@ -10,7 +10,7 @@ export function Form({ onSubmit, children, action, method, autoComplete }: FormP
 	)
 }
 
-export function FormLabel({ htmlFor, className, children }: TextAreaLabelProps) {
+export function FormLabel({ htmlFor, className, children }: FormLabelProps) {
 	return (
 		<label htmlFor={htmlFor} className={className}>{children}</label>
 
@@ -18,7 +18,7 @@ export function FormLabel({ htmlFor, className, children }: TextAreaLabelProps) 
 }
 
 
-export function TextArea({ id, name, rows, className, placeholder, value }: TextAreaProps) {
+export function FormTextArea({ id, name, rows, className, placeholder, value, required }: FormTextAreaProps) {
 	return (
 		<>
 			<label htmlFor="message" className="text-white">Type your message here:</label>
@@ -28,7 +28,8 @@ export function TextArea({ id, name, rows, className, placeholder, value }: Text
 				rows={rows}
 				className={`${className}`}
 				placeholder={placeholder}
-				required
+				value={value}
+				required={required}
 			></textarea>
 		</>
 	)
@@ -37,8 +38,6 @@ export function TextArea({ id, name, rows, className, placeholder, value }: Text
 
 
 export function FormButton({ children, title }: FormButtonProps) {
-
-
 	return (
 		<button
 			type='submit'

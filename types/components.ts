@@ -49,18 +49,18 @@ export type FormProps = {
 }
 
 
-export type TextAreaProps = {
+export type FormTextAreaProps = {
 	id: string;
 	name: string;
 	rows: number;
 	className?:string;
 	placeholder:string;
 	value?:string
-	children?: React.ReactNode;
+	required?:boolean;
 	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-export type TextAreaLabelProps = {
+export type FormLabelProps = {
 	htmlFor: string;
 	className:string;
 	children?: React.ReactNode;
