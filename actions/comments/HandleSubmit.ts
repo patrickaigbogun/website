@@ -4,7 +4,6 @@ export async function submitComments(Value: string) {
 	const mutations = [{
 		create: {
 			_type: 'comment',
-			_createdAt: new Date().toISOString(),
 			content: Value, // Pass the actual comment content
 		}
 	}];
