@@ -1,4 +1,6 @@
 // HeaderWrapper.tsx
+
+'use server';
 import { getPages } from "@/sanity/sanity-utils";
 import { Header } from "@/components/Header";
 import { Suspense } from "react";
