@@ -1,6 +1,6 @@
 
 import LoadingUI from "@/components/loadingui";
-import Hero from "@/components/Hero";
+import { Hero } from "@/components/Hero";
 import { Suspense } from "react";
 import ProjectsGrid from "@/components/ProjectsGrid";
 

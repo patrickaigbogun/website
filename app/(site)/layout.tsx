@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 // import Link from "next/link";
-import Footer from "@/components/Footer";
+import { Footer } from "@/components/Footer";
 import HeaderWrapper from "@/components/HeaderWrapper";
 
 import { nunito } from "@/fonts/fonts";

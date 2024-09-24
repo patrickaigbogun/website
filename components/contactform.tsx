@@ -2,7 +2,7 @@ import { montserrat } from "@/fonts/fonts";
 
 
 
-export default function ContactForm() {
+export function ContactForm() {
 	return (
 		<div className="flex justify-center my-10">
 			<div className="w-full max-w-lg md:max-w-3xl lg:max-w-5xl">

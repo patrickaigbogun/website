@@ -2,7 +2,7 @@
 import { getPage } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 import LoadingUI from "@/components/loadingui";
-import ContactForm from "@/components/ContactForm";
+import { ContactForm } from "@/components/ContactForm";
 import { montserrat } from "@/fonts/fonts";
 import { NavBtn } from "@/components/NavBtn";
 import RedirectButton from "@/components/RedirectButton";

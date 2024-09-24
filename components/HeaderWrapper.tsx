@@ -1,6 +1,6 @@
 // HeaderWrapper.tsx
 import { getPages } from "@/sanity/sanity-utils";
-import Header from "@/components/Header";
+import { Header } from "@/components/Header";
 import { Suspense } from "react";
 import LoadingUI from "@/components/loadingui";
 

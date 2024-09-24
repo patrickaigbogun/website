@@ -2,7 +2,7 @@ import { montserrat } from "@/fonts/fonts";
 import { GithubLogo, LinkedinLogo, Phone } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
-export default function Footer() {
+export function Footer() {
 
 	return (
 

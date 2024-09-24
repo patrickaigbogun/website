@@ -2,7 +2,7 @@
 import { montserrat } from '@/fonts/fonts';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 
-export default function Hero() {
+export function Hero() {
 	const [text] = useTypewriter({
 		words: [
 			"Welcome to my portfolio!",
