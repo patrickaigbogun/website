@@ -1,6 +1,4 @@
-import { CommentTypes } from "./Comments";
 
-export  type CommentProps = {
+export type CommentFormProps = {
     FieldValue: string,
-
 }

@@ -2,15 +2,14 @@
 
 import BlogPostsGridWrapper from '@/components/BlogPostGridWrapper';
 import CommentForm from '@/components/CommentForm';
-import { CommentTypes } from '@/types/Comments';
 
 
-export default function BlogHome(comment:CommentTypes) {
+export default function BlogHome() {
   
   return (
     <>
       <BlogPostsGridWrapper />
-      <CommentForm FieldValue={comment._id}  />
+      <CommentForm FieldValue={''}  />
     </>
   );
 }

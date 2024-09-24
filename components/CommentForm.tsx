@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
 import { submitComments } from '@/actions/comments/HandleSubmit';
-import { CommentProps } from '@/types/CommentProps';
+import { CommentFormProps } from '@/types/CommentProps';
 import { Form, FormButton, FormLabel, FormTextArea } from './Form';
 
-export default function CommentForm({ FieldValue, }: CommentProps) {
+export default function CommentForm({FieldValue}: CommentFormProps ) {
 	// State to manage the comment input
 	const [Value, setValue] = useState(FieldValue || '');
 

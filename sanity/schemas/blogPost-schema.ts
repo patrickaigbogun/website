@@ -43,7 +43,6 @@ const blogPost = {
 			group: ["seo", "summary"],
 			validation: (rule: RuleType)=> [
 				rule.required().min(10).error('A tagline of min. 10 characters is required'),
-				rule.max(50).error('Shorter taglines are usually better')
 			]			
 		},
 		{
@@ -53,7 +52,6 @@ const blogPost = {
 			of: [{ type: "block" }],
 			group: ["summary"],
 			validation: (rule: RuleType)=> [
-				rule.required().min(10).error('An excerpt of min. 10 characters is required'),
 				rule.max(150).error('Shorter excerpts are usually better')
 			]		
 		},
