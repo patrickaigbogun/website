@@ -1,12 +1,12 @@
 
 import { getPage } from "@/sanity/sanity-utils";
-import { PortableText } from "next-sanity";
 import LoadingUI from "@/components/loadingui";
 import { ContactForm } from "@/components/contactform";
 import { montserrat } from "@/fonts/fonts";
 import { NavBtn } from "@/components/NavBtn";
 import RedirectButton from "@/components/RedirectButton";
 import { Suspense } from "react";
+import { PortableText } from "@portabletext/react";
 
 interface Props {
 	params: { slug: string };

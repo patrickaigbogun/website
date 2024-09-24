@@ -1,4 +1,3 @@
-import { structureTool } from "sanity/structure";
 import schemas from "./sanity/schemas";
 
 const config = {
@@ -11,9 +10,6 @@ const config = {
 	apiVersion: "2024-06-30",
 
 	basePath: "/admin",
-
-	plugins: [structureTool()],
-
 	schema: { types: schemas },
 };
 
