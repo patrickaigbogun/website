@@ -18,10 +18,9 @@ export function FormLabel({ htmlFor, className, children }: FormLabelProps) {
 }
 
 
-export function FormTextArea({ id, name, rows, className, placeholder, value, required }: FormTextAreaProps) {
+export function FormTextArea({ id, name, rows, className, placeholder, value, required, onChange }: FormTextAreaProps) {
 	return (
 		<>
-			<label htmlFor="message" className="text-white">Type your message here:</label>
 			<textarea
 				id={id}
 				name={name}
@@ -30,20 +29,20 @@ export function FormTextArea({ id, name, rows, className, placeholder, value, re
 				placeholder={placeholder}
 				value={value}
 				required={required}
-			></textarea>
+				onChange={onChange}
+			/>
 		</>
 	)
 }
 
 
 
-export function FormButton({ children, title, autoFocus, disabled, formAction, popoverTarget, popoverTargetAction, }: FormButtonProps) {
+export function FormButton({ children, title, autoFocus, disabled, formAction, popoverTargetAction, }: FormButtonProps) {
 	return (
 		<button
 			autoFocus={autoFocus}
 			disabled={disabled}
 			formAction={formAction}
-			popoverTarget={popoverTarget}
 			popoverTargetAction={popoverTargetAction}
 			type='submit'
 			title={title}

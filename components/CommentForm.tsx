@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { submitComments } from '@/actions/comments/HandleSubmit';
 import { CommentProps } from '@/types/CommentProps';
-import { Form, FormLabel } from './Form';
+import { Form, FormButton, FormLabel, FormTextArea } from './Form';
 
 export default function CommentForm({ FieldValue, }: CommentProps) {
 	// State to manage the comment input
@@ -27,16 +27,17 @@ export default function CommentForm({ FieldValue, }: CommentProps) {
 	return (
 		<Form onSubmit={handleSubmit}>
 			<FormLabel htmlFor="comment" className="text-white">Type your message here:</FormLabel>
-			<textarea
+			<FormTextArea
 				id="comment"
 				name="comment"
 				rows={3}
+				className='text-black'
 				placeholder="Type something here"
 				required
 				value={Value} // Bind the textarea to the state
 				onChange={(e) => setValue(e.target.value)} // Update state on change
 			/>
-			<button type="submit">Send Comment</button>
+			<FormButton title={'Send Comment'} >Send Comment</FormButton>
 		</Form>
 	);
 }
