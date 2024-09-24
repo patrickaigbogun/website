@@ -67,9 +67,15 @@ export type FormLabelProps = {
 }
 
 export type FormButtonProps = {
-	children : React.ReactNode;
-	title:string;
-}
+	children: React.ReactNode;
+	title: string;
+	autoFocus?: boolean;
+	disabled?: boolean;
+	formAction?: string;
+	popoverTarget?: string;
+	popoverTargetAction?: 'toggle' | 'show' | 'hide'; // Narrowed type
+};
+
 
 export type RuleType = {
 	error(arg0: string): unknown;
