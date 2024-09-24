@@ -2,7 +2,7 @@
 
 'use server';
 import { getPages } from "@/sanity/sanity-utils";
-import Header  from "@/components/Header";
+import Header  from "@/components/header";
 import { Suspense } from "react";
 import LoadingUI from "@/components/loadingui";
 
