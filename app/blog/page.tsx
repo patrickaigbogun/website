@@ -1,15 +1,22 @@
 // @/app/blog/page.tsx
 
-import BlogPostsGridWrapper from '@/components/BlogPostGridWrapper';
+import { getblogPosts } from '@/sanity/sanity-utils';
+import BlogPostsGrid from '@/components/BlogPostsGrid';
+import { Suspense } from 'react';
+import LoadingUI from '@/components/loadingui';
 import CommentForm from '@/components/CommentForm';
 
 
-export default function BlogHome() {
+export default async function BlogHome() {
+  const blogPosts = await getblogPosts();
+
   
   return (
-    <>
-      <BlogPostsGridWrapper />
+    <div>
+     <Suspense fallback={<LoadingUI />}>
+				<BlogPostsGrid blogPosts={blogPosts} />
+			</Suspense>
       <CommentForm FieldValue={''}  />
-    </>
+    </div>
   );
 }

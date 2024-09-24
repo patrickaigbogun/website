@@ -1,7 +1,9 @@
-import { PortableTextBlock } from "next-sanity";
 import { Page } from "./Page";
 import { blogPost } from './blogPost'
 import { FormEventHandler } from "react";
+import { Project } from "./Projects";
+import { PortableTextBlock } from "@portabletext/react";
+
 
 
 export type HeaderProps = {
@@ -100,3 +102,7 @@ export type CardImageBgProps = {
 	// reuse: string;
 	className?: string;
 };
+
+export type ProjectsGridProps = {
+	projects: Project[];
+}

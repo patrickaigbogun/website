@@ -1,15 +1,14 @@
-import { getProjects } from "@/sanity/sanity-utils";
-import { Project } from "@/types/Projects";
 import Link from "next/link";
 import { montserrat } from "@/fonts/fonts";
 import Image from "next/image";
+import { ProjectsGridProps } from "@/types/components";
 
-const ProjectsGrid = async () => {
-    const projects = await getProjects();
+export function ProjectsGrid({projects}:ProjectsGridProps)  {
+    
 
     return (
         <div className="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3 ">
-            {projects.map((project: Project) => (
+            {projects.map((project) => (
                 <Link
                     href={`/projects/${project.slug}`}
                     key={project._id}
@@ -32,4 +31,3 @@ const ProjectsGrid = async () => {
     );
 };
 
-export default ProjectsGrid
