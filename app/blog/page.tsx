@@ -4,8 +4,7 @@ import { getblogPosts } from '@/sanity/sanity-utils';
 import BlogPostsGrid from '@/components/BlogPostsGrid';
 import { Suspense } from 'react';
 import LoadingUI from '@/components/loadingui';
-import CommentForm from '@/components/CommentForm';
-
+import CommentForm from '@/components/commentForm';
 
 export default async function BlogHome() {
   const blogPosts = await getblogPosts();

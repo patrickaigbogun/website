@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { submitComments } from '@/actions/comments/HandleSubmit';
 import { CommentFormProps } from '@/types/CommentProps';
-import { Form, FormButton, FormLabel, FormTextArea } from './Form';
+import { Form, FormButton, FormLabel, FormTextArea } from './reuseForm';
 
 export default function CommentForm({FieldValue}: CommentFormProps ) {
 	// State to manage the comment input
@@ -41,7 +41,7 @@ export default function CommentForm({FieldValue}: CommentFormProps ) {
 			className='flex justify-center md:justify-start'
 			>
 				<FormButton
-					className="w-full mx-auto md:w-auto md:mx-0 "
+					className="w-full mx-auto rounded-full md:w-auto md:mx-0"
 					title={'Send Comment'} 
 					>
 					Send Comment
