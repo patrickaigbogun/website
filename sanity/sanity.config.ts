@@ -1,4 +1,4 @@
-import schemas from "./sanity/schemas";
+import schemas from "./schemas";
 import {structureTool} from 'sanity/structure'
 
 
