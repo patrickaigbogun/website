@@ -10,7 +10,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 
 // UNCOMMENT WHEN YOU UNCOMMENT AUTHOR ASYNC FETCHES
-// import { Author } from "@/types/author"
+import { Author } from "@/types/author"
 
 
 const builder = imageUrlBuilder(clientConfig)
@@ -143,24 +143,42 @@ export async function getblogPost(slug: string): Promise<blogPost> {
 // }
 
 
-// export async function getAuthor(slug: String): Promise<Author> {
+export async function getAuthor(slug: String): Promise<Author> {
 
-// 	return createClient(clientConfig).fetch(
-// 		groq`*[_type == 'author' && slug.current == $slug][0]{
+	return createClient(clientConfig).fetch(
+		groq`*[_type == 'author' && slug.current == $slug][0]{
 
-// 			_id,
-// 			_createdAt,
-// 			name,
-// 			'slug': slug.current,
-// 			publishDate,
-// 			'image': image.asset->url,
+			_id,
+			_createdAt,
+			name,
+			'slug': slug.current,
+			publishDate,
+			'image': image.asset->url,
 
-// 		}`, 
-// 		{ slug }
-// 	);
+		}`, 
+		{ slug }
+	);
 
 
-// }
+}
+
+export async function getAuthorImage(): Promise<Author> {
+
+	return createClient(clientConfig).fetch(
+		groq`*[_type == 'author' && name match 	 'Patrick*'][0] {
+
+			_id,
+			_createdAt,
+			name,
+			'slug': slug.current,
+			publishDate,
+			'image': image.asset->url,
+
+		}`, 
+	);
+
+
+}
 
 
 
