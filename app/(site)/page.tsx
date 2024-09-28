@@ -1,4 +1,6 @@
 
+//"@/app/(site)/page.tsx"
+
 import { getProjects } from "@/sanity/sanity-utils";
 
 import LoadingUI from "@/components/loadingui";

@@ -1,3 +1,6 @@
+
+//"@/components/projectgrid.tsx"
+
 import Link from "next/link";
 import { montserrat } from "@/fonts/fonts";
 import Image from "next/image";

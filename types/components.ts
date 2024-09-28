@@ -3,6 +3,7 @@ import { blogPost } from './blogPost'
 import { FormEventHandler } from "react";
 import { Project } from "./Projects";
 import { PortableTextBlock } from "@portabletext/react";
+import { CommentTypes } from "./Comments";
 
 
 
@@ -74,7 +75,7 @@ export type FormButtonProps = {
 	autoFocus?: boolean;
 	disabled?: boolean;
 	formAction?: string;
-	className?:string;
+	className?: string;
 	popovertargetaction?: 'toggle' | 'show' | 'hide'; // Narrowed type
 };
 
@@ -105,4 +106,9 @@ export type CardImageBgProps = {
 
 export type ProjectsGridProps = {
 	projects: Project[];
+}
+
+
+export type commentProps = {
+	comments: CommentTypes[];
 }

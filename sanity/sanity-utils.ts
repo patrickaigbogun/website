@@ -11,12 +11,13 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // UNCOMMENT WHEN YOU UNCOMMENT AUTHOR ASYNC FETCHES
 import { Author } from "@/types/author"
+import { CommentTypes } from "@/types/Comments";
 
 
 const builder = imageUrlBuilder(clientConfig)
 
 export function urlFor(source: SanityImageSource) {
-  return builder.image(source)
+	return builder.image(source)
 }
 
 export async function getProjects(): Promise<Project[]> {
@@ -137,7 +138,7 @@ export async function getblogPost(slug: string): Promise<blogPost> {
 // 			_createdAt,
 // 			name,
 // 			'image': image.asset->url,
-			
+
 //         }`
 // 	);
 // }
@@ -155,7 +156,7 @@ export async function getAuthor(slug: String): Promise<Author> {
 			publishDate,
 			'image': image.asset->url,
 
-		}`, 
+		}`,
 		{ slug }
 	);
 
@@ -174,11 +175,20 @@ export async function getAuthorImage(): Promise<Author> {
 			publishDate,
 			'image': image.asset->url,
 
-		}`, 
+		}`,
 	);
 
 
 }
 
+export async function getComments(): Promise<CommentTypes[]> {
+	return createClient(clientConfig).fetch(
+		groq`*[_type == 'comment']{
+			_id,
+			_createdAt,
+			content
+		}`
+	);
+}
 
 

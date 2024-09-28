@@ -6,10 +6,10 @@ import { Suspense } from 'react';
 import LoadingUI from '@/components/loadingui';
 import {CommentForm} from '@/components/commentform';
 import BlogHero from '@/components/bloghero';
+import { CommentSection } from '@/components/commentsection';
 
 export default async function BlogHome() {
 	const blogPosts = await getblogPosts();
-
 
 	return (
 		<div className='space-y-20' >
@@ -18,7 +18,7 @@ export default async function BlogHome() {
 				<BlogPostsGrid blogPosts={blogPosts} />
 			</Suspense>
 			<section>
-				<CommentForm FieldValue={''} />
+				<CommentSection />
 			</section>
 		</div>
 	);
