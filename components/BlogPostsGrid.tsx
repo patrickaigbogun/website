@@ -4,12 +4,13 @@
 
 import { blogPostsProps } from '@/types/components'
 import Link from 'next/link'
-import CardImageBg from './CardImageBg';
+import CardImageBg from '@/components/cardImageBg';
 
 
 export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 	return (
-		<div className='mx-auto flex justify-center w-[90%] sm:w-[85%]'>
+		<section>
+			<div className=''>
 			<div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
 				{blogPosts.map((blogPost) => {
 					console.log(blogPost); // Correctly logs individual blog post
@@ -35,5 +36,7 @@ export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 				})}
 			</div>
 		</div>
+		</section>
+		
 	);
 }
