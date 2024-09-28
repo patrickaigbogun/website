@@ -3,6 +3,7 @@ import "../globals.css";
 import { nunito } from "@/fonts/fonts";
 import {BlogHeader} from "@/components/blogheader";
 import { getAuthorImage } from "@/sanity/sanity-utils";
+import FloatIngisland from "@/components/floatingisland";
 
 
 
@@ -33,6 +34,7 @@ export default async function RootLayout({
 		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" lang="en">
 			<body className={`bg-[#270453] text-gray-600 ${nunito.className} `}>
 				<BlogHeader name={author.name} image={author.image} />
+				<FloatIngisland />
 				<main className="mx-auto flex justify-center w-[90%] sm:w-[85%] py-12 ">
 					{children}
 				</main>
