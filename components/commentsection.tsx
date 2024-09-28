@@ -3,12 +3,20 @@
 //"@/components/commentsection.tsx"
 
 import { useEffect, useState } from "react";
-import { CommentBubble } from "./commentbubble";
+// import { CommentBubble } from "./commentbubble";
 import { getComments } from "@/sanity/sanity-utils";
 import { CommentTypes } from "@/types/Comments"; // Ensure you import your CommentTypes
-import { CommentForm } from "./commentform";
+// import { CommentForm } from "./commentform";
+import dynamic from "next/dynamic";
 
-export function CommentSection() {
+const CommentForm = dynamic(() => import('@/components/commentform').then((mod) => mod.CommentForm), { ssr: false })
+const CommentBubble = dynamic(() => import('@/components/commentbubble').then((mod) => mod.CommentBubble), { ssr: false })
+
+
+function CommentSection() {
+
+	const [showMore, setShowMore] = useState(false)
+
 	const [comments, setComments] = useState<CommentTypes[]>([]); // Specify the type here
 	const [shouldRevalidate, setShouldRevalidate] = useState(false);
 
@@ -26,7 +34,7 @@ export function CommentSection() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			fetchComments();
-		}, 1000); // Revalidate every 1 second
+		}, 60000); // Revalidate every 1 second
 
 		return () => clearInterval(interval); // Cleanup on unmount
 	}, []);
@@ -43,13 +51,18 @@ export function CommentSection() {
 
 			<h2 className="mb-4 text-xl font-bold">Comments ({comments.length})</h2>
 
-			<div className="space-y-6">
+			{showMore && (<div className="space-y-6">
 				{comments.length > 0 ? (
 					<CommentBubble comments={comments} />
 				) : (
 					<p className="text-gray-500">No comments yet. Be the first to comment!</p>
 				)}
-			</div>
+			</div>)}
+			<button onClick={() => setShowMore(!showMore)}>Toggle</button>
+
+
 		</section>
 	);
 }
+
+export default CommentSection;

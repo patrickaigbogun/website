@@ -7,7 +7,7 @@ interface Props {
 export async function BlogHeader({image, name}:Props) {
 
 	return (
-		<header className="flex flex-row justify-between p-5 text-white bg-stone-500 " >
+		<header className="top-0 flex flex-row justify-between w-full p-5 text-white bg-stone-500 " >
 			<div className="flex items-center" >
 				<div>Logo/Sitename</div>
 			</div>

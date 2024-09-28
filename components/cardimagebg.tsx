@@ -4,16 +4,19 @@ import { urlFor } from '@/sanity/sanity-utils';
 import { CardImageBgProps } from '@/types/components';
 import { PortableText } from 'next-sanity';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 
 
-export function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, className, author }: CardImageBgProps) {
+export function CardImageBg({ href, imageSrc, alt, title, tagline, excerpt, date, className, author }: CardImageBgProps) {
 	const [isHovered, setIsHovered] = useState(false);
 
 
 
 	return (
+		<Link href={href}
+		>
 		<div
 			className={`  relative overflow-hidden shadow-lg cursor-pointer rounded-3xl w-72 h-[22rem] max-w-72 group`}
 			onMouseEnter={() => setIsHovered(true)}
@@ -27,6 +30,7 @@ export function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, clas
 					alt={alt}
 					fill
 					className={`object-cover `}
+					sizes='auto'
 				/>
 			</div>
 
@@ -52,5 +56,6 @@ export function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, clas
 				</div>
 			</div>
 		</div>
+		</Link>
 	);
 }

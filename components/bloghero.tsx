@@ -21,13 +21,14 @@ export default function BlogHero() {
                 className="text-6xl font-bold"
             >
                 Welcome to my Blog!
-                <motion.p
+                <br />
+                <motion.span
                     initial={{
-                        x: "-200%", // Starts 100% above the viewport
+                        // x: "-200%", // Starts 100% above the viewport
                         opacity: 0  // Invisible at the start
                     }}
                     animate={{
-                        x: "0",  // Moves to its final position (y = 0)
+                        // x: "0",  // Moves to its final position (y = 0)
                         opacity: 1 // Fully visible when in position
                     }}
                     transition={{
@@ -40,13 +41,13 @@ export default function BlogHero() {
 
                 >
                     This is a personal blog where i discuss technologies, philosophy and poetry...
-                    <motion.p
+                    <motion.span
                         initial={{
-                            x: "200%", // Starts 100% above the viewport
+                            // x: "200%", // Starts 100% above the viewport
                             opacity: 0  // Invisible at the start
                         }}
                         animate={{
-                            x: "0",  // Moves to its final position (y = 0)
+                            // x: "0",  // Moves to its final position (y = 0)
                             opacity: 1 // Fully visible when in position
                         }}
                         transition={{
@@ -58,9 +59,10 @@ export default function BlogHero() {
                         className="text-2xl"
 
                     >
+                        <br />
                         Peruse my latest posts below 👇🏽 or visit them by their main categories above ☝🏽
-                    </motion.p>
-                </motion.p>
+                    </motion.span>
+                </motion.span>
 
             </motion.p>
         </section>

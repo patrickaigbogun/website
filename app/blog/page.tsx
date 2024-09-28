@@ -1,12 +1,12 @@
 // @/app/blog/page.tsx
 
 import { getblogPosts } from '@/sanity/sanity-utils';
-import {BlogPostsGrid} from '@/components/blogpostsgrid';
-import { Suspense } from 'react';
-import LoadingUI from '@/components/loadingui';
-import {CommentForm} from '@/components/commentform';
+import { BlogPostsGrid } from '@/components/blogpostsgrid';
+// import { CommentForm } from '@/components/commentform';
 import BlogHero from '@/components/bloghero';
-import { CommentSection } from '@/components/commentsection';
+import CommentSection from '@/components/commentsection';
+
+
 
 export default async function BlogHome() {
 	const blogPosts = await getblogPosts();
@@ -14,9 +14,9 @@ export default async function BlogHome() {
 	return (
 		<div className='space-y-20' >
 			<BlogHero />
-			<Suspense fallback={<LoadingUI />}>
+			<section >
 				<BlogPostsGrid blogPosts={blogPosts} />
-			</Suspense>
+			</section>
 			<section>
 				<CommentSection />
 			</section>

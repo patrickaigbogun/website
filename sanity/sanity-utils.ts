@@ -183,7 +183,7 @@ export async function getAuthorImage(): Promise<Author> {
 
 export async function getComments(): Promise<CommentTypes[]> {
 	return createClient(clientConfig).fetch(
-		groq`*[_type == 'comment']{
+		groq`*[_type == 'comment' ] | order(_createdAt desc){
 			_id,
 			_createdAt,
 			content
