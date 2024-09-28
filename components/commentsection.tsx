@@ -10,7 +10,7 @@ import { CommentTypes } from "@/types/Comments"; // Ensure you import your Comme
 import dynamic from "next/dynamic";
 
 const CommentForm = dynamic(() => import('@/components/commentform').then((mod) => mod.CommentForm), { ssr: false })
-const CommentBubble = dynamic(() => import('@/components/commentbubble').then((mod) => mod.CommentBubble), { ssr: false })
+const CommentBubble = dynamic(() => import('@/components/commentbubble').then((mod) => mod.CommentBubble),{ loading: () => <p>Loading...</p>, ssr: false })
 
 
 function CommentSection() {
