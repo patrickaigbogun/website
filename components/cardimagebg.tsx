@@ -36,16 +36,16 @@ export function CardImageBg({ href, imageSrc, alt, title, tagline, excerpt, date
 
 			{/* Text Content */}
 			<div className="relative z-10 flex flex-col justify-end h-full p-4 bg-gradient-to-t from-black via-gray-950/30 to-transparent">
-				<span className='space-y-3' >
-					<span className='space-y-1' >
+				<div className='space-y-3' >
+					<div className='space-y-1' >
 						<h2 className="text-xl font-bold text-white">{title}</h2>
 						<p className="text-base text-gray-300">{tagline}</p>
-					</span>
+					</div>
 					<p className="text-xs text-gray-300">{new Date(date).toDateString()}</p>
 					<p>
 						{author}
 					</p>
-				</span>
+				</div>
 
 				{/* Excerpt, only visible on hover */}
 				<div
