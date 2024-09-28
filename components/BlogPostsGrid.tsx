@@ -4,7 +4,7 @@
 
 import { blogPostsProps } from '@/types/components'
 import Link from 'next/link'
-import CardImageBg from '@/components/cardImageBg';
+import CardImageBg from '@/components/cardimagebg';
 
 
 export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
