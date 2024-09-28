@@ -75,7 +75,7 @@ export type FormButtonProps = {
 	disabled?: boolean;
 	formAction?: string;
 	className?:string;
-	popoverTargetAction?: 'toggle' | 'show' | 'hide'; // Narrowed type
+	popovertargetaction?: 'toggle' | 'show' | 'hide'; // Narrowed type
 };
 
 

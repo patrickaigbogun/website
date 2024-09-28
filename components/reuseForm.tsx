@@ -37,13 +37,13 @@ export function FormTextArea({ id, name, rows, className, placeholder, value, re
 
 
 
-export function FormButton({ children, title, autoFocus, disabled, formAction, popoverTargetAction, className, }: FormButtonProps) {
+export function FormButton({ children, title, autoFocus, disabled, formAction, popovertargetaction, className, }: FormButtonProps) {
 	return (
 		<button
 			autoFocus={autoFocus}
 			disabled={disabled}
 			formAction={formAction}
-			popoverTargetAction={popoverTargetAction}
+			popoverTargetAction={popovertargetaction}
 			type='submit'
 			title={title}
 			aria-label={title}
