@@ -4,7 +4,7 @@ import { submitComments } from '@/actions/comments/HandleSubmit';
 import { CommentFormProps } from '@/types/CommentProps';
 import { Form, FormButton, FormLabel, FormTextArea } from './reuseForm';
 
-export default function CommentForm({FieldValue}: CommentFormProps ) {
+export function CommentForm({FieldValue}: CommentFormProps ) {
 	// State to manage the comment input
 	const [Value, setValue] = useState(FieldValue || '');
 

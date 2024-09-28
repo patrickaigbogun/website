@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 
 
-export default function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, className, author }: CardImageBgProps) {
+export function CardImageBg({ imageSrc, alt, title, tagline, excerpt, date, className, author }: CardImageBgProps) {
 	const [isHovered, setIsHovered] = useState(false);
 
 

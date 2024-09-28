@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { nunito } from "@/fonts/fonts";
-import BlogHeader from "@/components/blogheader";
+import {BlogHeader} from "@/components/blogheader";
 import { getAuthorImage } from "@/sanity/sanity-utils";
 
 

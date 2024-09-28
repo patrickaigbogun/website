@@ -4,7 +4,7 @@ import { getProjects } from "@/sanity/sanity-utils";
 import LoadingUI from "@/components/loadingui";
 import { Hero } from "@/components/hero";
 import { Suspense } from "react";
-import { ProjectsGrid } from "@/components/ProjectsGrid";
+import { ProjectsGrid } from "@/components/projectsgrid";
 
 
 

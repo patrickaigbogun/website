@@ -4,10 +4,10 @@
 
 import { blogPostsProps } from '@/types/components'
 import Link from 'next/link'
-import CardImageBg from '@/components/cardimagebg';
+import {CardImageBg} from '@/components/cardimagebg';
 
 
-export default function BlogPostsGrid({ blogPosts }: blogPostsProps) {
+export function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 	return (
 		<section>
 			<div className=''>

@@ -4,7 +4,7 @@ interface Props {
 	name: string;
 }
 
-export default async function BlogHeader({image, name}:Props) {
+export async function BlogHeader({image, name}:Props) {
 
 	return (
 		<header className="flex flex-row justify-between p-5 text-white bg-stone-500 " >
