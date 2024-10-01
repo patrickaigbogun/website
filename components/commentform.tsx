@@ -29,8 +29,8 @@ export function CommentForm({ FieldValue, onCommentSubmitted }: CommentFormProps
       <FormTextArea
         id="comment"
         name="comment"
-        rows={3}
-        className="w-full p-2 text-black bg-white border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-zinc-700"
+        rows={7}
+        className="w-full p-3 text-black bg-white border border-gray-300 rounded-3xl outline-none focus:ring-4 focus:ring-[#9f75ff]/60 "
         placeholder="Type something here"
         required
         value={Value}

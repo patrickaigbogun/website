@@ -10,7 +10,7 @@ import { CommentTypes } from "@/types/Comments"; // Ensure you import your Comme
 import dynamic from "next/dynamic";
 
 const CommentForm = dynamic(() => import('@/components/commentform').then((mod) => mod.CommentForm), { ssr: false })
-const CommentBubble = dynamic(() => import('@/components/commentbubble').then((mod) => mod.CommentBubble),{ loading: () => <p>Loading...</p>, ssr: false })
+const CommentBubble = dynamic(() => import('@/components/commentbubble').then((mod) => mod.CommentBubble), { loading: () => <p>Loading...</p>, ssr: false })
 
 
 function CommentSection() {
@@ -34,7 +34,7 @@ function CommentSection() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			fetchComments();
-		}, 60000); // Revalidate every 1 second
+		}, 100); // Revalidate every 1 second
 
 		return () => clearInterval(interval); // Cleanup on unmount
 	}, []);
@@ -44,21 +44,23 @@ function CommentSection() {
 	};
 
 	return (
-		<section className="max-w-3xl p-4 mx-auto my-8 bg-white rounded-lg shadow-lg">
+		<section className="w-full p-0 mx-auto my-8 space-y-10 text-center sm:max-w-3xl">
 			<section>
 				<CommentForm FieldValue={''} onCommentSubmitted={handleCommentSubmitted} />
 			</section>
 
-			<h2 className="mb-4 text-xl font-bold">Comments ({comments.length})</h2>
+			<button onClick={() => setShowMore(!showMore)}>
+				<h2 className="p-2 m-0 text-xl font-bold text-black transition-all ease-linear bg-white border-4 border-gray-200 rounded-full hover:scale-105"> Show Comments ({comments.length})</h2>
+			</button>
 
-			{showMore && (<div className="space-y-6">
+
+			{showMore && (<section className="space-y-6 ">
 				{comments.length > 0 ? (
 					<CommentBubble comments={comments} />
 				) : (
 					<p className="text-gray-500">No comments yet. Be the first to comment!</p>
 				)}
-			</div>)}
-			<button onClick={() => setShowMore(!showMore)}>Toggle</button>
+			</section>)}
 
 
 		</section>
