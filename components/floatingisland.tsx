@@ -1,14 +1,14 @@
 'use client';
 
 import { HouseSimple, GearSix, BellSimple, UserCircle, SignOut, ChatTeardropText } from "@phosphor-icons/react/dist/ssr";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 
 export const MobileIsland = () => {
 	const [isActive, setIsActive] = useState(false);
 
 	return (
-		<div className="absolute z-30" draggable='true' >
-			<div className="fixed flex flex-col p-3 space-y-4 bg-gray-800 shadow-lg left-5 top-1/3 rounded-xl">
+		<div className="relative"  >
+			<div className="flex flex-row p-3 space-y-4 bg-gray-800 shadow-lg left-5 top-1/3 rounded-xl">
 				{/* Toggle Quick Actions */}
 				<button onClick={() => setIsActive(!isActive)} className="text-gray-100">
 					<GearSix size={20} weight="bold" />
@@ -56,9 +56,9 @@ export const DesktopIsland = () => {
 	const [isActive, setIsActive] = useState(false);
 
 	return (
-		<div className="absolute z-30" draggable='true' >
+		<div className="absolute z-40"  >
 
-			<div className="fixed flex flex-col p-3 space-y-4 bg-gray-800 shadow-lg left-5 top-1/3 rounded-xl">
+			<div className="flex flex-col p-3 space-y-4 bg-gray-800 shadow-lg left-5 top-1/3 rounded-xl">
 				{/* Toggle Quick Actions */}
 				<button onClick={() => setIsActive(!isActive)} className="text-gray-100">
 					<GearSix size={28} weight="bold" />
@@ -103,7 +103,7 @@ export const DesktopIsland = () => {
 }
 
 function FloatingIsland() {
-	const [width, setwidth] = useState(0);
+	const [width, setwidth] = useState(window.innerWidth);
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -117,6 +117,7 @@ function FloatingIsland() {
 
 	if (width > 700) {
 		return (
+			
 			<section>
 				<DesktopIsland />
 			</section>
