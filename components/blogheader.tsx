@@ -51,9 +51,9 @@ function MobileHeader({ image, name }: Props) {
 			<div
 				className={`transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-40' : 'max-h-0'}`}
 			>
-				<ul className="flex flex-col mt-2 space-y-2">
+				<ul className="flex flex-col mt-2 space-y-2 max-w-[90%] mx-auto">
 					<li>
-						<div className="p-2 rounded-full hover:bg-[#4b05ad]/30 hover:scale-105 transition-all ease-linear ">Nav Item 1</div>
+						<div className=" p-2 rounded-full hover:bg-[#4b05ad]/30 hover:scale-105 transition-all ease-linear ">Nav Item 1</div>
 					</li>
 					<li>
 						<div className="p-2 rounded-full hover:bg-[#4b05ad]/30 hover:scale-105 transition-all ease-linear ">Nav Item 2</div>
