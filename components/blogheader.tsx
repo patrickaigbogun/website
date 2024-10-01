@@ -36,7 +36,7 @@ function MobileHeader({ image, name }: Props) {
 				<div>Logo/Sitename</div>
 				<div className='flex items-center space-x-2' >
 				<div className="flex items-center">
-					<img src={image} alt={name} width={36} height={36} className="object-fill rounded-full hover:brightness-50 hover:box-shadow-lg hover:shadow-[#2c0076] hover:scale-110" />
+					<img src={image} alt={`'profile image of' ${name}`} width={36} height={36} className="object-fill rounded-full hover:brightness-50 hover:box-shadow-lg hover:shadow-[#2c0076] hover:scale-110" />
 				</div>
 				<button
 					className="p-2 transition-colors rounded-full hover:bg-[#4b05ad]/30"
