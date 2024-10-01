@@ -1,7 +1,7 @@
 'use client';
 
 import { HouseSimple, GearSix, BellSimple, UserCircle, SignOut, ChatTeardropText } from "@phosphor-icons/react/dist/ssr";
-import { useEffect, useState, useTransition } from 'react';
+import { useEffect, useState } from 'react';
 
 export const MobileIsland = () => {
 	const [isActive, setIsActive] = useState(false);

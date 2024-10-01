@@ -34,13 +34,13 @@ export default async function RootLayout({
 
 	return (
 		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" lang="en">
-			<body className={` z-0 bg-[#270453] text-gray-600 ${nunito.className} `}>
+			<body className={` z-0 bg-[#270453] text-[#EBE5FF] ${nunito.className} `}>
 				<BlogHeader name={author.name} image={author.image} />
 				{/* <DraggableWrapper  Top={200} Left={15}> */}
-					<FloatingIsland />
+					{/* <FloatingIsland /> */}
 				{/* </DraggableWrapper> */}
-				{/* <DraggableSidebar /> */}
-				<main className=" z-10 mx-auto flex justify-center w-[90%] sm:w-[85%] py-12 ">
+				{/* <DraggableSidebar /> */} 
+				<main className=" z-1 mx-auto flex justify-center w-[90%] sm:w-[85%] py-12 ">
 					{children}
 				</main>
 			</body>
