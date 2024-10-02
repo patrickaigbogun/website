@@ -3,6 +3,7 @@ import "../globals.css";
 import { nunito } from "@/fonts/fonts";
 import { BlogHeader } from "@/components/blogheader";
 import { getAuthorImage } from "@/sanity/sanity-utils";
+import BlogFooter from "@/components/blogfooter";
 
 // import DraggableWrapper from "@/components/dragwrapper";
 // import FloatingIsland from "@/components/floatingisland";
@@ -34,15 +35,18 @@ export default async function RootLayout({
 
 	return (
 		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" lang="en">
-			<body className={` z-0 bg-[#140428] text-[#EBE5FF] ${nunito.className} py-12 `}>
+			<body className={` z-0 bg-[#140428] text-[#EBE5FF] ${nunito.className} `}>
 				<BlogHeader image={author.image} name={author.name} />
 				{/* <DraggableWrapper  Top={200} Left={15}> */}
-					{/* <FloatingIsland /> */}
+				{/* <FloatingIsland /> */}
 				{/* </DraggableWrapper> */}
-				{/* <DraggableSidebar /> */} 
+				{/* <DraggableSidebar /> */}
 				<main className=" z-1 mx-auto flex justify-center w-[90%] sm:w-[85%] py-12  ">
 					{children}
 				</main>
+				<section>
+					<BlogFooter />
+				</section>
 			</body>
 		</html>
 	);

@@ -11,9 +11,9 @@ interface Props {
 
 function DesktopHeader({ image, name }: Props) {
 	return (
-		<header className="flex flex-row justify-between rounded-full mx-auto w-[70%] p-4 font-bold text-[#d9ceff] bg-[#9f75ff]/60" >
+		<header className="flex flex-row justify-between rounded-full my-9 mx-auto w-[70%] p-4 font-bold text-[#d9ceff] bg-[#9f75ff]/60" >
 			<div className="flex items-center" >
-				<div>Logo/Sitename</div>
+				<div>Patrick&apos;s Blog</div>
 			</div>
 			<div className="flex flex-row items-center justify-center space-x-3" >
 				<div className="justify-center p-2 font-bold transition-all duration-200 ease-in-out rounded-full hover:font-extrabold hover:scale-105 hover:text-black bg-[#4b05ad]/30" >Nav Items</div>
@@ -31,20 +31,20 @@ function MobileHeader({ image, name }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<header className="flex flex-col w-[90%] mx-auto p-4 font-bold text-[#d9ceff] bg-[#9f75ff]/60 rounded-3xl">
+		<header className="flex flex-col w-[90%] my-9 mx-auto p-4 font-bold text-[#d9ceff] bg-[#9f75ff]/60 rounded-3xl">
 			<div className="flex items-center justify-between">
-				<div>Logo/Sitename</div>
-				<div className='flex items-center space-x-2' >
-				<div className="flex items-center">
-					<img src={image} alt={`'profile image of' ${name}`} width={36} height={36} className="object-fill rounded-full hover:brightness-50 hover:box-shadow-lg hover:shadow-[#2c0076] hover:scale-110" />
-				</div>
-				<button
-					className="p-2 transition-colors rounded-full hover:bg-[#4b05ad]/30"
-					onClick={() => setIsMenuOpen(!isMenuOpen)}
-				>
-					{/* Menu Icon */}
-					<DotsThreeCircleVertical size={32} />
-				</button>
+				<div>Patrick&apos;s Blog</div>
+				<div className='flex items-center space-x-1' >
+					<div className="flex items-center">
+						<img src={image} alt={`profile image of ${name}`} width={36} height={36} className="object-fill rounded-full hover:brightness-50 hover:box-shadow-lg hover:shadow-[#2c0076] hover:scale-110" />
+					</div>
+					<button
+						className="p-1 transition-colors rounded-full hover:bg-[#4b05ad]/30"
+						onClick={() => setIsMenuOpen(!isMenuOpen)}
+					>
+						{/* Menu Icon */}
+						<DotsThreeCircleVertical size={40} />
+					</button>
 				</div>
 			</div>
 
