@@ -118,7 +118,7 @@ export async function getblogPost(slug: string): Promise<blogPost> {
 			tagline,
 			excerpt,
 			publishDate,
-			authors,
+			'author': authors->{_id, name}, 
 			'image': image.asset->url,
 			content
 		}`,
