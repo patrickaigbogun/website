@@ -13,7 +13,7 @@ export function ProjectsGrid({projects}:ProjectsGridProps)  {
         <div className="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3 ">
             {projects.map((project) => (
                 <Link
-                    href={`/projects/${project.slug}`}
+                    href={`/portfolio/projects/${project.slug}`}
                     key={project._id}
                     className="transition duration-300 ease-in-out border-2 border-gray-300 group rounded-xl hover:scale-105 hover:border-4 hover:border-gray-300">
                     {project.image && (

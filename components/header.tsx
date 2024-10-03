@@ -34,7 +34,7 @@ function Header({ pages }: HeaderProps) {
 							{pages.map((page) => (
 								<Link
 									key={page._id}
-									href={`/${page.slug}`}
+									href={`/portfolio/${page.slug}`}
 									className="px-3 py-2 text-sm font-medium text-gray-300 transition duration-300 rounded-md hover:text-white hover:bg-green-400/10 hover:font-bold"
 									aria-label={`Go to ${page.title}`}
 								>

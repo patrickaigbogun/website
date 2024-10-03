@@ -49,8 +49,8 @@ export function FormButton({ children, title, autoFocus, disabled, formAction, p
 			aria-label={title}
 			className={`  ${className} relative inline-block p-2 m-0 overflow-hidden font-bold text-black transition-all duration-300 ease-out bg-white border-4 border-inherit hover:border-[#9f75ff]/60  group`}
 		>
-			<span className="absolute top-0 left-0 w-0 h-full transition-all duration-300 ease-out bg-black group-hover:w-full"></span>
-			<span className="relative group-hover:text-white">
+			<span className="absolute top-0 left-0 w-0 h-full transition-all duration-300 ease-out bg-[#140428] group-hover:w-full"></span>
+			<span className="relative group-hover:text-[#EBE5FF]">
 				{children}
 			</span>
 		</button>
