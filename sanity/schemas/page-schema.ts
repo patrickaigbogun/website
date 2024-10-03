@@ -1,3 +1,4 @@
+import { RuleType } from "@/types/components";
 
 const page = {
     name: "page",
@@ -9,6 +10,18 @@ const page = {
             title: 'Title',
             type: 'string',
         },
+        {
+			name: "image",
+			title: "Image",
+			type: "image",
+			options: { hotspot: true },
+		},
+        {
+			name: "alt",
+			title: "Alt Text",
+			type: "string",
+			validation: (rule: RuleType) => rule.required(),
+		},	
         {
             name: 'slug',
             title: 'Slug',
