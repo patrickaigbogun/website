@@ -17,10 +17,10 @@ export function Footer() {
 							<EnvelopeSimple size={24} weight="duotone" />
 							<span>name@email.com</span>
 						</div> */}
-					<Link href={"https://linkedin.com/username"} className="transition ease-in-out hover:scale-125">
+					<Link href={"https://linkedin.com/patrickaigbogun"} className="transition ease-in-out hover:scale-125">
 						<LinkedinLogo size={24} weight="duotone" />
 					</Link>
-					<Link href={"https://github.com/username"} className="transition ease-in-out hover:scale-125">
+					<Link href={"https://github.com/patrickaigbogun"} className="transition ease-in-out hover:scale-125">
 						<GithubLogo size={24} weight="duotone" />
 					</Link>
 				</div>
