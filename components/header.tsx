@@ -11,7 +11,7 @@ import clsx from "clsx";
 function Header({ pages }: HeaderProps) {
 	return (
 		<div>
-			<Disclosure as="nav" className="bg-green-800/15 backdrop-blur-lg border-t-green-500 rounded-2xl">
+			<Disclosure as="nav" className="bg-green-800/30 backdrop-blur-lg border-t-green-500 rounded-2xl">
 			{({ open }) => (
 				<div
 					className={clsx(
