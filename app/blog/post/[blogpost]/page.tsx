@@ -10,7 +10,8 @@ export default async function page({ params }: Props) {
 	const blogPost = await getblogPost(params.blogpost);
 
 	return (
-		<div className="w-full md:w-[75%] mx-auto" >
+		<div className="space-y-32 w-full md:w-[75%] mx-auto" >
+			<section>
 			<h1 className="text-5xl font-bold" >
 				{blogPost.title}
 			</h1>
@@ -34,6 +35,7 @@ export default async function page({ params }: Props) {
 				<div className="" >
 				<PortableText value={blogPost.content} />
 				</div>
+			</section>
 			</section>
 			<section>
 				<CommentSection />
