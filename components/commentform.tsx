@@ -25,12 +25,12 @@ export function CommentForm({ FieldValue, onCommentSubmitted }: CommentFormProps
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormLabel htmlFor="comment" className="text-left text-white">Type your message here:</FormLabel>
+      <FormLabel htmlFor="comment" className="text-lg font-bold">Type your message here:</FormLabel>
       <FormTextArea
         id="comment"
         name="comment"
         rows={7}
-        className="w-full p-3 text-black bg-white  ring-gray-300 rounded-3xl outline-none  ring-4 focus:ring-[#C5ACFF] "
+        className=" caret-[#0C0218] w-full p-3 text-[#0C0218] bg-white  ring-gray-300 rounded-xl outline-none  ring-4 focus:ring-[#C5ACFF] "
         placeholder="Type something here"
         required
         value={Value}

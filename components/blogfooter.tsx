@@ -4,7 +4,7 @@ import Link from "next/link"
 
 function BlogFooter() {
 	return (
-		<footer className={`${montserrat.className} p-3 bg-black/40 gap-y-6`}>
+		<footer className={`${montserrat.className} p-3 bg-[#07010E] gap-y-6`}>
 			<section className="mx-auto w-[90%] md:w-[85%] space-y-6 Prose prose-a:underline" >
 				<p className="font-bold" >
 					© 2024 Patrick&apos;s Blog – A Journey Through Technology, Philosophy, and Poetry

@@ -32,7 +32,7 @@ export default async function page({ params }: Props) {
 					height={540}
 					className="object-cover my-10 border-2 border-gray-700 aspect-video rounded-xl"
 				/>
-				<div className="" >
+				<div className="text-lg prose text-[#EBE5FF] prose-strong:text-[#d0c6ef] prose-a:text-white p prose-a:underline prose-a:decoration-green-500" >
 				<PortableText value={blogPost.content} />
 				</div>
 			</section>

@@ -35,7 +35,7 @@ export default async function RootLayout({
 
 	return (
 		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" lang="en">
-			<body className={` z-0 bg-[#140428] text-[#EBE5FF] ${nunito.className} `}>
+			<body className={` z-0 bg-[#0C0218] text-[#c8c2cc] ${nunito.className} `}>
 				<BlogHeader image={author.image} name={author.name} />
 				{/* <DraggableWrapper  Top={200} Left={15}> */}
 				{/* <FloatingIsland /> */}

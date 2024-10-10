@@ -12,7 +12,7 @@ interface Props {
 
 function DesktopHeader({ image, name }: Props) {
 	return (
-		<header className="border-4 border-[#140428]/50 flex flex-row justify-between rounded-full my-9 mx-auto w-[70%] px-4 py-3 font-bold text-[#d9ceff] bg-[#9f75ff]/60" >
+		<header className="border-4 shadow-2xl border-[#20102d] flex flex-row justify-between rounded-full my-9 mx-auto w-[70%] px-4 py-3 font-bold  bg-[#180c2a]" >
 			<div className="flex items-center" >
 				<Link href={'/blog'}>Patrick&apos;s Blog</Link>
 			</div>
@@ -32,7 +32,7 @@ function MobileHeader({ image, name }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<header className="flex flex-col w-[90%] my-9 mx-auto p-4 font-bold text-[#d9ceff] bg-[#9f75ff]/60 rounded-3xl">
+		<header className="flex flex-col w-[90%] my-9 mx-auto p-4 font-bold  bg-[#180c2a] rounded-3xl">
 			<div className="flex items-center justify-between">
 				<div>Patrick&apos;s Blog</div>
 				<div className='flex items-center space-x-1' >
