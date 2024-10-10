@@ -22,7 +22,7 @@ function Header({ pages }: HeaderProps) {
 					<div className="flex justify-between h-16">
 						{/* Logo Section */}
 						<div className="flex items-center flex-shrink-0">
-							<Link href="/" aria-label="Go to homepage">
+							<Link href="/portfolio" aria-label="Go to homepage">
 								<span className="text-3xl font-bold text-transparent bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text">
 									Oti.
 								</span>

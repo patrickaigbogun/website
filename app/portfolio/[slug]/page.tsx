@@ -24,7 +24,7 @@ export default async function Page({ params }: Props) {
 			<Suspense fallback={<LoadingUI />}>
 				<h1 className={` ${montserrat.className} my-14 text-white text-5xl font-bold`}>{page.title}</h1>
 
-				<img src={page.image} alt={page.alt} className="object-contain border-2 border-gray-900 rounded-full" />
+				{ page.image? <img src={page.image} alt={page.alt} className="object-contain border-2 border-gray-900 rounded-full w-52 h-52" /> : <p/>  }
 
 				<div className="mt-10 text-lg prose text-white transition prose-strong:text-white prose-headings:text-white prose-a:text-white p prose-a:underline prose-a:decoration-green-500">
 					<PortableText value={page.content} />

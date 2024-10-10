@@ -55,7 +55,7 @@ export default async function Project({ params }: Props) {
 					</div>
 
 					{/* Content here */}
-					<div className="text-lg text-white ">
+					<div className="text-lg prose text-white transition prose-strong:text-white prose-headings:text-white prose-a:text-white p prose-a:underline prose-a:decoration-green-500 prose-p:decoration-green-500">
 						<PortableText value={project.content} />
 					</div>
 				</div>
