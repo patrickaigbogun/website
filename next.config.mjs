@@ -8,7 +8,7 @@ const nextConfig = {
 		  has: [
 			{
 			  type: 'host',
-			  value: 'blog.patrickaigbogun.me',
+			  value: 'www.blog.patrickaigbogun.me',
 			},
 		  ],
 		},
