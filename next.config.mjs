@@ -1,14 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	images: {
-		remotePatterns: [
+	async rewrites() {
+	  return [
+		{
+		  source: '/:path*',
+		  destination: 'https://patrickaigbogun.me/blog/:path*',
+		  has: [
 			{
-				protocol: 'https',
-				hostname: 'cdn.sanity.io',
-				port: '',
+			  type: 'host',
+			  value: 'blog.patrickaigbogun.me',
 			},
-		],
+		  ],
+		},
+	  ];
 	},
-};
-
-export default nextConfig;
+	images: {
+	  remotePatterns: [
+		{
+		  protocol: 'https',
+		  hostname: 'cdn.sanity.io',
+		  port: '',
+		},
+	  ],
+	},
+  };
+  
+  export default nextConfig;
+  
