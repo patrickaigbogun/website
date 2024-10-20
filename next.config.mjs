@@ -3,8 +3,12 @@ const nextConfig = {
 	async rewrites() {
 	  return [
 		{
+		  source: '/blog/:path*',
+		  destination: '/blog/:path*', // Keep the destination internal
+		},
+		{
 		  source: '/:path*',
-		  destination: 'https://patrickaigbogun.me/blog/:path*',
+		  destination: '/blog/:path*', // Redirect everything else to /blog
 		  has: [
 			{
 			  type: 'host',
