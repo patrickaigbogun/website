@@ -3,9 +3,7 @@
 
 import { getProjects } from "@/sanity/sanity-utils";
 
-import LoadingUI from "@/components/loadingui";
 import { Hero } from "@/components/hero";
-import { Suspense } from "react";
 import { ProjectsGrid } from "@/components/projectsgrid";
 
 
@@ -17,9 +15,7 @@ export default async function PortfolioHome() {
 			<Hero />
 
 			{/* Show loading state while the projects are being fetched */}
-			<Suspense fallback={<LoadingUI />}>
-				<ProjectsGrid projects={projects} />
-			</Suspense>
+			<ProjectsGrid projects={projects} />
 		</div>
 	);
 }
