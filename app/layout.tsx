@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../globals.css";
+import "./globals.css";
 import { Footer } from "@/components/footer";
 import { getPages } from "@/sanity/sanity-utils";
 import Header from "@/components/header";
