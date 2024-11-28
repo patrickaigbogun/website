@@ -22,7 +22,7 @@ function Header({ pages }: HeaderProps) {
 					<div className="flex justify-between h-16">
 						{/* Logo Section */}
 						<div className="flex items-center flex-shrink-0">
-							<Link href="/portfolio" aria-label="Go to homepage">
+							<Link href='/' aria-label="Go to homepage">
 								<span className="text-3xl font-bold text-transparent bg-gradient-to-r from-green-900 via-green-700 to-green-300 bg-clip-text">
 									Oti.
 								</span>
@@ -34,7 +34,7 @@ function Header({ pages }: HeaderProps) {
 							{pages.map((page) => (
 								<Link
 									key={page._id}
-									href={`/portfolio/${page.slug}`}
+									href={`/${page.slug}`}
 									className="px-3 py-2 text-sm font-medium text-gray-300 transition duration-300 rounded-md hover:text-white hover:bg-green-400/10 hover:font-bold"
 									aria-label={`Go to ${page.title}`}
 								>
