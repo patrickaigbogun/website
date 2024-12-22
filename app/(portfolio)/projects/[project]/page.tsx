@@ -1,10 +1,6 @@
-// sanitytester\app\(site)\projects\[project]\page.tsx
-
-
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-// import Link from 'next/link';
 import LoadingUI from "@/components/loadingui";
 import { montserrat } from "@/fonts/fonts";
 import { NavBtn } from "@/components/NavBtn";
@@ -12,57 +8,44 @@ import { LinkButton } from "@/components/LinkButton";
 import { Suspense } from "react";
 
 type Props = {
-	params: { project: string }
+  params: { project: string };
 };
 
 export default async function Project({ params }: Props) {
+  const project = await getProject(params.project);
 
-	const project = await getProject(params.project);
+  return (
+    <div className="mb-10">
+      <header className="flex items-center justify-between gap-2 p-4 mx-auto my-2 max-w-screen-2xl">
+        <NavBtn direction="back">Go Back</NavBtn>
+        <LinkButton target={project.url} title="View project">
+          View Project
+        </LinkButton>
+      </header>
 
+      <Suspense fallback={<LoadingUI />}>
+        <div className="flex flex-col gap-10 px-4 mx-auto max-w-screen-2xl">
+          <h1
+            className={`text-white text-3xl sm:text-5xl font-bold text-start sm:text-center ${montserrat.className}`}
+          >
+            {project.name}
+          </h1>
 
-	return (
-		<div className="mb-10" >
+          <div className="flex items-center justify-center w-full">
+            <Image
+              src={project.image}
+              alt={project.name}
+              width={1920}
+              height={1080}
+              className="object-cover max-w-full border-2 border-gray-700 rounded-xl"
+            />
+          </div>
 
-			<header className="flex items-center justify-between gap-2 p-0 my-2 " >
-				<NavBtn direction="back" >Go Back</NavBtn>
-				{/* {project.url} */}
-				{/* View project */}
-				{/* View Project */}
-
-				<LinkButton
-					target={project.url}
-					title='View project'
-				>
-					View Project</LinkButton>
-			</header>
-			<Suspense fallback={<LoadingUI />}>
-				<div className="w-full md:w-[75%] mx-auto">
-					<h1 className={`my-14 text-white text-5xl font-bold ${montserrat.className}`}>
-						{project.name}
-					</h1>
-
-					<div className="flex justify-center">
-						<div className="p-0 m-0">
-							{/* Image here */}
-							<Image
-								src={project.image}
-								alt={project.name}
-								width={960}
-								height={540}
-								className="object-cover my-10 border-2 border-gray-700 aspect-video rounded-xl"
-							/>
-						</div>
-					</div>
-
-					{/* Content here */}
-					<div className="text-lg prose text-white transition prose-strong:text-white prose-headings:text-white prose-a:text-white p prose-a:underline prose-a:decoration-green-500 prose-p:decoration-green-500">
-						<PortableText value={project.content} />
-					</div>
-				</div>
-			</Suspense>
-
-
-		</div>
-
-	);
+          <div className="w-full max-w-full prose prose-lg text-justify text-white justify-evenly prose-headings:text-white prose-strong:text-white prose-a:text-green-500">
+            <PortableText value={project.content} />
+          </div>
+        </div>
+      </Suspense>
+    </div>
+  );
 }

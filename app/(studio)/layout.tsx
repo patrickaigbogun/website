@@ -3,7 +3,7 @@ import "../globals.css";
 
 
 export const metadata: Metadata = {
-	title: "A simple portfolio",
+	title: "Admin for Patrick Aigbogun's Portfolio ",
 	description: "personal website made with nextjs and sanitystudio",
 };
 

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 	description: "Personal blog where i discuss technologies, philosophy and poetry",
 };
 
-export default async function RootLayout({
+export default async function BlogLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
@@ -34,20 +34,18 @@ export default async function RootLayout({
 
 
 	return (
-		<html className="overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" lang="en">
-			<body className={` z-0 bg-[#0C0218] text-[#c8c2cc] ${nunito.className} `}>
+		<div className="flex flex-col min-h-screen overflow-y-scroll bg-[#0C0218] text-[#c8c2cc] scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" lang="en">
+			<section className={` flex-grow ${nunito.className} `}>
 				<BlogHeader image={author.image} name={author.name} />
 				{/* <DraggableWrapper  Top={200} Left={15}> */}
 				{/* <FloatingIsland /> */}
 				{/* </DraggableWrapper> */}
 				{/* <DraggableSidebar /> */}
-				<main className=" z-1 mx-auto flex justify-center w-[90%] sm:w-[85%] py-12  ">
+				<main className=" mx-auto flex-grow w-[90%] sm:w-[85%] py-12  ">
 					{children}
 				</main>
-				<section>
 					<BlogFooter />
-				</section>
-			</body>
-		</html>
+			</section>
+		</div>
 	);
 }
