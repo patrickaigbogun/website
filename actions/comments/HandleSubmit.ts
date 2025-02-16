@@ -1,5 +1,7 @@
 'use server';
 
+import { dataset, mutateToken, projectId } from "@/constants/envs";
+
 export async function submitComments(Value: string) {
 	const mutations = [{
 		create: {
@@ -9,11 +11,11 @@ export async function submitComments(Value: string) {
 	}];
 
 	try {
-		const response = await fetch(`https://${process.env.NEXT_PUBLIC_PROJECT_ID}.api.sanity.io/v2021-06-07/data/mutate/${process.env.NEXT_PUBLIC_DATASET}`, {
+		const response = await fetch(`https://${projectId}.api.sanity.io/v2021-06-07/data/mutate/${dataset}`, {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json',
-				Authorization: `Bearer ${process.env.COMMENT_TOKEN}` // Private key
+				Authorization: `Bearer ${mutateToken}` // Private key
 			},
 			body: JSON.stringify({ mutations })
 		});
