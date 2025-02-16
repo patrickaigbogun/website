@@ -16,9 +16,9 @@ export const SanityProjectId = {
 };
 
 export const SanityDataset = {
-    apiKey: getEnvironmentVariable("NEXT_PUBLIC_DATASET")
+	apiKey: getEnvironmentVariable("NEXT_PUBLIC_DATASET")
 };
 
 export const SanityMutateToken = {
-    apiKey: getEnvironmentVariable("MUTATE_TOKEN")
+	apiKey: getEnvironmentVariable("MUTATE_TOKEN")
 }
