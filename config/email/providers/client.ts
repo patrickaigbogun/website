@@ -1,5 +1,5 @@
-import { emailKeys } from '@/config/email/env';
-import { Resend } from 'resend';
+// import { emailKeys } from '@/config/email/env';
+// import { Resend } from 'resend';
 
-const apiKey = emailKeys.apiKey;
-export const emailConfig = new Resend(apiKey);
+// const apiKey = emailKeys.apiKey;
+// export const emailConfig = new Resend(apiKey);

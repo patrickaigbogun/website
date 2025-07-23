@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const SCHEMA_DIR = path.resolve('orm/schema');
+const SCHEMA_DIR = path.resolve('schemas/orm');
 const INDEX_FILE = path.join(SCHEMA_DIR, 'index.ts');
 
 function generateSchemaIndex() {

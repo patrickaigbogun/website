@@ -1,6 +1,6 @@
 //"@/app/(site)/page.tsx"
 
-import { getProjects } from '@/sanity/sanity-utils';
+import { getProjects } from '@/lib/cms/sanity';
 
 import { Hero } from '@/components/hero';
 import { ProjectsGrid } from '@/components/projectsgrid';

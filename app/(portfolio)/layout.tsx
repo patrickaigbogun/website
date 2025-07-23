@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import '../globals.css';
 import { Footer } from '@/components/footer';
-import { getPages } from '@/sanity/sanity-utils';
+import { getPages } from '@/lib/cms/sanity';
 import Header from '@/components/header';
 
 import { nunito } from '@/fonts/fonts';
-import { div } from 'framer-motion/client';
 
 export const metadata: Metadata = {
 	title: 'A simple portfolio',

@@ -1,5 +1,5 @@
 import CommentSection from '@/components/commentsection';
-import { getblogPost, urlFor } from '@/sanity/sanity-utils';
+import { getblogPost, urlFor } from '@/lib/cms/sanity';
 import { PortableText } from 'next-sanity';
 
 type Props = {

@@ -1,6 +1,4 @@
-export const revalidate = 60; // Revalidate every 60 seconds by default
-
-import { getPage } from '@/sanity/sanity-utils';
+import { getPage } from '@/lib/cms/sanity';
 import { ContactForm } from '@/components/contactform';
 import { montserrat } from '@/fonts/fonts';
 import { NavBtn } from '@/components/NavBtn';

@@ -9,8 +9,8 @@
 import { defineConfig } from '@patrickaigbogunoti/x-env';
 
 export default defineConfig({
-	publicPrefix: ['NEXT_PUBLIC_', 'VITE'],
+	publicPrefix: ['NEXT_PUBLIC_'],
 	env: ['.env', '.env.local', '.env.production'],
 	generated: 'types/env/index.ts',
-	entryPoints: ['app.ts', 'next.config.ts'],
+	entryPoints: ['next.config.ts'],
 });

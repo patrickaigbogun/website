@@ -2,7 +2,7 @@ import chokidar from 'chokidar';
 import { execSync } from 'child_process';
 import path from 'path';
 
-const SCHEMA_DIR = path.resolve('orm/schema');
+const SCHEMA_DIR = path.resolve('schemas/orm');
 
 console.log('👀 Watching schema directory for changes...');
 

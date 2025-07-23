@@ -1,10 +1,10 @@
 // db/relations.ts
 import { relations } from 'drizzle-orm';
-import { articles } from './schema/articles';
-import { resources } from './schema/resources';
-import { videos } from './schema/videos';
-import { chapters } from './schema/chapters';
-import { courses } from './schema/courses';
+import { articles } from './articles';
+import { resources } from './resources';
+import { videos } from './videos';
+import { chapters } from './chapters';
+import { courses } from './courses';
 
 export const courseRelations = relations(courses, ({ many }) => ({
 	chapters: many(chapters),

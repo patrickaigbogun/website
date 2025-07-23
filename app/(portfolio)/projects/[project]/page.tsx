@@ -1,4 +1,4 @@
-import { getProject } from '@/sanity/sanity-utils';
+import { getProject } from '@/lib/cms/sanity';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import LoadingUI from '@/components/loadingui';

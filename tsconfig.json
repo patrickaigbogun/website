@@ -29,7 +29,8 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"./types/env/index.ts",
-		"./lib/env/helpers.ts"
+		"./lib/env/helpers.ts",
+		"config/cms/providers"
 	],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", "dist", ".next", "public", "coverage", "build"]
 }

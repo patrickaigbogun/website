@@ -1,5 +1,5 @@
-import { getServerEnv } from 'x-env-helpers';
+// import { getServerEnv } from 'x-env-helpers';
 
-export const emailKeys = {
-	apiKey: getServerEnv('EMAIL_KEY'),
-};
+// export const emailKeys = {
+// 	apiKey: getServerEnv('EMAIL_KEY'),
+// };

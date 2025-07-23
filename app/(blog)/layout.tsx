@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import '../globals.css';
 import { nunito } from '@/fonts/fonts';
 import { BlogHeader } from '@/components/blogheader';
-import { getAuthorImage } from '@/sanity/sanity-utils';
+import { getAuthorImage } from '@/lib/cms/sanity';
 import BlogFooter from '@/components/blogfooter';
 
 // import DraggableWrapper from "@/components/dragwrapper";
