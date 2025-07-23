@@ -5,7 +5,7 @@
 import { useEffect, useState } from 'react';
 import * as motion from 'framer-motion/client';
 // import { CommentBubble } from "./commentbubble";
-import { getComments } from '@/sanity/sanity-utils';
+import { getComments } from '@/lib//cms/sanity';
 import { CommentTypes } from '@/types/Comments'; // Ensure you import your CommentTypes
 // import { CommentForm } from "./commentform";
 import dynamic from 'next/dynamic';

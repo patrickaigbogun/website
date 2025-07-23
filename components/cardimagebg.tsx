@@ -1,6 +1,6 @@
 'use client';
 
-import { urlFor } from '@/sanity/sanity-utils';
+import { urlFor } from '@/lib//cms/sanity';
 import { CardImageBgProps } from '@/types/components';
 import { PortableText } from 'next-sanity';
 import Image from 'next/image';
