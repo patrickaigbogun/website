@@ -24,7 +24,7 @@ export default async function BlogLayout({
 }>) {
 	const author = await getAuthorImage();
 	if (!author) {
-		console.log("Author not found");
+		console.warn("Author not found");
 		return (
 			<div>
 				<p>Author not found.</p>
@@ -34,7 +34,7 @@ export default async function BlogLayout({
 
 
 	return (
-		<div className="flex flex-col min-h-screen overflow-y-scroll bg-[#0C0218] text-[#c8c2cc] scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" lang="en">
+		<div className="flex flex-col min-h-screen overflow-y-scroll bg-[#0C0218] text-[#c8c2cc] scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-gray-700/20 scrollbar-thumb-[#ded1ff]/30" >
 			<section className={` flex-grow ${nunito.className} `}>
 				<BlogHeader image={author.image} name={author.name} />
 				{/* <DraggableWrapper  Top={200} Left={15}> */}
