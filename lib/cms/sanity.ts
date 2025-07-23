@@ -2,7 +2,7 @@
 
 import { Project } from '@/types/Projects';
 import { createClient, groq } from 'next-sanity';
-import {clientConfig} from '@/config/cms/providers/client';
+import clientConfig from '@/config/cms/providers/client';
 import { Page } from '@/types/Page';
 import { blogPost } from '@/types/blogPost';
 import imageUrlBuilder from '@sanity/image-url';
