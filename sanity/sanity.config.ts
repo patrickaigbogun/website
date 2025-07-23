@@ -1,11 +1,12 @@
+import { projectId, dataset } from "@/constants/envs";
 import schemas from "./schemas";
 import {structureTool} from 'sanity/structure'
 
 
 const config = {
-	projectId: "d8emt0pr",
+	projectId: projectId,
 
-	dataset: "production",
+	dataset: dataset,
 
 	title: "my personal website",
 
