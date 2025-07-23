@@ -1,3 +1,3 @@
-import { StorageService } from '@/services/StorageService';
+// import { StorageService } from '@/services/StorageService';
 
-export const storageService = new StorageService();
+// export const storageService = new StorageService();

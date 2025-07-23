@@ -21,7 +21,8 @@
 			"@/*": ["./*"],
 			"x-env-types": ["./types/env/index.ts"],
 			"x-env-helpers": ["./lib/env/helpers.ts"]
-		}
+		},
+		"target": "ES2017"
 	},
 	"include": [
 		"next-env.d.ts",
