@@ -1,16 +1,13 @@
 // @/components/BlogPostsGrid
 
-
-
 import { blogPostsProps } from '@/types/components';
-import {CardImageBg} from '@/components/cardimagebg';
-
+import { CardImageBg } from '@/components/cardimagebg';
 
 export function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 	return (
 		<section className='flex justify-center'>
 			<div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-				{blogPosts.map((blogPost) => {
+				{blogPosts.map(blogPost => {
 					console.log(blogPost); // Correctly logs individual blog post
 					return (
 						<CardImageBg
@@ -29,6 +26,5 @@ export function BlogPostsGrid({ blogPosts }: blogPostsProps) {
 				})}
 			</div>
 		</section>
-		
 	);
 }

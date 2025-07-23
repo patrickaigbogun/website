@@ -6,39 +6,67 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"gen:schema": "tsx scripts/generate-schema.ts",
+		"watch:schema": "tsx scripts/watch-schema.ts",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"format:fix": "prettier --write --list-different .",
+		"prepare": "husky"
 	},
 	"dependencies": {
+		"@aws-sdk/client-s3": "^3.848.0",
+		"@aws-sdk/s3-request-presigner": "^3.848.0",
 		"@headlessui/react": "^2.2.4",
 		"@heroicons/react": "^2.2.0",
+		"@mux/mux-node": "^12.2.0",
 		"@phosphor-icons/react": "^2.1.10",
 		"@portabletext/react": "^3.2.1",
+		"@react-email/components": "^0.3.2",
 		"@sanity/image-url": "^1.1.0",
 		"@sanity/structure": "^2.36.2",
+		"bcryptjs": "^3.0.2",
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
 		"framer-motion": "^12.23.6",
 		"next": "^15.4.3",
 		"next-sanity": "^10.0.3",
+		"next-video": "^2.2.1",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
+		"react-email": "^4.2.3",
 		"react-simple-typewriter": "^5.0.1",
+		"resend": "^4.7.0",
 		"rxjs": "^7.8.2",
 		"sanity": "^4.1.1",
 		"sharp": "^0.34.3",
 		"styled-components": "^6.1.19",
-		"tailwind-scrollbar": "^4.0.2"
+		"tailwind-scrollbar": "^3.1.0"
 	},
 	"devDependencies": {
+		"@neondatabase/serverless": "^1.0.1",
+		"@patrickaigbogunoti/x-env": "^0.2.137",
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/node": "^24.1.0",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"autoprefixer": "^10.4.21",
+		"chokidar": "^4.0.3",
+		"drizzle-kit": "^0.31.4",
+		"drizzle-orm": "^0.44.3",
 		"eslint": "^8.57.1",
 		"eslint-config-next": "^15.4.3",
+		"husky": "^9.1.7",
+		"pnpm": "^10.13.1",
 		"postcss": "^8.5.6",
+		"prettier": "^3.6.2",
 		"tailwindcss": "^3.4.16",
+		"tsx": "^4.20.3",
 		"typescript": "^5.8.3"
+	},
+	"pnpm": {
+		"overrides": {
+			"@sanity/icons": "^3.7.4"
+		}
 	}
 }

@@ -1,7 +1,5 @@
 // // @/components/BlogPostGridWrapper.tsx
 
-
-
 // import { getblogPosts } from '@/sanity/sanity-utils';
 // import BlogPostsGrid from '@/components/BlogPostsGrid';
 // import { Suspense } from 'react';

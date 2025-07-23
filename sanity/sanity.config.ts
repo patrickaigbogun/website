@@ -1,18 +1,17 @@
-import { projectId, dataset } from "@/constants/envs";
-import schemas from "./schemas";
-import {structureTool} from 'sanity/structure'
-
+import { projectId, dataset } from '@/constants/envs';
+import schemas from './schemas';
+import { structureTool } from 'sanity/structure';
 
 const config = {
 	projectId: projectId,
 
 	dataset: dataset,
 
-	title: "my personal website",
+	title: 'my personal website',
 
-	apiVersion: "2024-06-30",
+	apiVersion: '2024-06-30',
 
-	basePath: "/admin",
+	basePath: '/admin',
 
 	plugins: [structureTool()],
 

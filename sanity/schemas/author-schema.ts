@@ -1,45 +1,42 @@
-
 const author = {
-	name: "author",
+	name: 'author',
 
-	title: "Author",
+	title: 'Author',
 
-	type: "document",
-
-
+	type: 'document',
 
 	fields: [
 		{
-			name: "name",
-			title: "Name",
-			type: "string",
+			name: 'name',
+			title: 'Name',
+			type: 'string',
 		},
 		{
-			name: "slug",
-			title: "Slug",
-			type: "slug",
-			options: { source: "name" },
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			options: { source: 'name' },
 		},
 		{
 			title: 'Publish date',
 			name: 'publishDate',
 			type: 'date',
 			options: {
-			  dateFormat: 'YYYY-MM-DD',
-			  calendarTodayLabel: 'Today'
+				dateFormat: 'YYYY-MM-DD',
+				calendarTodayLabel: 'Today',
 			},
-		  },
+		},
 		{
-			name: "image",
-			title: "Image",
-			type: "image",
+			name: 'image',
+			title: 'Image',
+			type: 'image',
 			options: { hotspot: true },
 			fields: [
 				{
-					name: "alt",
-					title: "Alt",
-					type: "string",
-					options: {source: "name"},
+					name: 'alt',
+					title: 'Alt',
+					type: 'string',
+					options: { source: 'name' },
 				},
 			],
 		},

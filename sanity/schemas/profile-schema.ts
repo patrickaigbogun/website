@@ -1,18 +1,15 @@
-
 const profile = {
-	name: "profile",
+	name: 'profile',
 
-	title: "Profile",
+	title: 'Profile',
 
-	type: "document",
-
-
+	type: 'document',
 
 	fields: [
 		{
-			name: "username",
-			title: "Username",
-			type: "string",
+			name: 'username',
+			title: 'Username',
+			type: 'string',
 		},
 	],
 };

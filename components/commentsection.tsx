@@ -2,21 +2,25 @@
 
 //"@/components/commentsection.tsx"
 
-import { useEffect, useState } from "react";
-import * as motion from "framer-motion/client";
+import { useEffect, useState } from 'react';
+import * as motion from 'framer-motion/client';
 // import { CommentBubble } from "./commentbubble";
-import { getComments } from "@/sanity/sanity-utils";
-import { CommentTypes } from "@/types/Comments"; // Ensure you import your CommentTypes
+import { getComments } from '@/sanity/sanity-utils';
+import { CommentTypes } from '@/types/Comments'; // Ensure you import your CommentTypes
 // import { CommentForm } from "./commentform";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
-const CommentForm = dynamic(() => import('@/components/commentform').then((mod) => mod.CommentForm), { ssr: false })
-const CommentBubble = dynamic(() => import('@/components/commentbubble').then((mod) => mod.CommentBubble), { loading: () => <p>Loading...</p>, ssr: false })
-
+const CommentForm = dynamic(
+	() => import('@/components/commentform').then(mod => mod.CommentForm),
+	{ ssr: false }
+);
+const CommentBubble = dynamic(
+	() => import('@/components/commentbubble').then(mod => mod.CommentBubble),
+	{ loading: () => <p>Loading...</p>, ssr: false }
+);
 
 function CommentSection() {
-
-	const [showMore, setShowMore] = useState(false)
+	const [showMore, setShowMore] = useState(false);
 
 	const [comments, setComments] = useState<CommentTypes[]>([]); // Specify the type here
 	const [shouldRevalidate, setShouldRevalidate] = useState(false);
@@ -41,33 +45,41 @@ function CommentSection() {
 	}, []);
 
 	const handleCommentSubmitted = () => {
-		setShouldRevalidate((prev) => !prev); // Toggle the state to trigger revalidation
+		setShouldRevalidate(prev => !prev); // Toggle the state to trigger revalidation
 	};
 
 	return (
-		<section className="w-full p-0 mx-auto my-8 space-y-10 text-center sm:max-w-3xl">
+		<section className='w-full p-0 mx-auto my-8 space-y-10 text-center sm:max-w-3xl'>
 			<section>
-				<CommentForm FieldValue={''} onCommentSubmitted={handleCommentSubmitted} />
+				<CommentForm
+					FieldValue={''}
+					onCommentSubmitted={handleCommentSubmitted}
+				/>
 			</section>
 
 			<button onClick={() => setShowMore(!showMore)}>
-				<h2 className="p-2 m-0 text-xl font-bold text-black transition-all ease-linear bg-white border-4 border-gray-200 rounded-full hover:scale-105">
-					{showMore ? 'Hide Comments' : `Show Comments (${comments.length})`}
+				<h2 className='p-2 m-0 text-xl font-bold text-black transition-all ease-linear bg-white border-4 border-gray-200 rounded-full hover:scale-105'>
+					{showMore
+						? 'Hide Comments'
+						: `Show Comments (${comments.length})`}
 				</h2>
 			</button>
 
-			<div className={`transition-opacity duration-500 ${showMore ? 'opacity-100' : 'opacity-0'}`}>
-    {showMore && (
-        <section className="space-y-6">
-            {comments.length > 0 ? (
-                <CommentBubble comments={comments} />
-            ) : (
-                <p className="text-gray-500">No comments yet. Be the first to comment!</p>
-            )}
-        </section>
-    )}
-</div>
-
+			<div
+				className={`transition-opacity duration-500 ${showMore ? 'opacity-100' : 'opacity-0'}`}
+			>
+				{showMore && (
+					<section className='space-y-6'>
+						{comments.length > 0 ? (
+							<CommentBubble comments={comments} />
+						) : (
+							<p className='text-gray-500'>
+								No comments yet. Be the first to comment!
+							</p>
+						)}
+					</section>
+				)}
+			</div>
 		</section>
 	);
 }

@@ -1,16 +1,13 @@
 // import { group } from "console";
 
-import { RuleType } from "@/types/components";
-
-
-
+import { RuleType } from '@/types/components';
 
 const blogPost = {
-	name: "blogPost",
+	name: 'blogPost',
 
-	title: "BlogPosts",
+	title: 'BlogPosts',
 
-	type: "document",
+	type: 'document',
 
 	groups: [
 		{
@@ -25,35 +22,38 @@ const blogPost = {
 
 	fields: [
 		{
-			name: "title",
-			title: "Title",
-			type: "string",
-			group: ["seo", "summary"],
+			name: 'title',
+			title: 'Title',
+			type: 'string',
+			group: ['seo', 'summary'],
 		},
 		{
-			name: "slug",
-			title: "Slug",
-			type: "slug",
-			options: { source: "title" },
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			options: { source: 'title' },
 		},
 		{
-			name: "tagline",
-			title: "Tagline",
-			type: "string",
-			group: ["seo", "summary"],
-			validation: (rule: RuleType)=> [
-				rule.required().min(10).error('A tagline of min. 10 characters is required'),
-			]			
+			name: 'tagline',
+			title: 'Tagline',
+			type: 'string',
+			group: ['seo', 'summary'],
+			validation: (rule: RuleType) => [
+				rule
+					.required()
+					.min(10)
+					.error('A tagline of min. 10 characters is required'),
+			],
 		},
 		{
-			name: "excerpt",
-			title: "Excerpt",
-			type: "array",
-			of: [{ type: "block" }],
-			group: ["summary"],
-			validation: (rule: RuleType)=> [
-				rule.max(150).error('Shorter excerpts are usually better')
-			]		
+			name: 'excerpt',
+			title: 'Excerpt',
+			type: 'array',
+			of: [{ type: 'block' }],
+			group: ['summary'],
+			validation: (rule: RuleType) => [
+				rule.max(150).error('Shorter excerpts are usually better'),
+			],
 		},
 		{
 			title: 'Publish date',
@@ -61,36 +61,35 @@ const blogPost = {
 			type: 'date',
 			options: {
 				dateFormat: 'YYYY-MM-DD',
-				calendarTodayLabel: 'Today'
+				calendarTodayLabel: 'Today',
 			},
-			group: ["seo", "summary"],
+			group: ['seo', 'summary'],
 		},
 		{
 			name: 'authors',
 			type: 'reference',
 			title: 'Authors',
 			to: [{ type: 'author' }],
-			group: ["summary"],
+			group: ['summary'],
 		},
 		{
-			name: "image",
-			title: "Image",
-			type: "image",
+			name: 'image',
+			title: 'Image',
+			type: 'image',
 			options: { hotspot: true },
-				
 		},
 		{
-			name: "alt",
-			title: "Alt Text",
-			type: "string",
+			name: 'alt',
+			title: 'Alt Text',
+			type: 'string',
 			validation: (rule: RuleType) => rule.required(),
-		},	
-	
+		},
+
 		{
-			name: "content",
-			title: "Content",
-			type: "array",
-			of: [{ type: "block" }],
+			name: 'content',
+			title: 'Content',
+			type: 'array',
+			of: [{ type: 'block' }],
 		},
 	],
 };
