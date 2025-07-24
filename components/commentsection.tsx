@@ -27,7 +27,7 @@ function CommentSection() {
 
 	// Fetch comments from your API
 	const fetchComments = async () => {
-		const fetchedComments = await getComments();
+		const fetchedComments = await getComments('2');
 		setComments(fetchedComments); // This will now accept CommentTypes[]
 	};
 

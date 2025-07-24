@@ -1,6 +1,6 @@
 'use client';
 
-import { urlFor } from '@/lib//cms/sanity';
+import { urlFor } from '@/utils/cms/sanity';
 import { CardImageBgProps } from '@/types/components';
 import { PortableText } from 'next-sanity';
 import Image from 'next/image';
@@ -30,7 +30,7 @@ export function CardImageBg({
 				{/* Background Image */}
 				<div className={`${className} absolute inset-0`}>
 					<Image
-						src={urlFor(imageSrc).url()}
+						src={imageSrc}
 						alt={alt}
 						fill
 						className={`object-cover `}

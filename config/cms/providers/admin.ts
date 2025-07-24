@@ -1,4 +1,4 @@
-import { sanityDataset, sanityProjectId } from '@/config/cms/env';
+import { sanityDataset, sanityProjectId } from '@/config/cms/env/client';
 import schemas from '@/schemas/cms';
 import { structureTool } from 'sanity/structure';
 

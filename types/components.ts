@@ -89,7 +89,7 @@ export type RuleType = {
 
 export type CardImageBgProps = {
 	href: string;
-	imageSrc: { asset: { _ref: string } };
+	imageSrc: string;
 	alt: string;
 	title?: string;
 	tagline?: string;

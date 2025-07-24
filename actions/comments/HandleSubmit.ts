@@ -1,10 +1,7 @@
 'use server';
 
-import {
-	sanityDataset,
-	sanityMutateToken,
-	sanityProjectId,
-} from '@/config/cms/env';
+import { sanityMutateToken } from '@/config/cms/env/server';
+import { sanityProjectId, sanityDataset } from '@/config/cms/env/client';
 
 export async function submitComments(Value: string) {
 	const mutations = [

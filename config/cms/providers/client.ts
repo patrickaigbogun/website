@@ -1,4 +1,4 @@
-import { sanityDataset, sanityProjectId } from '@/config/cms/env';
+import { sanityDataset, sanityProjectId } from '@/config/cms/env/client';
 
 const clientConfig = {
 	projectId: sanityProjectId,

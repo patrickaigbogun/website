@@ -2,18 +2,20 @@
 
 import { blogPostsProps } from '@/types/components';
 import { CardImageBg } from '@/components/cardimagebg';
+import { url } from 'inspector';
+import { urlFor } from '@/lib/cms/sanity';
 
 export function BlogPostsGrid({ blogPosts }: blogPostsProps) {
+	const image = urlFor(blogPosts[0].image).url();
 	return (
 		<section className='flex justify-center'>
 			<div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
 				{blogPosts.map(blogPost => {
-					console.log(blogPost); // Correctly logs individual blog post
 					return (
 						<CardImageBg
 							key={blogPost._id}
 							href={`/blog/post/${blogPost.slug}`}
-							imageSrc={blogPost.image}
+							imageSrc={image}
 							alt={blogPost.alt || 'Blog post image'}
 							title={blogPost.title}
 							tagline={blogPost.tagline}
