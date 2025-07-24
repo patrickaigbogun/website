@@ -1,11 +1,9 @@
-import { Page } from "./Page";
-import { blogPost } from './blogPost'
-import { FormEventHandler } from "react";
-import { Project } from "./Projects";
-import { PortableTextBlock } from "@portabletext/react";
-import { CommentTypes } from "./Comments";
-
-
+import { Page } from './Page';
+import { blogPost } from './blogPost';
+import { FormEventHandler } from 'react';
+import { Project } from './Projects';
+import { PortableTextBlock } from '@portabletext/react';
+import { CommentTypes } from './Comments';
 
 export type HeaderProps = {
 	pages: Page[];
@@ -49,8 +47,7 @@ export type FormProps = {
 	method?: 'GET' | 'POST' | 'PUT' | 'DELETE'; // More specific method types
 	autoComplete?: AutoCompleteOptions; // Narrowed type for autocomplete
 	children?: React.ReactNode;
-}
-
+};
 
 export type FormTextAreaProps = {
 	id: string;
@@ -58,16 +55,16 @@ export type FormTextAreaProps = {
 	rows: number;
 	className?: string;
 	placeholder: string;
-	value?: string
+	value?: string;
 	required?: boolean;
 	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-}
+};
 
 export type FormLabelProps = {
 	htmlFor: string;
 	className: string;
 	children?: React.ReactNode;
-}
+};
 
 export type FormButtonProps = {
 	children: React.ReactNode;
@@ -79,22 +76,20 @@ export type FormButtonProps = {
 	popovertargetaction?: 'toggle' | 'show' | 'hide'; // Narrowed type
 };
 
-
 export type RuleType = {
 	error(arg0: string): unknown;
 	warning: (arg0: string) => RuleType;
-	required: () => RuleType
-	min: (min: number) => RuleType
-	max: (max: number) => RuleType
-	length: (exactLength: number) => RuleType
-	greaterThan: (gt: number) => RuleType
-	uri: (options: { scheme: string[] }) => RuleType
+	required: () => RuleType;
+	min: (min: number) => RuleType;
+	max: (max: number) => RuleType;
+	length: (exactLength: number) => RuleType;
+	greaterThan: (gt: number) => RuleType;
+	uri: (options: { scheme: string[] }) => RuleType;
 };
 
-
 export type CardImageBgProps = {
-	href:string
-	imageSrc: { asset: { _ref: string } };
+	href: string;
+	imageSrc: string;
 	alt: string;
 	title?: string;
 	tagline?: string;
@@ -107,9 +102,8 @@ export type CardImageBgProps = {
 
 export type ProjectsGridProps = {
 	projects: Project[];
-}
-
+};
 
 export type commentProps = {
 	comments: CommentTypes[];
-}
+};

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Run build to ensure everything compiles
+echo "🏗️  Running build to ensure everything compiles..."
+pnpm build
+
+echo "✅ Pre-push checks passed!"

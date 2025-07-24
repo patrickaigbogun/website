@@ -1,17 +1,14 @@
-
 //"@/app/(site)/page.tsx"
 
-import { getProjects } from "@/sanity/sanity-utils";
+import { getProjects } from '@/lib/cms/sanity';
 
-import { Hero } from "@/components/hero";
-import { ProjectsGrid } from "@/components/projectsgrid";
-
-
+import { Hero } from '@/components/hero';
+import { ProjectsGrid } from '@/components/projectsgrid';
 
 export default async function PortfolioHome() {
 	const projects = await getProjects();
 	return (
-		<div className="mb-10">
+		<div className='mb-10'>
 			<Hero />
 
 			{/* Show loading state while the projects are being fetched */}
