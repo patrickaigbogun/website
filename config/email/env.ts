@@ -1,5 +1,3 @@
-// import { getServerEnv } from 'x-env-helpers';
-
-// export const emailKeys = {
-// 	apiKey: getServerEnv('EMAIL_KEY'),
-// };
+export const emailKeys = {
+	apiKey: process.env.EMAIL_KEY!,
+};

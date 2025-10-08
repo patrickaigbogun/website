@@ -1,13 +1,12 @@
-// import { defineConfig } from 'drizzle-kit';
-// // import { pgSqlDb } from './config/db/providers/client';
-// // import { dbKeys } from './config/db/env';
+import { defineConfig } from 'drizzle-kit';
+import { dbKeys } from './config/db/env';
 
-// // import { neonDbUrl } from '#/constants/db';
-// export default defineConfig({
-// 	out: './migrations/drizzle',
-// 	schema: './schemas/orm',
-// 	dialect: 'postgresql',
-// 	dbCredentials: {
-// 		url: dbKeys.url,
-// 	},
-// });
+export default defineConfig({
+	out: './orm/drizzle',
+	schema: ['./orm/schema/', './orm/enums.ts'],
+	dialect: 'postgresql',
+	dbCredentials: {
+		url: dbKeys.url,
+	},
+	casing: 'snake_case', // This will automatically convert camelCase to snake_case
+});

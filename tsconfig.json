@@ -1,37 +1,40 @@
 {
 	"compilerOptions": {
-		"lib": ["dom", "dom.iterable", "esnext"],
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"outDir": "dist",
 		"allowJs": true,
 		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
 		"esModuleInterop": true,
-		"module": "esnext",
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
+		"noEmit": true,
 		"jsx": "preserve",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./*"],
+			"#/*": ["./app/*"],
+			"@components/*": ["./components/*"],
+			"@lib/*": ["./lib/*"],
+			"@utils/*": ["./utils/*"],
+			"@routes/*": ["./routes/*"],
+			"@config/*": ["./config/*"],
+			"@core/*": ["./core/*"],
+			"@constants/*": ["./constants/*"],
+			"@types/*": ["./types/*"],
+			"@hooks/*": ["./hooks/*"]
+		},
+		"strict": true,
+		"allowSyntheticDefaultImports": true,
 		"incremental": true,
 		"plugins": [
 			{
 				"name": "next"
 			}
-		],
-		"paths": {
-			"@/*": ["./*"],
-			"x-env-types": ["./types/env/index.ts"],
-			"x-env-helpers": ["./lib/env/helpers.ts"]
-		},
-		"target": "ES2017"
+		]
 	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".next/types/**/*.ts",
-		"./types/env/index.ts",
-		"./lib/env/helpers.ts",
-		"config/cms/providers"
-	],
+	"include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
 	"exclude": ["node_modules", "dist", ".next", "public", "coverage", "build"]
 }

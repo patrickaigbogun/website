@@ -1,3 +1,366 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* globals.css */
+
+:root {
+	/* Light mode */
+	--bg-dark: oklch(0.92 0.015 97);
+	--bg: oklch(0.96 0.015 97);
+	--bg-light: oklch(1 0.015 97);
+
+	--text: oklch(0.15 0.03 97);
+	--text-muted: oklch(0.4 0.03 97);
+
+	--highlight: oklch(1 0.03 97);
+
+	--border: oklch(0.6 0.03 97);
+	--border-muted: oklch(0.7 0.03 97);
+
+	--primary: oklch(0.4 0.1 97);
+	--secondary: oklch(0.4 0.1 277);
+	--danger: oklch(0.5 0.05 30);
+	--warning: oklch(0.5 0.05 100);
+	--success: oklch(0.5 0.05 160);
+	--info: oklch(0.5 0.05 260);
+}
+
+::selection {
+	background: var(--highlight);
+	color: var(--bg);
+}
+
+.dark {
+	/* Dark mode */
+	--bg-dark: oklch(0.1 0.015 97);
+	--bg: oklch(0.15 0.015 97);
+	--bg-light: oklch(0.2 0.015 97);
+
+	--text: oklch(0.96 0.03 97);
+	--text-muted: oklch(0.76 0.03 97);
+
+	--highlight: oklch(0.5 0.03 97);
+
+	--border: oklch(0.4 0.03 97);
+	--border-muted: oklch(0.3 0.03 97);
+
+	--primary: oklch(0.76 0.1 97);
+	--secondary: oklch(0.76 0.1 277);
+	--danger: oklch(0.7 0.05 30);
+	--warning: oklch(0.7 0.05 100);
+	--success: oklch(0.7 0.05 160);
+	--info: oklch(0.7 0.05 260);
+}
+
+/* Base styles and resets */
+html {
+	font-family: system-ui, sans-serif;
+	font-feature-settings:
+		'liga' 1,
+		'calt' 1;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--bg);
+	color: var(--text);
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--bg);
+	color: var(--text);
+	line-height: 1.6;
+}
+
+/* Tailwind container override */
+.container {
+	@apply mx-auto px-4;
+}
+
+/* Glassmorphic Popover Styles */
+.glassmorphic-popover {
+	backdrop-filter: blur(20px) saturate(150%);
+	-webkit-backdrop-filter: blur(20px) saturate(150%);
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow:
+		0 8px 32px rgba(0, 0, 0, 0.1),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2);
+	color: var(--text);
+	transition: all 0.3s ease;
+}
+
+.glassmorphic-popover:hover {
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow:
+		0 12px 40px rgba(0, 0, 0, 0.15),
+		inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode glassmorphic popover */
+.dark .glassmorphic-popover {
+	background: rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow:
+		0 8px 32px rgba(255, 255, 255, 0.05),
+		inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .glassmorphic-popover:hover {
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	box-shadow:
+		0 12px 40px rgba(255, 255, 255, 0.1),
+		inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Toast styles (commented but available) */
+.glassmorphic-toast {
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.glassmorphic-toast:hover {
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+	transform: translateY(-2px);
+}
+
+/* Dark mode glassmorphism */
+.dark .glassmorphic-toast {
+	background: rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05);
+}
+
+.dark .glassmorphic-toast:hover {
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	box-shadow: 0 12px 40px rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced glassmorphic variant with more blur */
+.glassmorphic-toast-enhanced {
+	backdrop-filter: blur(30px) saturate(150%);
+	-webkit-backdrop-filter: blur(30px) saturate(150%);
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	box-shadow:
+		0 8px 32px rgba(0, 0, 0, 0.1),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Frosted glass variant */
+.glassmorphic-toast-frosted {
+	backdrop-filter: blur(40px) brightness(1.1);
+	-webkit-backdrop-filter: blur(40px) brightness(1.1);
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.12) 0%,
+		rgba(255, 255, 255, 0.06) 100%
+	);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	box-shadow:
+		0 15px 35px rgba(0, 0, 0, 0.1),
+		0 5px 15px rgba(0, 0, 0, 0.05),
+		inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Reusable Spring Animations System */
+
+/* Base spring animation keyframes */
+@keyframes springIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.96);
+	}
+	30% {
+		opacity: 0.6;
+		transform: scale(1.01);
+	}
+	60% {
+		opacity: 0.9;
+		transform: scale(0.999);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes springOut {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+}
+
+/* Directional slide + spring combinations */
+@keyframes springSlideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(6px) scale(0.96);
+	}
+	30% {
+		opacity: 0.6;
+		transform: translateY(-1px) scale(1.01);
+	}
+	60% {
+		opacity: 0.9;
+		transform: translateY(0.5px) scale(0.999);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes springSlideDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-6px) scale(0.96);
+	}
+	30% {
+		opacity: 0.6;
+		transform: translateY(1px) scale(1.01);
+	}
+	60% {
+		opacity: 0.9;
+		transform: translateY(-0.5px) scale(0.999);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes springSlideLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(6px) scale(0.96);
+	}
+	30% {
+		opacity: 0.6;
+		transform: translateX(-1px) scale(1.01);
+	}
+	60% {
+		opacity: 0.9;
+		transform: translateX(0.5px) scale(0.999);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+}
+
+@keyframes springSlideRight {
+	0% {
+		opacity: 0;
+		transform: translateX(-6px) scale(0.96);
+	}
+	30% {
+		opacity: 0.6;
+		transform: translateX(1px) scale(1.01);
+	}
+	60% {
+		opacity: 0.9;
+		transform: translateX(-0.5px) scale(0.999);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+}
+
+/* Reusable animation classes */
+.animate-spring-in {
+	animation: springIn 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-spring-out {
+	animation: springOut 200ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+.animate-spring-slide-up {
+	animation: springSlideUp 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-spring-slide-down {
+	animation: springSlideDown 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-spring-slide-left {
+	animation: springSlideLeft 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-spring-slide-right {
+	animation: springSlideRight 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Legacy classes for backwards compatibility */
+.animate-slideUpAndFade {
+	animation: springSlideUp 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-slideRightAndFade {
+	animation: springSlideRight 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-slideDownAndFade {
+	animation: springSlideDown 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-slideLeftAndFade {
+	animation: springSlideLeft 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* State-based animation utilities */
+.spring-enter {
+	animation: springIn 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spring-exit {
+	animation: springOut 200ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Popover-specific animations that auto-apply based on position */
+[data-side='bottom'] {
+	animation: springSlideUp 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-side='top'] {
+	animation: springSlideDown 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-side='left'] {
+	animation: springSlideRight 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-side='right'] {
+	animation: springSlideLeft 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}

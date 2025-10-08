@@ -1,0 +1,22 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"outDir": "dist",
+		"rootDir": ".",
+		"module": "ESNext",
+		"target": "esnext",
+		"jsx": "react",
+		"moduleResolution": "bundler"
+	},
+	"include": ["app.ts", "routes/**/*.ts"],
+	"exclude": [
+		"node_modules",
+		"dist",
+		".next",
+		"public",
+		"coverage",
+		"build",
+		"app/**/*"
+	]
+}

@@ -151,4 +151,3 @@ temp/
 
 # Sentry Config File
 .sentryclirc
-.env

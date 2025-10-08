@@ -1,0 +1,6 @@
+{
+	"watch": ["app.ts", "routes", "config", "lib"],
+	"ext": "ts,json",
+	"ignore": ["node_modules", ".next", "public"],
+	"exec": "tsx app.ts"
+}

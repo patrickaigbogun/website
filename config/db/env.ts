@@ -1,5 +1,5 @@
-// import { getServerEnv } from 'x-env-helpers';
+export const dbKeys = {
+	url: 'postgresql://levradb_owner:npg_K10BpyWVztmX@ep-sparkling-sea-a9n8hdrc-pooler.gwc.azure.neon.tech/levradb?sslmode=require&channel_binding=require',
+};
 
-// export const dbKeys = {
-// 	url: getServerEnv(),
-// };
+console.log('DB_URL_RELATIVE:', dbKeys.url);

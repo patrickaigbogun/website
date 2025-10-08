@@ -1,6 +1,3 @@
-import { Load } from '@patrickaigbogunoti/x-env/server';
-Load();
-
 import type { NextConfig } from 'next';
 import { withNextVideo } from 'next-video/process';
 
