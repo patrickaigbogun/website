@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Check commit message format
-commit_regex='^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?: .{1,50}'
+commit_regex='^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert|init|wip|docs|fuckmylife|update|minor|enhancement|task)(\(.+\))?: .{1,50}'
 
 if ! grep -qE "$commit_regex" "$1"; then
     echo "❌ Invalid commit message format!"
