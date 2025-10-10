@@ -8,6 +8,7 @@ ARG NODE_VERSION=22
 FROM node:${NODE_VERSION}-bookworm-slim AS base
 ENV PNPM_HOME=/pnpm
 ENV PATH="$PNPM_HOME:$PATH"
+ENV PNPM_STORE_PATH=/pnpm/store
 RUN corepack enable && corepack prepare pnpm@10.13.1 --activate
 
 ############################################
@@ -16,8 +17,8 @@ RUN corepack enable && corepack prepare pnpm@10.13.1 --activate
 FROM base AS deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN corepack enable && corepack prepare pnpm@10 --activate
-RUN pnpm install --frozen-lockfile
+# Populate the pnpm store only (no node_modules) for better caching
+RUN pnpm fetch
 
 ############################################
 # Build stage
@@ -25,10 +26,9 @@ RUN pnpm install --frozen-lockfile
 FROM base AS build
 WORKDIR /app
 # Restore fetched store for fast, hermetic install
-COPY --from=deps /pnpm /pnpm
-COPY --from=deps /root/.local/share/pnpm/store /root/.local/share/pnpm/store
+COPY --from=deps /pnpm/store /pnpm/store
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --offline
 COPY . .
 ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1
@@ -41,7 +41,8 @@ RUN pnpm run build
 FROM base AS prod-deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --prod --frozen-lockfile
+COPY --from=deps /pnpm/store /pnpm/store
+RUN pnpm install --prod --frozen-lockfile --offline
 
 ############################################
 # Runtime image
