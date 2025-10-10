@@ -53,7 +53,6 @@ export const auth = betterAuth({
 				},
 				session: {
 					...session,
-					teamId: fullSession?.teamId,
 				},
 			};
 		}),

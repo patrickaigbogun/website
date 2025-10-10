@@ -1,3 +1,1 @@
-import { getServerEnv } from '@/lib/env/helpers';
-
-export const sanityMutateToken = getServerEnv('MUTATE_TOKEN');
+export const sanityMutateToken = process.env.SANITY_MUTATE_TOKEN;
