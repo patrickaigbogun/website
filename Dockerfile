@@ -16,8 +16,8 @@ RUN corepack enable && corepack prepare pnpm@10.13.1 --activate
 FROM base AS deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-# Pre-fetch dependencies to leverage Docker cache
-RUN pnpm fetch --prod
+RUN corepack enable && corepack prepare pnpm@10 --activate
+RUN pnpm install --frozen-lockfile
 
 ############################################
 # Build stage
