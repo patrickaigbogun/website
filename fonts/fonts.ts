@@ -8,6 +8,6 @@ export const montserrat = Montserrat({
 
 export const nunito = Nunito({
 	subsets: ['latin'],
-	variable: '--font-open-sans',
+	variable: '--font-nunito',
 	display: 'swap',
 });

@@ -25,6 +25,10 @@ jobs:
         uses: pnpm/action-setup@v3
         with:
           version: '10'
+          run_install: true
+        
+      - name: install pnpm
+        run: npm install -g pnpm@10
 
       - name: Verify pnpm
         run: |
