@@ -1,8 +1,11 @@
 name: Docker Build and Push
 
 on:
-  push:
-    branches: [ master ]
+  # Run after CI completes successfully
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+  # still allow manual runs
   workflow_dispatch: {}
 
 env:
@@ -15,10 +18,14 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: read
+    # Only run if CI succeeded on master
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'master' || github.event_name == 'workflow_dispatch' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v3
@@ -53,6 +60,9 @@ jobs:
           provenance: false
           build-args: |
             NODE_VERSION=22
+            NEXT_PUBLIC_PROJECT_ID=${{ vars.NEXT_PUBLIC_PROJECT_ID }}
+            NEXT_PUBLIC_DATASET=${{ vars.NEXT_PUBLIC_DATASET }}
+            NEXT_PUBLIC_BASE_URL=${{ vars.NEXT_PUBLIC_BASE_URL }}
           cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
           cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
           tags: ${{ steps.meta.outputs.tags }}

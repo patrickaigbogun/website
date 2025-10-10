@@ -32,6 +32,13 @@ RUN pnpm install --frozen-lockfile --offline
 COPY . .
 ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1
+# Public build-time envs required by Next.js for static analysis and SSG
+ARG NEXT_PUBLIC_PROJECT_ID
+ARG NEXT_PUBLIC_DATASET
+ARG NEXT_PUBLIC_BASE_URL
+ENV NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID
+ENV NEXT_PUBLIC_DATASET=$NEXT_PUBLIC_DATASET
+ENV NEXT_PUBLIC_BASE_URL=$NEXT_PUBLIC_BASE_URL
 # Build Next.js and server TS
 RUN pnpm run build
 
