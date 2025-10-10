@@ -17,7 +17,7 @@ export default function healthRoutes(server: FastifyInstance) {
 			status: 'ok',
 			version: '1.0.0',
 			uptime: process.uptime(),
-			environment: process.env.NODE_ENV || 'development',
+			environment: process.env.NODE_ENV,
 		};
 	});
 }

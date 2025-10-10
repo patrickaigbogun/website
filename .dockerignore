@@ -1,0 +1,19 @@
+# Ignore node modules and build caches
+node_modules
+.pnpm-store
+
+# Next.js build output and caches (rebuilt inside image)
+.next
+dist
+
+# Local dev files
+.env*
+!.env.example
+*.log
+.vscode
+.husky
+.git
+.gitignore
+.prettier*
+.eslintrc*
+.next/static

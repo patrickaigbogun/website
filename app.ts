@@ -87,8 +87,9 @@ async function main() {
 		});
 	});
 
-	await server.listen({ port: 7990 });
-	console.log('🚀 App running on http://localhost:7990');
+	const port = Number(process.env.PORT || 7990);
+	await server.listen({ port, host: '0.0.0.0' });
+	console.log(`🚀 App running on http://0.0.0.0:${port}`);
 }
 
 main();
