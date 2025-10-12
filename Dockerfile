@@ -80,4 +80,5 @@ EXPOSE 7990
 HEALTHCHECK --interval=30s --timeout=5s --retries=5 CMD curl -fsS http://localhost:7990/status || curl -fsS http://localhost:7990/ping || exit 1
 
 USER nodeuser
-CMD ["node", "dist/app.js"]
+# Final runtime
+CMD ["node", "--experimental-specifier-resolution=node", "dist/app.js"]

@@ -7,9 +7,18 @@
 		"module": "ESNext",
 		"target": "esnext",
 		"jsx": "react",
-		"moduleResolution": "bundler"
+		"moduleResolution": "bundler",
+		"sourceMap": false
 	},
-	"include": ["app.ts", "routes/**/*.ts"],
+	"include": [
+		"app.ts",
+		"routes/**/*.ts",
+		"plugins/**/*.ts",
+		"server/**/*.ts",
+		"services/**/*.ts",
+		"lib/server/**/*.ts",
+		"config/**/*.ts"
+	],
 	"exclude": [
 		"node_modules",
 		"dist",
@@ -17,6 +26,12 @@
 		"public",
 		"coverage",
 		"build",
-		"app/**/*"
+		"app/**/*",
+		"pages/**/*",
+		"components/**/*",
+		"styles/**/*",
+		"tests/**/*",
+		"**/*.test.ts",
+		"**/*.spec.ts"
 	]
 }
