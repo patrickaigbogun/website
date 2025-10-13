@@ -77,7 +77,7 @@ COPY package.json ./package.json
 
 EXPOSE 7990
 # Use Fastify health endpoints if available
-HEALTHCHECK --interval=30s --timeout=5s --retries=5 CMD curl -fsS http://localhost:7990/status || curl -fsS http://localhost:7990/ping || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --retries=5 CMD curl -fsS http://localhost:7990/api/v1/status || curl -fsS http://localhost:7990/api/v1/ping || exit 1
 
 USER nodeuser
 # Final runtime

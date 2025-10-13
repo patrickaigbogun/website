@@ -2,9 +2,6 @@
 node_modules
 .pnpm-store
 
-# Next.js build output and caches (rebuilt inside image)
-.next
-dist
 
 # Local dev files
 .env*
