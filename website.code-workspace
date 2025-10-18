@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"typescript.format.enable": true,
+		"files.associations": {
+			"*.tsx": "typescriptreact",
+			"*.ts": "typescript"
+		},
+		"emmet.includeLanguages": {
+			"typescriptreact": "html"
+		}
+	}
+}
