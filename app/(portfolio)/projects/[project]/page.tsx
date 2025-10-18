@@ -1,18 +1,18 @@
+import { LinkButton } from "@/components/LinkButton";
+import LoadingUI from "@/components/loadingui";
+import { NavBtn } from "@/components/NavBtn";
+import { montserrat } from "@/fonts/fonts";
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-import LoadingUI from "@/components/loadingui";
-import { montserrat } from "@/fonts/fonts";
-import { NavBtn } from "@/components/NavBtn";
-import { LinkButton } from "@/components/LinkButton";
 import { Suspense } from "react";
 
 type Props = {
-  params: { project: string };
+  params: Promise<{ project: string }>;
 };
 
 export default async function Project({ params }: Props) {
-  const project = await getProject(params.project);
+  const project = await getProject((await params).project);
 
   return (
     <div className="mb-10">

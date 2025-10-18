@@ -1,18 +1,18 @@
 export const revalidate = 60; // Revalidate every 60 seconds by default
 
-import { getPage } from "@/sanity/sanity-utils";
 import { ContactForm } from "@/components/contactform";
-import { montserrat } from "@/fonts/fonts";
 import { NavBtn } from "@/components/NavBtn";
+import { montserrat } from "@/fonts/fonts";
+import { getPage } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 
 interface Props {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 };
 
 
 export default async function Page({ params }: Props) {
-	const page = await getPage(params.slug);
+	const page = await getPage((await params).slug);
 
 	return (
 		<div className="mb-10 w-full md:w-[75%] mx-auto">

@@ -2,8 +2,12 @@ import CommentSection from "@/components/commentsection";
 import { getblogPost, urlFor } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 
-export default async function page({ params }: { params: { blogpost: string } }) {
-	const blogPost = await getblogPost(params.blogpost);
+type Props = {
+	params: Promise<{ blogpost: string }>
+};
+
+export default async function page({ params }: Props) {
+	const blogPost = await getblogPost((await params).blogpost);
 
 	return (
 		<div className="space-y-32 w-full md:w-[75%] mx-auto" >
