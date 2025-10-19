@@ -14,7 +14,9 @@
 		"isolatedModules": true,
 		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true,
-		"declaration": true
+		"declaration": true,
+		"incremental": false,
+		"tsBuildInfoFile": null
 	},
 	"include": [
 		"app.ts",

@@ -6,7 +6,7 @@
 	"main": "dist/app.js",
 	"scripts": {
 		"dev": "nodemon",
-		"build": "pnpm run build:frontend & pnpm run build:backend",
+		"build": "pnpm run build:frontend && pnpm run build:backend",
 		"build:frontend": "next build",
 		"build:backend": "tsup app.ts --format esm,cjs --dts --config tsconfig.server.json",
 		"start": "cross-env NODE_ENV=production node dist/app.js",
