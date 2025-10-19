@@ -28,7 +28,7 @@
 		},
 		"strict": true,
 		"allowSyntheticDefaultImports": true,
-		"incremental": true,
+		"incremental": false,
 		"plugins": [
 			{
 				"name": "next"
