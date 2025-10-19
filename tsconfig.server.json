@@ -5,10 +5,16 @@
 		"outDir": "dist",
 		"rootDir": ".",
 		"module": "ESNext",
-		"target": "esnext",
+		"target": "ESNext",
 		"jsx": "react",
 		"moduleResolution": "bundler",
-		"sourceMap": false
+		"sourceMap": false,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"declaration": true
 	},
 	"include": [
 		"app.ts",
