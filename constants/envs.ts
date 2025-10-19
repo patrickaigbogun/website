@@ -1,7 +1,6 @@
-import { SanityProjectId, SanityDataset, SanityMutateToken } from "@/env.config";
 
-export const projectId = SanityProjectId.apiKey;
+export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!;
 
-export const dataset = SanityDataset.apiKey;
+export const dataset = process.env.NEXT_PUBLIC_DATASET!;
 
-export const mutateToken = SanityMutateToken.apiKey
+export const mutateToken = process.env.MUTATE_TOKEN!;

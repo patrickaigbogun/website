@@ -13,10 +13,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body >
+			<div >
 				{children}
-			</body>
-		</html>
+			</div>
 	);
 }
