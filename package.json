@@ -8,7 +8,7 @@
 		"dev": "nodemon",
 		"build": "pnpm run build:frontend && pnpm run build:backend",
 		"build:frontend": "next build",
-		"build:backend": "tsup app.ts --format esm,cjs --dts --config tsconfig.server.json",
+		"build:backend": "tsup app.ts --format esm,cjs --dts --config tsconfig.dts.json",
 		"start": "cross-env NODE_ENV=production node dist/app.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "next lint",

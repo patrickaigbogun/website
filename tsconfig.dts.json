@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.server.json",
+	"compilerOptions": {
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"incremental": false,
+		"tsBuildInfoFile": null
+	}
+}
