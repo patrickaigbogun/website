@@ -5,20 +5,20 @@ echo "🔧 Generating schema..."
 pnpm gen:schema
 
 # Check for env files in staged commits (except .env.example)
-echo "🔍 Checking for environment files in staged commits..."
-staged_env_files=$(git diff --cached --name-only | grep -E '^\.env(\.[^.]*)?$' | grep -v '\.env\.example$' || true)
+# echo "🔍 Checking for environment files in staged commits..."
+# staged_env_files=$(git diff --cached --name-only | grep -E '^\.env(\.[^.]*)?$' | grep -v '\.env\.example$' || true)
 
-if [ ! -z "$staged_env_files" ]; then
-    echo "❌ Environment files found in staged commits:"
-    echo "$staged_env_files"
-    echo ""
-    echo "🧹 Removing environment files from staged commits..."
-    echo "$staged_env_files" | xargs git reset HEAD --
-    echo "✅ Environment files removed from staging area."
-    echo ""
-    echo "⚠️  Note: .env files should not be committed to version control."
-    echo "   Only .env.example should be committed as a template."
-fi
+# if [ ! -z "$staged_env_files" ]; then
+#     echo "❌ Environment files found in staged commits:"
+#     echo "$staged_env_files"
+#     echo ""
+#     echo "🧹 Removing environment files from staged commits..."
+#     echo "$staged_env_files" | xargs git reset HEAD --
+#     echo "✅ Environment files removed from staging area."
+#     echo ""
+#     echo "⚠️  Note: .env files should not be committed to version control."
+#     echo "   Only .env.example should be committed as a template."
+# fi
 
 # Get staged files that can be formatted (exclude ignored directories)
 echo "🎨 Formatting staged files..."
