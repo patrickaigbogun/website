@@ -60,9 +60,11 @@ jobs:
           provenance: false
           build-args: |
             NODE_VERSION=22
-            NEXT_PUBLIC_PROJECT_ID=${{ vars.NEXT_PUBLIC_PROJECT_ID }}
-            NEXT_PUBLIC_DATASET=${{ vars.NEXT_PUBLIC_DATASET }}
-            NEXT_PUBLIC_BASE_URL=${{ vars.NEXT_PUBLIC_BASE_URL }}
+            NEXT_PUBLIC_PROJECT_ID=${{ secrets.NEXT_PUBLIC_PROJECT_ID }}
+            NEXT_PUBLIC_DATASET=${{ secrets.NEXT_PUBLIC_DATASET }}
+            NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}
+            MUTATE_TOKEN=${{ secrets.MUTATE_TOKEN }}
+            BETTER_AUTH_SECRET=${{ secrets.BETTER_AUTH_SECRET }}
           cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
           cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
           tags: ${{ steps.meta.outputs.tags }}
