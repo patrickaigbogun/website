@@ -9,24 +9,27 @@ import webRequest from './plugins/web-request';
 import registerRoutes from './routes/index';
 
 const dev = process.env.NODE_ENV !== 'production';
+const isProd = process.env.NODE_ENV === 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const server = fastify({
-	logger: {
-		level: 'info',
-		transport: {
-			target: 'pino-pretty',
-			options: {
-				colorize: true,
-				translateTime: 'HH:MM:ss',
-				ignore: 'pid,hostname,reqId,responseTime',
-				messageFormat: '{msg}',
-				levelFirst: true,
-				singleLine: true,
+	logger: !dev
+		? true
+		: {
+				level: 'info',
+				transport: {
+					target: 'pino-pretty',
+					options: {
+						colorize: true,
+						translateTime: 'HH:MM:ss',
+						ignore: 'pid,hostname,reqId,responseTime',
+						messageFormat: '{msg}',
+						levelFirst: true,
+						singleLine: true,
+					},
+				},
 			},
-		},
-	},
 });
 
 server.register(authPlugin);
