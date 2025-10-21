@@ -2,6 +2,7 @@
 import { FastifyInstance } from 'fastify';
 // import chapterRoutes from './chapters';
 import authRoutes from './auth';
+import commentsRoutes from './comments';
 import healthRoutes from './health';
 
 export default function registerRoutes(server: FastifyInstance) {
@@ -22,6 +23,7 @@ export default function registerRoutes(server: FastifyInstance) {
 			// app.register(videoRoutes);
 			// app.register(courseRoutes);
 			// app.register(userRoutes);
+			app.register(commentsRoutes);
 		},
 		{ prefix: '/api/v1' }
 	);
