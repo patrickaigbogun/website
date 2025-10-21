@@ -11,8 +11,7 @@ import BlogFooter from '@/components/blogfooter';
 
 export const metadata: Metadata = {
 	title: 'Patrick Aigbogun, Oti. Blog',
-	description:
-		'Personal blog where i discuss technologies, philosophy and poetry',
+	description: 'I talk about things.',
 };
 
 export default async function BlogLayout({

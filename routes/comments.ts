@@ -3,10 +3,12 @@ import Elysia from 'elysia';
 import { commentPlugin } from '@fuma-comment/server/elysia';
 import { createDrizzleAdapter } from '@fuma-comment/server/adapters/drizzle';
 import { db } from '@/config/db/orms/client';
+import * as schema from '@/orm/schema';
 
 export default fastifyPlugin(async fastify => {
 	// Shared plugins (session, web-request) are registered globally in app.ts
 	const adapter = createDrizzleAdapter({
+		schemas: schema,
 		db,
 		auth: {
 			async getUserId(req: any) {

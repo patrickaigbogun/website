@@ -59,6 +59,7 @@
 		"framer-motion": "^12.23.12",
 		"gsap": "^3.13.0",
 		"ioredis": "^5.7.0",
+		"memoirist": "^0.4.0",
 		"motion": "^12.23.12",
 		"next": "^15.4.3",
 		"next-sanity": "^10.0.3",

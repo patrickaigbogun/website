@@ -1,4 +1,5 @@
 // import CommentSection from '@/components/commentsection';
+import { CommentsWithAuth } from '@/components/comment-fuma';
 import { urlFor } from '@/lib/cms/sanity';
 import { getblogPost } from '@/lib/cms/sanity';
 import { PortableText } from 'next-sanity';
@@ -32,9 +33,9 @@ export default async function page({ params }: Props) {
 					</div>
 				</section>
 			</section>
-			{/* <section>
-				<CommentSection />
-			</section> */}
+			<section>
+				<CommentsWithAuth />
+			</section>
 		</div>
 	);
 }

@@ -125,6 +125,9 @@ importers:
       ioredis:
         specifier: ^5.7.0
         version: 5.8.1
+      memoirist:
+        specifier: ^0.4.0
+        version: 0.4.0
       motion:
         specifier: ^12.23.12
         version: 12.23.22(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -7173,6 +7176,9 @@ packages:
   media-tracks@0.3.3:
     resolution: {integrity: sha512-9P2FuUHnZZ3iji+2RQk7Zkh5AmZTnOG5fODACnjhCVveX1McY3jmCRHofIEI+yTBqplz7LXy48c7fQ3Uigp88w==}
 
+  memoirist@0.4.0:
+    resolution: {integrity: sha512-zxTgA0mSYELa66DimuNQDvyLq36AwDlTuVRbnQtB+VuTcKWm5Qc4z3WkSpgsFWHNhexqkIooqpv4hdcqrX5Nmg==}
+
   memoize-one@3.1.1:
     resolution: {integrity: sha512-YqVh744GsMlZu6xkhGslPSqSurOv6P+kLN2J3ysBZfagLcL5FdRK/0UpgLoL8hwjjEvvAVkjJZyFP+1T6p1vgA==}
 
@@ -12224,7 +12230,7 @@ snapshots:
     dependencies:
       '@portabletext/sanity-bridge': 1.1.13(@sanity/schema@4.10.2(@types/react@19.2.2)(debug@4.4.3))(@sanity/types@4.10.2(@types/react@19.2.2))
       '@portabletext/schema': 1.2.0
-      '@sanity/types': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
+      '@sanity/types': 4.10.2(@types/react@19.2.2)
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
     transitivePeerDependencies:
@@ -12239,7 +12245,7 @@ snapshots:
       '@portabletext/schema': 1.2.0
       '@portabletext/to-html': 3.0.0
       '@sanity/schema': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
-      '@sanity/types': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
+      '@sanity/types': 4.10.2(@types/react@19.2.2)
       '@xstate/react': 6.0.0(@types/react@19.2.2)(react@19.2.0)(xstate@5.22.1)
       debug: 4.4.3(supports-color@5.5.0)
       get-random-values-esm: 1.0.2
@@ -12281,7 +12287,7 @@ snapshots:
     dependencies:
       '@portabletext/schema': 1.2.0
       '@sanity/schema': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
-      '@sanity/types': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
+      '@sanity/types': 4.10.2(@types/react@19.2.2)
       get-random-values-esm: 1.0.2
       lodash.startcase: 4.4.0
 
@@ -13533,7 +13539,7 @@ snapshots:
   '@sanity/insert-menu@2.0.2(@emotion/is-prop-valid@1.2.2)(@sanity/types@4.10.2(@types/react@19.2.2))(react-dom@19.2.0(react@19.2.0))(react-is@19.2.0)(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
       '@sanity/icons': 3.7.4(react@19.2.0)
-      '@sanity/types': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
+      '@sanity/types': 4.10.2(@types/react@19.2.2)
       '@sanity/ui': 3.1.8(@emotion/is-prop-valid@1.2.2)(react-dom@19.2.0(react@19.2.0))(react-is@19.2.0)(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       lodash: 4.17.21
       react: 19.2.0
@@ -13714,7 +13720,7 @@ snapshots:
     dependencies:
       '@sanity/descriptors': 1.1.1
       '@sanity/generate-help-url': 3.0.0
-      '@sanity/types': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
+      '@sanity/types': 4.10.2(@types/react@19.2.2)
       arrify: 2.0.1
       groq-js: 1.19.0
       humanize-list: 1.0.1
@@ -13794,9 +13800,17 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@sanity/types@4.10.2(@types/react@19.2.2)(debug@4.4.3)':
+  '@sanity/types@4.10.2(@types/react@19.2.2)':
     dependencies:
       '@sanity/client': 7.12.0
+      '@sanity/media-library-types': 1.0.1
+      '@types/react': 19.2.2
+    transitivePeerDependencies:
+      - debug
+
+  '@sanity/types@4.10.2(@types/react@19.2.2)(debug@4.4.3)':
+    dependencies:
+      '@sanity/client': 7.12.0(debug@4.4.3)
       '@sanity/media-library-types': 1.0.1
       '@types/react': 19.2.2
     transitivePeerDependencies:
@@ -13863,7 +13877,7 @@ snapshots:
     dependencies:
       '@sanity/client': 7.12.0
     optionalDependencies:
-      '@sanity/types': 4.10.2(@types/react@19.2.2)(debug@4.4.3)
+      '@sanity/types': 4.10.2(@types/react@19.2.2)
 
   '@sanity/visual-editing@3.0.5(@emotion/is-prop-valid@1.2.2)(@sanity/client@7.12.0)(@sanity/types@4.10.2(@types/react@19.2.2))(next@15.5.4(@babel/core@7.28.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react-is@19.2.0)(react@19.2.0)(sanity@4.10.2(@emotion/is-prop-valid@1.2.2)(@portabletext/sanity-bridge@1.1.13(@sanity/schema@4.10.2(@types/react@19.2.2)(debug@4.4.3))(@sanity/types@4.10.2(@types/react@19.2.2)))(@types/node@24.7.0)(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(immer@10.1.3)(jiti@2.6.1)(lightningcss@1.30.2)(postcss@8.5.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1))(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)':
     dependencies:
@@ -17803,6 +17817,8 @@ snapshots:
       - react
 
   media-tracks@0.3.3: {}
+
+  memoirist@0.4.0: {}
 
   memoize-one@3.1.1: {}
 
