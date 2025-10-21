@@ -86,6 +86,7 @@
 	"devDependencies": {
 		"@neondatabase/serverless": "^1.0.1",
 		"@patrickaigbogunoti/x-env": "^0.2.137",
+		"@tailwindcss/postcss": "^4.1.15",
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/better-queue": "^3.8.6",
 		"@types/node": "^24.1.0",
@@ -111,7 +112,7 @@
 		"postcss": "^8.5.6",
 		"prettier": "^3.6.2",
 		"tailwind-merge": "^3.3.1",
-		"tailwindcss": "^3.4.16",
+		"tailwindcss": "^4.1.15",
 		"tsup": "^8.5.0",
 		"tsx": "^4.20.3",
 		"typescript": "^5.8.3"
