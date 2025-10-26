@@ -1,12 +1,21 @@
+'use client';
+
 // import CommentSection from '@/components/commentsection';
-import { CommentsWithAuth } from '@/components/comment-fuma';
+// import { CommentsWithAuth } from '@/components/comment-fuma';
 import { urlFor } from '@/lib/cms/sanity';
 import { getblogPost } from '@/lib/cms/sanity';
 import { PortableText } from 'next-sanity';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 
 type Props = {
 	params: Promise<{ blogpost: string }>;
 };
+
+const CommentsWithAuth = dynamic(
+	() => import('@/components/comment-fuma').then(mod => mod.CommentsWithAuth),
+	{ ssr: false }
+);
 
 export default async function page({ params }: Props) {
 	const blogPost = await getblogPost((await params).blogpost);
@@ -33,9 +42,9 @@ export default async function page({ params }: Props) {
 					</div>
 				</section>
 			</section>
-			<section>
-				<CommentsWithAuth />
-			</section>
+			{/* <Suspense> */}
+			<CommentsWithAuth page={blogPost._id} />
+			{/* </Suspense> */}
 		</div>
 	);
 }

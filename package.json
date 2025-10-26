@@ -1,21 +1,21 @@
 {
 	"name": "website",
-	"version": "0.8.7",
+	"version": "0.8.8",
 	"private": true,
 	"type": "module",
 	"main": "dist/app.js",
 	"scripts": {
-		"dev": "nodemon",
+		"dev": "dotenvx run -f .env.local -f .env -- cross-env  nodemon",
 		"build": "pnpm run build:frontend && pnpm run build:backend",
-		"build:frontend": "next build",
-		"build:backend": "tsup app.ts --format esm,cjs --dts --config tsconfig.server.json",
-		"start": "cross-env NODE_ENV=production node dist/app.js",
+		"build:frontend": "dotenvx run -f .env.local -f .env -- next build",
+		"build:backend": "dotenvx run -f .env.local -f .env -- tsup app.ts --format esm,cjs --dts --config tsconfig.server.json",
+		"start": "dotenvx run -f .env.local -f .env -- cross-env NODE_ENV=production node dist/app.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "next lint",
-		"gen:schema": "tsx scripts/generate-schema.ts",
-		"workers": "tsx scripts/worker.ts",
-		"watch:schema": "tsx scripts/watch-schema.ts",
-		"watch:workers": "tsx scripts/watch-workers.ts",
+		"gen:schema": "dotenvx run -f .env.local -f .env -- tsx scripts/generate-schema.ts",
+		"workers": "dotenvx run -f .env.local -f .env -- tsx scripts/worker.ts",
+		"watch:schema": "dotenvx run -f .env.local -f .env -- tsx scripts/watch-schema.ts",
+		"watch:workers": "dotenvx run -f .env.local -f .env -- tsx scripts/watch-workers.ts",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"format:fix": "prettier --write --list-different ."
@@ -23,6 +23,7 @@
 	"dependencies": {
 		"@aws-sdk/client-s3": "^3.848.0",
 		"@aws-sdk/s3-request-presigner": "^3.848.0",
+		"@dotenvx/dotenvx": "^1.51.0",
 		"@fastify/cors": "^11.0.1",
 		"@fastify/formbody": "^8.0.2",
 		"@fastify/postgres": "^6.0.2",
@@ -30,7 +31,6 @@
 		"@fuma-comment/server": "^1.3.1",
 		"@headlessui/react": "^2.2.7",
 		"@heroicons/react": "^2.2.0",
-		"@lottiefiles/dotlottie-react": "^0.14.4",
 		"@mux/mux-node": "^12.2.0",
 		"@neondatabase/serverless": "^1.0.1",
 		"@phosphor-icons/react": "^2.1.10",
@@ -80,13 +80,11 @@
 		"sharp": "^0.34.3",
 		"sonner": "^2.0.7",
 		"styled-components": "^6.1.19",
-		"tailwind-scrollbar": "^3.1.0",
 		"three": "^0.179.1",
 		"zod": "^4.1.12"
 	},
 	"devDependencies": {
 		"@neondatabase/serverless": "^1.0.1",
-		"@patrickaigbogunoti/x-env": "^0.2.137",
 		"@tailwindcss/postcss": "^4.1.15",
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/better-queue": "^3.8.6",
@@ -119,6 +117,13 @@
 		"typescript": "^5.8.3"
 	},
 	"pnpm": {
+		"peerDependencyRules": {
+			"allowedVersions": {
+				"drizzle-orm": {
+					"@fuma-comment/server": "^0.44.0"
+				}
+			}
+		},
 		"overrides": {
 			"@sanity/icons": "^3.7.4"
 		},

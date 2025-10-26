@@ -10,11 +10,5 @@ export default {
 			},
 		},
 	},
-	plugins: [
-		typography,
-		tailwindscrollbar({
-			nocompatible: true,
-			preferredStrategy: 'pseudoelements',
-		}),
-	],
+	plugins: [typography],
 };

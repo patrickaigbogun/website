@@ -25,6 +25,9 @@ export const auth = betterAuth({
 		provider: 'pg',
 	}),
 	trustedOrigins: ['http://localhost:7990'],
+	emailAndPassword: {
+		enabled: true,
+	},
 	plugins: [
 		magicLink({
 			async sendMagicLink({ email, url }) {
