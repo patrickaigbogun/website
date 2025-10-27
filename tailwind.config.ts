@@ -1,5 +1,4 @@
 import typography from '@tailwindcss/typography';
-import tailwindscrollbar from 'tailwind-scrollbar';
 
 export default {
 	theme: {
