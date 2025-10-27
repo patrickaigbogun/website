@@ -117,13 +117,6 @@
 		"typescript": "^5.8.3"
 	},
 	"pnpm": {
-		"peerDependencyRules": {
-			"allowedVersions": {
-				"drizzle-orm": {
-					"@fuma-comment/server": "^0.44.0"
-				}
-			}
-		},
 		"overrides": {
 			"@sanity/icons": "^3.7.4"
 		},
