@@ -1,5 +1,3 @@
-// import { group } from "console";
-
 import { RuleType } from '@/types/components';
 
 const blogPost = {
@@ -70,6 +68,34 @@ const blogPost = {
 			type: 'reference',
 			title: 'Authors',
 			to: [{ type: 'author' }],
+			group: ['summary'],
+		},
+		{
+			name: 'category',
+			type: 'reference',
+			title: 'Category',
+			to: [{ type: 'category' }],
+			group: ['summary'],
+		},
+		{
+			name: 'series',
+			type: 'reference',
+			title: 'Series',
+			to: [{ type: 'series' }],
+			group: ['summary'],
+		},
+		{
+			name: 'seriesOrder',
+			title: 'Order in Series',
+			type: 'number',
+			description: 'Position of this post within the series',
+			group: ['summary'],
+		},
+		{
+			name: 'tags',
+			type: 'array',
+			title: 'Tags',
+			of: [{ type: 'reference', to: [{ type: 'tag' }] }],
 			group: ['summary'],
 		},
 		{

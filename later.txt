@@ -1,0 +1,3 @@
+the floatingisland(control-center)
+will be an icon of the user image once singed in with a gear icon tangent to it
+and a ring around it that gets overlayed by the gear icon

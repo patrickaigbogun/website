@@ -2,7 +2,6 @@
 
 import { blogPostsProps } from '@/types/components';
 import { CardImageBg } from '@/components/cardimagebg';
-import { url } from 'inspector';
 import { urlFor } from '@/lib/cms/sanity';
 
 export function BlogPostsGrid({ blogPosts }: blogPostsProps) {

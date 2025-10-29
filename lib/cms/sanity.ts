@@ -67,7 +67,7 @@ export async function getPage(slug: String): Promise<Page> {
 			_createdAt,
 			title,
 			alt,
-			'slug': slug.current,						
+			'slug': slug.current,
 			'image': image.asset->url,
 			content
         }`,
@@ -80,14 +80,14 @@ export async function getblogPosts(): Promise<blogPost[]> {
 		groq`*[_type == 'blogPost']{
 			_id,
 			_createdAt,
-			title, 
+			title,
 			'slug': slug.current,
 			'image': image.asset->url,
 			alt,
 			tagline,
-			excerpt, 
+			excerpt,
 			publishDate,
-			'author': authors->{_id, name}, 
+			'author': authors->{_id, name},
 			content
 		}`
 	);
@@ -115,6 +115,28 @@ export async function getblogPost(slug: string): Promise<blogPost> {
 			}
 		}`,
 		{ slug }
+	);
+}
+
+export async function getAuthors(): Promise<Author[]> {
+	return client.fetch(
+		groq`*[_type == 'author']{
+			_id,
+			_createdAt,
+			name,
+			'slug': slug.current,
+			'image': image.asset->url,
+			alt,
+			bio,
+			'socials': socials,
+			'posts': *[_type == 'blogPost' && references(^._id)]{
+				_id,
+				title,
+				'slug': slug.current,
+				'image': image.asset->url,
+				alt,
+				publishDate
+		}`
 	);
 }
 
