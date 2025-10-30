@@ -20,9 +20,7 @@ export default async function BlogLayout({
 		<div className='flex flex-col min-h-screen bg-bg text-text'>
 			<section className={`${nunito.className} `}>
 				<LandingHeader />
-				<main className=' mx-auto w-[90%] sm:w-[85%] py-12  '>
-					{children}
-				</main>
+				<main className=' mx-auto py-12  '>{children}</main>
 			</section>
 		</div>
 	);

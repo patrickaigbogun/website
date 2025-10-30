@@ -1,12 +1,10 @@
 'use client';
 import { LinkProps } from '@/types/components';
-import Link from 'next/link';
-import React from 'react';
 
 export function LinkButton({ target, children, title }: LinkProps) {
 	return (
 		<div>
-			<Link
+			<a
 				href={target}
 				title={title}
 				aria-label={title}
@@ -18,7 +16,7 @@ export function LinkButton({ target, children, title }: LinkProps) {
 				<span className='relative group-hover:text-white'>
 					{children}
 				</span>
-			</Link>
+			</a>
 		</div>
 	);
 }

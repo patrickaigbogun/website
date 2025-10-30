@@ -84,9 +84,14 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    background-color: var(--bg);
+    background-image: url('/noise.png');
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    background-blend-mode: multiply;
+    opacity: 0.95;
 }
 
 /* Tailwind container override */
@@ -399,4 +404,115 @@ body {
     mask-mode: alpha;
     -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     -webkit-mask-mode: alpha;
+}
+
+/* Scrapbook Photo Effects */
+.scrapbook-photo {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    transition: all 0.3s ease;
+}
+
+.scrapbook-photo:hover {
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
+}
+
+/* Washi Tape Styles */
+.scrapbook-tape {
+    position: absolute;
+    z-index: 10;
+    background: rgba(255, 220, 100, 0.7);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scrapbook-tape::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px);
+}
+
+.scrapbook-tape-top-left {
+    width: 60px;
+    height: 25px;
+    top: -8px;
+    left: 10px;
+    transform: rotate(-5deg);
+}
+
+.scrapbook-tape-top-right {
+    width: 60px;
+    height: 25px;
+    top: -8px;
+    right: 10px;
+    transform: rotate(5deg);
+}
+
+.scrapbook-tape-corner {
+    width: 80px;
+    height: 25px;
+    top: 15px;
+    right: -15px;
+    transform: rotate(45deg);
+    background: rgba(150, 200, 255, 0.6);
+}
+
+.scrapbook-tape-cross {
+    width: 25px;
+    height: 80px;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    background: rgba(255, 180, 200, 0.65);
+}
+
+.scrapbook-tape-cross::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    background: rgba(255, 180, 200, 0.65);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Handwriting Font */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+.font-handwriting {
+    font-family: 'Caveat', cursive;
+}
+
+/* Bounce Animation */
+@keyframes bounce-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Grainy Texture */
+.bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+}
+
+/* Radial Gradient */
+.bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
 }
