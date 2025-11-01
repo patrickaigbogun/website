@@ -7,15 +7,16 @@ import { Brand } from '@components/reuse/logo';
 import { NavTabItem, NavTabRoot } from '@components/reuse/navigation';
 import { ToggleMenu, ToggleTheme } from '@components/reuse/toggles';
 import {
+	BugDroidIcon,
 	CoinIcon,
 	DotsThreeIcon,
-	FileCodeIcon,
 	HouseIcon,
+	PaintBrushIcon,
 	ScalesIcon,
-	StudentIcon,
 } from '@phosphor-icons/react';
 import { Flex, Text } from '@radix-ui/themes';
 import { ActionButton } from '../reuse/button/action-button';
+import { montserrat } from '@/fonts/fonts';
 
 export default function LandingHeader() {
 	const isMobile = useIsMobile(768);
@@ -39,9 +40,21 @@ export function DesktopHeader() {
 				Levra
 			</Brand>
 			<NavTabRoot>
-				<NavTabItem label='Tech' href='#tech' />
-				<NavTabItem label='Philosophy' href='#philosophy' />
-				<NavTabItem label='Art' href='#art' />
+				<NavTabItem
+					className='text-text font-bold text-base'
+					label='Tech'
+					href='#tech'
+				/>
+				<NavTabItem
+					className='text-text font-bold text-base'
+					label='Philosophy'
+					href='#philosophy'
+				/>
+				<NavTabItem
+					className='text-text font-bold text-base'
+					label='Art'
+					href='#art'
+				/>
 			</NavTabRoot>
 			<ActionButton
 				className='backdrop:filter backdrop-blur-md bg-stone-500/30'
@@ -59,13 +72,13 @@ export function MobileHeader() {
 		<div className='w-full p-4 px-6 flex flex-row items-center justify-between '>
 			<Flex direction={'row'} align={'center'}>
 				<Brand
-					classname='backdrop:filter backdrop-blur-md bg-stone-500/30 px-3 py-2'
+					classname={`backdrop:filter backdrop-blur-md bg-stone-500/30 px-3 py-2 ${montserrat.className} `}
 					src='./logo-black.png'
 					alt='Oti Blog Logo'
 					size={'xs'}
 					rounded={'full'}
 				>
-					Levra
+					Oti
 				</Brand>
 			</Flex>
 			<ActionButton
@@ -92,7 +105,7 @@ export function MobileHeader() {
 									className='space-x-2'
 								>
 									<HouseIcon size={28} weight={'regular'} />
-									<Text>Home</Text>
+									<Text weight={'bold'}>Home</Text>
 								</Flex>
 							</ListRoot.Item>
 							<ListRoot.Item>
@@ -101,27 +114,12 @@ export function MobileHeader() {
 									align={'center'}
 									className='space-x-2'
 								>
-									<CoinIcon size={28} weight={'regular'} />
-									<Text>Pricing</Text>
+									<BugDroidIcon
+										size={28}
+										weight={'regular'}
+									/>
+									<Text weight={'bold'}>Tech</Text>
 								</Flex>
-								<ListRoot className='mt-2 ml-6'>
-									<ListRoot.Item>
-										<a
-											href='#tech'
-											className='hover:underline'
-										>
-											Tech
-										</a>
-									</ListRoot.Item>
-									<ListRoot.Item>
-										<a
-											href='#philosophy'
-											className='hover:underline'
-										>
-											Philosophy
-										</a>
-									</ListRoot.Item>
-								</ListRoot>
 							</ListRoot.Item>
 
 							<ListRoot.Item>
@@ -130,19 +128,23 @@ export function MobileHeader() {
 									align={'center'}
 									className='space-x-2'
 								>
-									<StudentIcon size={28} weight={'regular'} />
-									<Text>Tutorials</Text>
+									<CoinIcon size={28} weight={'regular'} />
+									<Text weight={'bold'}>Philosophy</Text>
 								</Flex>
-								<ListRoot className='mt-2 ml-6'>
-									<ListRoot.Item>
-										<a
-											href='#art'
-											className='hover:underline'
-										>
-											Art
-										</a>
-									</ListRoot.Item>
-								</ListRoot>
+							</ListRoot.Item>
+
+							<ListRoot.Item>
+								<Flex
+									direction={'row'}
+									align={'center'}
+									className='space-x-2'
+								>
+									<PaintBrushIcon
+										size={28}
+										weight={'regular'}
+									/>
+									<Text weight={'bold'}>Art</Text>
+								</Flex>
 							</ListRoot.Item>
 
 							<ListRoot.Item>
@@ -152,7 +154,7 @@ export function MobileHeader() {
 									className='space-x-2'
 								>
 									<ScalesIcon size={28} weight={'regular'} />
-									<Text>Legal</Text>
+									<Text weight={'bold'}>Legal</Text>
 								</Flex>
 								<ListRoot className='mt-2 ml-6'>
 									<ListRoot.Item>

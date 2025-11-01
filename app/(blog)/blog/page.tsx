@@ -7,6 +7,7 @@ import Featured from '@/components/ui/featured';
 import Promo from '@/components/ui/promo';
 import Footer from '@/components/ui/footer';
 import { useIsClient } from '@uidotdev/usehooks';
+import { ScrollArea } from '@components/ui/scroll-area';
 
 export default function Home() {
 	const isClient = useIsClient();
@@ -34,10 +35,12 @@ export default function Home() {
 
 	return (
 		<main>
-			<Hero />
-			<Featured />
-			<Promo />
-			<Footer />
+			<ScrollArea maskHeight={10}>
+				<Hero />
+				<Featured />
+				<Promo />
+				<Footer />
+			</ScrollArea>
 		</main>
 	);
 }
