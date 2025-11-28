@@ -9,7 +9,7 @@ export default function GlobalError({
 	reset,
 }: {
 	error: Error & { digest?: string };
-	reset: () => void;
+	reset?: () => void;
 }) {
 	return (
 		<html className='bg-bg-dark'>
@@ -35,7 +35,11 @@ export default function GlobalError({
 									size={28}
 								/>
 							</p>
-							<button onClick={() => reset()}>Try again</button>
+							{typeof reset === 'function' ? (
+								<button onClick={() => reset?.()}>
+									Try again
+								</button>
+							) : null}
 						</div>
 					</center>
 				</ThemeProvider>

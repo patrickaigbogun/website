@@ -37,21 +37,21 @@ export function DesktopHeader() {
 				size={'xs'}
 				rounded={'full'}
 			>
-				Levra
+				Oti's Blog
 			</Brand>
 			<NavTabRoot>
 				<NavTabItem
-					className='text-text font-bold text-base'
+					className='text-text font-bold text-lg'
 					label='Tech'
 					href='#tech'
 				/>
 				<NavTabItem
-					className='text-text font-bold text-base'
+					className='text-text font-bold text-xl'
 					label='Philosophy'
 					href='#philosophy'
 				/>
 				<NavTabItem
-					className='text-text font-bold text-base'
+					className='text-text font-bold text-lg'
 					label='Art'
 					href='#art'
 				/>

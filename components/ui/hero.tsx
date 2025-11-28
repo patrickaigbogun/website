@@ -135,7 +135,7 @@ export default function Hero() {
 
 				{/* Content */}
 				<div className='absolute inset-0 flex items-center text-center justify-center z-10'>
-					<div className='space-y-12 max-w-[85%] text-text backdrop:blur-sm bg-bg-dark/70 dark:bg-bg-dark/30 p-8 rounded-2xl border-4 border-border/15 shadow-2xl hero-content-inset'>
+					<div className='space-y-12 max-w-[85%] text-text backdrop:blur-lg bg-bg-dark/70 dark:bg-bg-dark/60 p-8 rounded-2xl border-4 border-border/15 dark:border-bg-dark/5 shadow-2xl hero-content-inset'>
 						<div className='space-y-3'>
 							<h1
 								className={`text-4xl md:text-7xl font-extrabold ${montserrat.className}`}

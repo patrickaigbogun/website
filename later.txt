@@ -6,4 +6,3 @@ and a ring around it that gets overlayed by the gear icon
 
 //--------NOW--------//
 
-i have images in my public directory that are meant to be used in the hero, i mean to use arrange them scattered around the hero, give me techniques that can achieve this effect.
